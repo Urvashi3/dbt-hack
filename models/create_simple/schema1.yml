@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: musicals_info
+    description: "Musical Details"
+    columns:
+      - name: eventid
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
+      - name: eventname
+        tests:
+          - not_null
+
+      - name: catgroup
+        tests:
+          - accepted_values:
+              values: ['Shows']
+          - not_null         
+     
+  - name: musical_listing
+    description: "Musical Listing"
+    columns:
+      - name: eventid
+        description: "The referrential  key for this table"
+        tests:
+          - relationships:
+              to: ref('musicals_info')
+              field: eventid              

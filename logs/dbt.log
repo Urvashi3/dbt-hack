@@ -1,0 +1,3175 @@
+2021-07-07 19:51:30.878824 (MainThread): Running with dbt=0.20.0-rc1
+2021-07-07 19:51:31.148840 (MainThread): running dbt with arguments Namespace(cls=<class 'dbt.task.run.RunTask'>, debug=False, defer=None, exclude=None, fail_fast=False, full_refresh=False, log_cache_events=False, log_format='default', models=None, partial_parse=None, profile=None, profiles_dir='C:\\Users\\urvas\\.dbt', project_dir=None, record_timing_info=None, rpc_method='run', selector_name=None, single_threaded=False, state=None, strict=False, target=None, test_new_parser=False, threads=None, use_cache=True, use_colors=None, use_experimental_parser=False, vars='{}', version_check=True, warn_error=False, which='run', write_json=True)
+2021-07-07 19:51:31.149805 (MainThread): Tracking: tracking
+2021-07-07 19:51:31.159221 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ECDAE52588>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ECDE9F3DC8>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ECDE9F3288>]}
+2021-07-07 19:51:31.189159 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ECDE983B48>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ECDE983488>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ECDE9890C8>]}
+2021-07-07 19:51:31.189159 (MainThread): Flushing usage events
+2021-07-07 19:51:31.784294 (MainThread): Encountered an error:
+2021-07-07 19:51:31.785289 (MainThread): Compilation Error
+  dbt found 2 package(s) specified in packages.yml, but only 0 package(s) installed in dbt_modules. Run "dbt deps" to install package dependencies.
+2021-07-07 19:51:32.775853 (MainThread): Traceback (most recent call last):
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\main.py", line 125, in main
+    results, succeeded = handle_and_check(args)
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\main.py", line 203, in handle_and_check
+    task, res = run_from_args(parsed)
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\main.py", line 256, in run_from_args
+    results = task.run()
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\task\runnable.py", line 406, in run
+    self._runtime_initialize()
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\task\runnable.py", line 122, in _runtime_initialize
+    super()._runtime_initialize()
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\task\runnable.py", line 79, in _runtime_initialize
+    self.load_manifest()
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\task\runnable.py", line 66, in load_manifest
+    self.manifest = ManifestLoader.get_full_manifest(self.config)
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\parser\manifest.py", line 167, in get_full_manifest
+    projects = config.load_dependencies()
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\config\runtime.py", line 337, in load_dependencies
+    f'dbt found {count_packages_specified} package(s) '
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\exceptions.py", line 444, in raise_compiler_error
+    raise CompilationException(msg, node)
+dbt.exceptions.CompilationException: Compilation Error
+  dbt found 2 package(s) specified in packages.yml, but only 0 package(s) installed in dbt_modules. Run "dbt deps" to install package dependencies.
+
+2021-07-07 19:51:58.180720 (MainThread): Running with dbt=0.20.0-rc1
+2021-07-07 19:51:58.446118 (MainThread): running dbt with arguments Namespace(cls=<class 'dbt.task.deps.DepsTask'>, debug=False, defer=None, log_cache_events=False, log_format='default', partial_parse=None, profile=None, profiles_dir='C:\\Users\\urvas\\.dbt', project_dir=None, record_timing_info=None, rpc_method='deps', single_threaded=False, state=None, strict=False, target=None, test_new_parser=False, use_cache=True, use_colors=None, use_experimental_parser=False, vars='{}', warn_error=False, which='deps', write_json=True)
+2021-07-07 19:51:58.446118 (MainThread): Tracking: tracking
+2021-07-07 19:51:58.447115 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AB0965F988>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AB09D97F08>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AB09DA6948>]}
+2021-07-07 19:51:58.448112 (MainThread): Set downloads directory='C:\Users\urvas\AppData\Local\Temp\dbt-downloads-lkt1084s'
+2021-07-07 19:51:58.448112 (MainThread): Making package registry request: GET https://hub.getdbt.com/api/v1/index.json
+2021-07-07 19:51:59.804168 (MainThread): Response from registry: GET https://hub.getdbt.com/api/v1/index.json 200
+2021-07-07 19:51:59.805164 (MainThread): Making package registry request: GET https://hub.getdbt.com/api/v1/fishtown-analytics/dbt_utils.json
+2021-07-07 19:52:00.009981 (MainThread): Response from registry: GET https://hub.getdbt.com/api/v1/fishtown-analytics/dbt_utils.json 200
+2021-07-07 19:52:00.021948 (MainThread): Making package registry request: GET https://hub.getdbt.com/api/v1/fishtown-analytics/dbt_utils/0.7.0.json
+2021-07-07 19:52:00.255522 (MainThread): Response from registry: GET https://hub.getdbt.com/api/v1/fishtown-analytics/dbt_utils/0.7.0.json 200
+2021-07-07 19:52:00.256519 (MainThread): Making package registry request: GET https://hub.getdbt.com/api/v1/fishtown-analytics/redshift.json
+2021-07-07 19:52:00.463934 (MainThread): Response from registry: GET https://hub.getdbt.com/api/v1/fishtown-analytics/redshift.json 200
+2021-07-07 19:52:00.466929 (MainThread): Making package registry request: GET https://hub.getdbt.com/api/v1/fishtown-analytics/redshift/0.2.2.json
+2021-07-07 19:52:00.725875 (MainThread): Response from registry: GET https://hub.getdbt.com/api/v1/fishtown-analytics/redshift/0.2.2.json 200
+2021-07-07 19:52:00.726911 (MainThread): Making package registry request: GET https://hub.getdbt.com/api/v1/fishtown-analytics/dbt_utils.json
+2021-07-07 19:52:00.967521 (MainThread): Response from registry: GET https://hub.getdbt.com/api/v1/fishtown-analytics/dbt_utils.json 200
+2021-07-07 19:52:00.975503 (MainThread): Making package registry request: GET https://hub.getdbt.com/api/v1/fishtown-analytics/dbt_utils/0.7.0.json
+2021-07-07 19:52:01.282387 (MainThread): Response from registry: GET https://hub.getdbt.com/api/v1/fishtown-analytics/dbt_utils/0.7.0.json 200
+2021-07-07 19:52:01.284336 (MainThread): Making package registry request: GET https://hub.getdbt.com/api/v1/fishtown-analytics/dbt_utils.json
+2021-07-07 19:52:01.504235 (MainThread): Response from registry: GET https://hub.getdbt.com/api/v1/fishtown-analytics/dbt_utils.json 200
+2021-07-07 19:52:01.516202 (MainThread): Making package registry request: GET https://hub.getdbt.com/api/v1/fishtown-analytics/redshift.json
+2021-07-07 19:52:01.685730 (MainThread): Response from registry: GET https://hub.getdbt.com/api/v1/fishtown-analytics/redshift.json 200
+2021-07-07 19:52:01.686728 (MainThread): Making package registry request: GET https://hub.getdbt.com/api/v1/fishtown-analytics/dbt_utils/0.7.0.json
+2021-07-07 19:52:01.918927 (MainThread): Response from registry: GET https://hub.getdbt.com/api/v1/fishtown-analytics/dbt_utils/0.7.0.json 200
+2021-07-07 19:52:01.919924 (MainThread): Making package registry request: GET https://hub.getdbt.com/api/v1/fishtown-analytics/redshift/0.2.2.json
+2021-07-07 19:52:02.164783 (MainThread): Response from registry: GET https://hub.getdbt.com/api/v1/fishtown-analytics/redshift/0.2.2.json 200
+2021-07-07 19:52:02.164783 (MainThread): Installing fishtown-analytics/dbt_utils@0.7.0
+2021-07-07 19:52:02.725795 (MainThread):   Installed from version 0.7.0
+2021-07-07 19:52:02.725795 (MainThread): Sending event: {'category': 'dbt', 'action': 'package', 'label': '91d003db-7a22-4642-9cd8-15ea8b8aa395', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AB09DC2BC8>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AB09DBF1C8>]}
+2021-07-07 19:52:02.726799 (MainThread): Installing fishtown-analytics/redshift@0.2.2
+2021-07-07 19:52:04.037151 (MainThread):   Installed from version 0.2.2
+2021-07-07 19:52:04.038118 (MainThread): Sending event: {'category': 'dbt', 'action': 'package', 'label': '91d003db-7a22-4642-9cd8-15ea8b8aa395', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AB09D97F08>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AB09DC2BC8>]}
+2021-07-07 19:52:04.040112 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AB09DC31C8>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AB09CFAFC8>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AB06223488>]}
+2021-07-07 19:52:04.040112 (MainThread): Flushing usage events
+2021-07-07 19:52:35.817441 (MainThread): Running with dbt=0.20.0-rc1
+2021-07-07 19:52:36.073346 (MainThread): running dbt with arguments Namespace(cls=<class 'dbt.task.run.RunTask'>, debug=False, defer=None, exclude=None, fail_fast=False, full_refresh=False, log_cache_events=False, log_format='default', models=None, partial_parse=None, profile=None, profiles_dir='C:\\Users\\urvas\\.dbt', project_dir=None, record_timing_info=None, rpc_method='run', selector_name=None, single_threaded=False, state=None, strict=False, target=None, test_new_parser=False, threads=None, use_cache=True, use_colors=None, use_experimental_parser=False, vars='{}', version_check=True, warn_error=False, which='run', write_json=True)
+2021-07-07 19:52:36.073346 (MainThread): Tracking: tracking
+2021-07-07 19:52:36.074343 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016F631FA248>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016F631FA088>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016F631FA0C8>]}
+2021-07-07 19:52:36.114353 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016F631808C8>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016F63180EC8>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016F631807C8>]}
+2021-07-07 19:52:36.114353 (MainThread): Flushing usage events
+2021-07-07 19:52:36.304749 (MainThread): Encountered an error:
+2021-07-07 19:52:36.305741 (MainThread): Runtime Error
+  Failed to read package: Runtime Error
+    Invalid config version: 1, expected 2
+  
+  Error encountered in C:\Users\urvas\dbt-project\dbt-demo\dbt-demo\dbt_modules\redshift\dbt_project.yml
+
+Error encountered in C:\Users\urvas\dbt-project\dbt-demo\dbt-demo\dbt_modules\redshift
+2021-07-07 19:52:36.519898 (MainThread): Traceback (most recent call last):
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\config\runtime.py", line 367, in load_projects
+    project = self.new_project(str(path))
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\config\runtime.py", line 147, in new_project
+    verify_version=getattr(self.args, 'version_check', False),
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\config\project.py", line 642, in from_project_root
+    partial = cls.partial_load(project_root, verify_version=verify_version)
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\config\project.py", line 611, in partial_load
+    verify_version=verify_version,
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\config\project.py", line 460, in from_project_root
+    path=os.path.join(project_root, 'dbt_project.yml')
+dbt.exceptions.DbtProjectError: Runtime Error
+  Invalid config version: 1, expected 2
+
+Error encountered in C:\Users\urvas\dbt-project\dbt-demo\dbt-demo\dbt_modules\redshift\dbt_project.yml
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\main.py", line 125, in main
+    results, succeeded = handle_and_check(args)
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\main.py", line 203, in handle_and_check
+    task, res = run_from_args(parsed)
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\main.py", line 256, in run_from_args
+    results = task.run()
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\task\runnable.py", line 406, in run
+    self._runtime_initialize()
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\task\runnable.py", line 122, in _runtime_initialize
+    super()._runtime_initialize()
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\task\runnable.py", line 79, in _runtime_initialize
+    self.load_manifest()
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\task\runnable.py", line 66, in load_manifest
+    self.manifest = ManifestLoader.get_full_manifest(self.config)
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\parser\manifest.py", line 167, in get_full_manifest
+    projects = config.load_dependencies()
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\config\runtime.py", line 347, in load_dependencies
+    for project_name, project in self.load_projects(project_paths):
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\config\runtime.py", line 373, in load_projects
+    ) from e
+dbt.exceptions.DbtProjectError: Runtime Error
+  Failed to read package: Runtime Error
+    Invalid config version: 1, expected 2
+  
+  Error encountered in C:\Users\urvas\dbt-project\dbt-demo\dbt-demo\dbt_modules\redshift\dbt_project.yml
+
+Error encountered in C:\Users\urvas\dbt-project\dbt-demo\dbt-demo\dbt_modules\redshift
+
+2021-07-07 20:08:49.085192 (MainThread): Running with dbt=0.20.0-rc1
+2021-07-07 20:08:49.348374 (MainThread): running dbt with arguments Namespace(cls=<class 'dbt.task.run.RunTask'>, debug=False, defer=None, exclude=None, fail_fast=False, full_refresh=False, log_cache_events=False, log_format='default', models=None, partial_parse=None, profile=None, profiles_dir='C:\\Users\\urvas\\.dbt', project_dir=None, record_timing_info=None, rpc_method='run', selector_name=None, single_threaded=False, state=None, strict=False, target=None, test_new_parser=False, threads=None, use_cache=True, use_colors=None, use_experimental_parser=False, vars='{}', version_check=False, warn_error=False, which='run', write_json=True)
+2021-07-07 20:08:49.349372 (MainThread): Tracking: tracking
+2021-07-07 20:08:49.349372 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029A728E5148>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029A728E3A48>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029A728E3E88>]}
+2021-07-07 20:08:49.372342 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029A72873D88>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029A72873208>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029A72873708>]}
+2021-07-07 20:08:49.372342 (MainThread): Flushing usage events
+2021-07-07 20:08:49.571114 (MainThread): Encountered an error:
+2021-07-07 20:08:49.572118 (MainThread): Runtime Error
+  Failed to read package: Runtime Error
+    Invalid config version: 1, expected 2
+  
+  Error encountered in C:\Users\urvas\dbt-project\dbt-demo\dbt-demo\dbt_modules\redshift\dbt_project.yml
+
+Error encountered in C:\Users\urvas\dbt-project\dbt-demo\dbt-demo\dbt_modules\redshift
+2021-07-07 20:08:49.596093 (MainThread): Traceback (most recent call last):
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\config\runtime.py", line 367, in load_projects
+    project = self.new_project(str(path))
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\config\runtime.py", line 147, in new_project
+    verify_version=getattr(self.args, 'version_check', False),
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\config\project.py", line 642, in from_project_root
+    partial = cls.partial_load(project_root, verify_version=verify_version)
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\config\project.py", line 611, in partial_load
+    verify_version=verify_version,
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\config\project.py", line 460, in from_project_root
+    path=os.path.join(project_root, 'dbt_project.yml')
+dbt.exceptions.DbtProjectError: Runtime Error
+  Invalid config version: 1, expected 2
+
+Error encountered in C:\Users\urvas\dbt-project\dbt-demo\dbt-demo\dbt_modules\redshift\dbt_project.yml
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\main.py", line 125, in main
+    results, succeeded = handle_and_check(args)
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\main.py", line 203, in handle_and_check
+    task, res = run_from_args(parsed)
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\main.py", line 256, in run_from_args
+    results = task.run()
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\task\runnable.py", line 406, in run
+    self._runtime_initialize()
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\task\runnable.py", line 122, in _runtime_initialize
+    super()._runtime_initialize()
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\task\runnable.py", line 79, in _runtime_initialize
+    self.load_manifest()
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\task\runnable.py", line 66, in load_manifest
+    self.manifest = ManifestLoader.get_full_manifest(self.config)
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\parser\manifest.py", line 167, in get_full_manifest
+    projects = config.load_dependencies()
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\config\runtime.py", line 347, in load_dependencies
+    for project_name, project in self.load_projects(project_paths):
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\config\runtime.py", line 373, in load_projects
+    ) from e
+dbt.exceptions.DbtProjectError: Runtime Error
+  Failed to read package: Runtime Error
+    Invalid config version: 1, expected 2
+  
+  Error encountered in C:\Users\urvas\dbt-project\dbt-demo\dbt-demo\dbt_modules\redshift\dbt_project.yml
+
+Error encountered in C:\Users\urvas\dbt-project\dbt-demo\dbt-demo\dbt_modules\redshift
+
+2021-07-07 20:20:25.182724 (MainThread): Running with dbt=0.20.0-rc1
+2021-07-07 20:20:25.477197 (MainThread): running dbt with arguments Namespace(cls=<class 'dbt.task.run.RunTask'>, debug=False, defer=None, exclude=None, fail_fast=False, full_refresh=False, log_cache_events=False, log_format='default', models=None, partial_parse=None, profile=None, profiles_dir='C:\\Users\\urvas\\.dbt', project_dir=None, record_timing_info=None, rpc_method='run', selector_name=None, single_threaded=False, state=None, strict=False, target=None, test_new_parser=False, threads=None, use_cache=True, use_colors=None, use_experimental_parser=False, vars='{}', version_check=True, warn_error=False, which='run', write_json=True)
+2021-07-07 20:20:25.477197 (MainThread): Tracking: tracking
+2021-07-07 20:20:25.478194 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000212890B0748>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000212890B1D08>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000212890B1C88>]}
+2021-07-07 20:20:25.505121 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021289047648>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021289047AC8>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021289047548>]}
+2021-07-07 20:20:25.505121 (MainThread): Flushing usage events
+2021-07-07 20:20:25.678839 (MainThread): Encountered an error:
+2021-07-07 20:20:25.678839 (MainThread): Runtime Error
+  Failed to read package: Runtime Error
+    Invalid config version: 1, expected 2
+  
+  Error encountered in C:\Users\urvas\dbt-project\dbt-demo\dbt-demo\dbt_modules\redshift\dbt_project.yml
+
+Error encountered in C:\Users\urvas\dbt-project\dbt-demo\dbt-demo\dbt_modules\redshift
+2021-07-07 20:20:25.686820 (MainThread): Traceback (most recent call last):
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\config\runtime.py", line 367, in load_projects
+    project = self.new_project(str(path))
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\config\runtime.py", line 147, in new_project
+    verify_version=getattr(self.args, 'version_check', False),
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\config\project.py", line 642, in from_project_root
+    partial = cls.partial_load(project_root, verify_version=verify_version)
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\config\project.py", line 611, in partial_load
+    verify_version=verify_version,
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\config\project.py", line 460, in from_project_root
+    path=os.path.join(project_root, 'dbt_project.yml')
+dbt.exceptions.DbtProjectError: Runtime Error
+  Invalid config version: 1, expected 2
+
+Error encountered in C:\Users\urvas\dbt-project\dbt-demo\dbt-demo\dbt_modules\redshift\dbt_project.yml
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\main.py", line 125, in main
+    results, succeeded = handle_and_check(args)
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\main.py", line 203, in handle_and_check
+    task, res = run_from_args(parsed)
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\main.py", line 256, in run_from_args
+    results = task.run()
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\task\runnable.py", line 406, in run
+    self._runtime_initialize()
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\task\runnable.py", line 122, in _runtime_initialize
+    super()._runtime_initialize()
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\task\runnable.py", line 79, in _runtime_initialize
+    self.load_manifest()
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\task\runnable.py", line 66, in load_manifest
+    self.manifest = ManifestLoader.get_full_manifest(self.config)
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\parser\manifest.py", line 167, in get_full_manifest
+    projects = config.load_dependencies()
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\config\runtime.py", line 347, in load_dependencies
+    for project_name, project in self.load_projects(project_paths):
+  File "c:\users\urvas\dbt-project\dbt-env\lib\site-packages\dbt\config\runtime.py", line 373, in load_projects
+    ) from e
+dbt.exceptions.DbtProjectError: Runtime Error
+  Failed to read package: Runtime Error
+    Invalid config version: 1, expected 2
+  
+  Error encountered in C:\Users\urvas\dbt-project\dbt-demo\dbt-demo\dbt_modules\redshift\dbt_project.yml
+
+Error encountered in C:\Users\urvas\dbt-project\dbt-demo\dbt-demo\dbt_modules\redshift
+
+2021-07-07 20:22:57.851445 (MainThread): Running with dbt=0.20.0-rc1
+2021-07-07 20:22:58.117948 (MainThread): running dbt with arguments Namespace(cls=<class 'dbt.task.run.RunTask'>, debug=False, defer=None, exclude=None, fail_fast=False, full_refresh=False, log_cache_events=False, log_format='default', models=None, partial_parse=None, profile=None, profiles_dir='C:\\Users\\urvas\\.dbt', project_dir=None, record_timing_info=None, rpc_method='run', selector_name=None, single_threaded=False, state=None, strict=False, target=None, test_new_parser=False, threads=None, use_cache=True, use_colors=None, use_experimental_parser=False, vars='{}', version_check=True, warn_error=False, which='run', write_json=True)
+2021-07-07 20:22:58.117948 (MainThread): Tracking: tracking
+2021-07-07 20:22:58.118945 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026055C13E08>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026055C13D88>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026055C13F08>]}
+2021-07-07 20:22:58.149863 (MainThread): Partial parsing not enabled
+2021-07-07 20:22:59.265321 (MainThread): Parsing macros\adapters.sql
+2021-07-07 20:22:59.337538 (MainThread): Parsing macros\catalog.sql
+2021-07-07 20:22:59.352496 (MainThread): Parsing macros\relations.sql
+2021-07-07 20:22:59.353497 (MainThread): Parsing macros\materializations\snapshot_merge.sql
+2021-07-07 20:22:59.353497 (MainThread): Parsing macros\adapters.sql
+2021-07-07 20:22:59.380419 (MainThread): Parsing macros\catalog.sql
+2021-07-07 20:22:59.383412 (MainThread): Parsing macros\relations.sql
+2021-07-07 20:22:59.384414 (MainThread): Parsing macros\materializations\snapshot_merge.sql
+2021-07-07 20:22:59.387371 (MainThread): Parsing macros\core.sql
+2021-07-07 20:22:59.391396 (MainThread): Parsing macros\adapters\common.sql
+2021-07-07 20:22:59.447242 (MainThread): Parsing macros\etc\datetime.sql
+2021-07-07 20:22:59.458213 (MainThread): Parsing macros\etc\get_custom_alias.sql
+2021-07-07 20:22:59.460176 (MainThread): Parsing macros\etc\get_custom_database.sql
+2021-07-07 20:22:59.462171 (MainThread): Parsing macros\etc\get_custom_schema.sql
+2021-07-07 20:22:59.464166 (MainThread): Parsing macros\etc\is_incremental.sql
+2021-07-07 20:22:59.465163 (MainThread): Parsing macros\etc\query.sql
+2021-07-07 20:22:59.466160 (MainThread): Parsing macros\materializations\helpers.sql
+2021-07-07 20:22:59.479161 (MainThread): Parsing macros\materializations\test.sql
+2021-07-07 20:22:59.487140 (MainThread): Parsing macros\materializations\common\merge.sql
+2021-07-07 20:22:59.503061 (MainThread): Parsing macros\materializations\incremental\helpers.sql
+2021-07-07 20:22:59.505056 (MainThread): Parsing macros\materializations\incremental\incremental.sql
+2021-07-07 20:22:59.516027 (MainThread): Parsing macros\materializations\seed\seed.sql
+2021-07-07 20:22:59.539963 (MainThread): Parsing macros\materializations\snapshot\snapshot.sql
+2021-07-07 20:22:59.579887 (MainThread): Parsing macros\materializations\snapshot\snapshot_merge.sql
+2021-07-07 20:22:59.581883 (MainThread): Parsing macros\materializations\snapshot\strategies.sql
+2021-07-07 20:22:59.601830 (MainThread): Parsing macros\materializations\table\table.sql
+2021-07-07 20:22:59.610806 (MainThread): Parsing macros\materializations\view\create_or_replace_view.sql
+2021-07-07 20:22:59.616793 (MainThread): Parsing macros\materializations\view\view.sql
+2021-07-07 20:22:59.624770 (MainThread): Parsing macros\schema_tests\accepted_values.sql
+2021-07-07 20:22:59.627728 (MainThread): Parsing macros\schema_tests\not_null.sql
+2021-07-07 20:22:59.628726 (MainThread): Parsing macros\schema_tests\relationships.sql
+2021-07-07 20:22:59.630720 (MainThread): Parsing macros\schema_tests\unique.sql
+2021-07-07 20:22:59.632715 (MainThread): Parsing macros\cross_db_utils\cast_bool_to_text.sql
+2021-07-07 20:22:59.633712 (MainThread): Parsing macros\cross_db_utils\concat.sql
+2021-07-07 20:22:59.634710 (MainThread): Parsing macros\cross_db_utils\current_timestamp.sql
+2021-07-07 20:22:59.638699 (MainThread): Parsing macros\cross_db_utils\datatypes.sql
+2021-07-07 20:22:59.646680 (MainThread): Parsing macros\cross_db_utils\dateadd.sql
+2021-07-07 20:22:59.650700 (MainThread): Parsing macros\cross_db_utils\datediff.sql
+2021-07-07 20:22:59.662635 (MainThread): Parsing macros\cross_db_utils\date_trunc.sql
+2021-07-07 20:22:59.663633 (MainThread): Parsing macros\cross_db_utils\except.sql
+2021-07-07 20:22:59.664630 (MainThread): Parsing macros\cross_db_utils\hash.sql
+2021-07-07 20:22:59.666624 (MainThread): Parsing macros\cross_db_utils\identifier.sql
+2021-07-07 20:22:59.668619 (MainThread): Parsing macros\cross_db_utils\intersect.sql
+2021-07-07 20:22:59.669616 (MainThread): Parsing macros\cross_db_utils\last_day.sql
+2021-07-07 20:22:59.673606 (MainThread): Parsing macros\cross_db_utils\length.sql
+2021-07-07 20:22:59.674603 (MainThread): Parsing macros\cross_db_utils\literal.sql
+2021-07-07 20:22:59.676600 (MainThread): Parsing macros\cross_db_utils\position.sql
+2021-07-07 20:22:59.677597 (MainThread): Parsing macros\cross_db_utils\replace.sql
+2021-07-07 20:22:59.679591 (MainThread): Parsing macros\cross_db_utils\right.sql
+2021-07-07 20:22:59.681586 (MainThread): Parsing macros\cross_db_utils\safe_cast.sql
+2021-07-07 20:22:59.684578 (MainThread): Parsing macros\cross_db_utils\split_part.sql
+2021-07-07 20:22:59.686607 (MainThread): Parsing macros\cross_db_utils\width_bucket.sql
+2021-07-07 20:22:59.692556 (MainThread): Parsing macros\cross_db_utils\_is_ephemeral.sql
+2021-07-07 20:22:59.694586 (MainThread): Parsing macros\cross_db_utils\_is_relation.sql
+2021-07-07 20:22:59.695579 (MainThread): Parsing macros\jinja_helpers\log_info.sql
+2021-07-07 20:22:59.697574 (MainThread): Parsing macros\jinja_helpers\pretty_log_format.sql
+2021-07-07 20:22:59.698571 (MainThread): Parsing macros\jinja_helpers\pretty_time.sql
+2021-07-07 20:22:59.699566 (MainThread): Parsing macros\jinja_helpers\slugify.sql
+2021-07-07 20:22:59.700566 (MainThread): Parsing macros\materializations\insert_by_period_materialization.sql
+2021-07-07 20:22:59.757414 (MainThread): Parsing macros\schema_tests\accepted_range.sql
+2021-07-07 20:22:59.760376 (MainThread): Parsing macros\schema_tests\at_least_one.sql
+2021-07-07 20:22:59.762370 (MainThread): Parsing macros\schema_tests\cardinality_equality.sql
+2021-07-07 20:22:59.765362 (MainThread): Parsing macros\schema_tests\equality.sql
+2021-07-07 20:22:59.769351 (MainThread): Parsing macros\schema_tests\equal_rowcount.sql
+2021-07-07 20:22:59.771346 (MainThread): Parsing macros\schema_tests\expression_is_true.sql
+2021-07-07 20:22:59.774338 (MainThread): Parsing macros\schema_tests\fewer_rows_than.sql
+2021-07-07 20:22:59.776333 (MainThread): Parsing macros\schema_tests\mutually_exclusive_ranges.sql
+2021-07-07 20:22:59.787303 (MainThread): Parsing macros\schema_tests\not_accepted_values.sql
+2021-07-07 20:22:59.790295 (MainThread): Parsing macros\schema_tests\not_constant.sql
+2021-07-07 20:22:59.791291 (MainThread): Parsing macros\schema_tests\recency.sql
+2021-07-07 20:22:59.794283 (MainThread): Parsing macros\schema_tests\relationships_where.sql
+2021-07-07 20:22:59.796278 (MainThread): Parsing macros\schema_tests\sequential_values.sql
+2021-07-07 20:22:59.799270 (MainThread): Parsing macros\schema_tests\test_not_null_where.sql
+2021-07-07 20:22:59.800267 (MainThread): Parsing macros\schema_tests\test_unique_where.sql
+2021-07-07 20:22:59.802262 (MainThread): Parsing macros\schema_tests\unique_combination_of_columns.sql
+2021-07-07 20:22:59.805254 (MainThread): Parsing macros\sql\date_spine.sql
+2021-07-07 20:22:59.811268 (MainThread): Parsing macros\sql\generate_series.sql
+2021-07-07 20:22:59.816259 (MainThread): Parsing macros\sql\get_column_values.sql
+2021-07-07 20:22:59.823238 (MainThread): Parsing macros\sql\get_query_results_as_dict.sql
+2021-07-07 20:22:59.826200 (MainThread): Parsing macros\sql\get_relations_by_pattern.sql
+2021-07-07 20:22:59.831186 (MainThread): Parsing macros\sql\get_relations_by_prefix.sql
+2021-07-07 20:22:59.835175 (MainThread): Parsing macros\sql\get_tables_by_pattern_sql.sql
+2021-07-07 20:22:59.844151 (MainThread): Parsing macros\sql\get_tables_by_prefix_sql.sql
+2021-07-07 20:22:59.846146 (MainThread): Parsing macros\sql\groupby.sql
+2021-07-07 20:22:59.848141 (MainThread): Parsing macros\sql\haversine_distance.sql
+2021-07-07 20:22:59.856331 (MainThread): Parsing macros\sql\nullcheck.sql
+2021-07-07 20:22:59.858326 (MainThread): Parsing macros\sql\nullcheck_table.sql
+2021-07-07 20:22:59.860353 (MainThread): Parsing macros\sql\pivot.sql
+2021-07-07 20:22:59.864344 (MainThread): Parsing macros\sql\safe_add.sql
+2021-07-07 20:22:59.866337 (MainThread): Parsing macros\sql\star.sql
+2021-07-07 20:22:59.870325 (MainThread): Parsing macros\sql\surrogate_key.sql
+2021-07-07 20:22:59.874315 (MainThread): Parsing macros\sql\union.sql
+2021-07-07 20:22:59.884288 (MainThread): Parsing macros\sql\unpivot.sql
+2021-07-07 20:22:59.893264 (MainThread): Parsing macros\web\get_url_host.sql
+2021-07-07 20:22:59.895259 (MainThread): Parsing macros\web\get_url_parameter.sql
+2021-07-07 20:22:59.897222 (MainThread): Parsing macros\web\get_url_path.sql
+2021-07-07 20:22:59.900214 (MainThread): Parsing macros\compression.sql
+2021-07-07 20:22:59.919196 (MainThread): Parsing macros\ddl.sql
+2021-07-07 20:22:59.928174 (MainThread): Parsing macros\introspection.sql
+2021-07-07 20:22:59.945094 (MainThread): Parsing macros\queries.sql
+2021-07-07 20:22:59.948086 (MainThread): Parsing macros\redshift_maintenance_operation.sql
+2021-07-07 20:22:59.952076 (MainThread): Parsing macros\try_cast.sql
+2021-07-07 20:22:59.953073 (MainThread): Parsing macros\unload.sql
+2021-07-07 20:22:59.958059 (MainThread): Parsing macros\utilities.sql
+2021-07-07 20:23:00.384918 (MainThread): Acquiring new redshift connection "model.my_new_project.musicals_info".
+2021-07-07 20:23:00.394925 (MainThread): Acquiring new redshift connection "model.my_new_project.my_first_dbt_model".
+2021-07-07 20:23:00.399912 (MainThread): Acquiring new redshift connection "model.my_new_project.my_second_dbt_model".
+2021-07-07 20:23:00.425839 (MainThread): Acquiring new redshift connection "model.redshift.pg_attribute".
+2021-07-07 20:23:00.431795 (MainThread): Acquiring new redshift connection "model.redshift.pg_class".
+2021-07-07 20:23:00.435784 (MainThread): Acquiring new redshift connection "model.redshift.pg_depend".
+2021-07-07 20:23:00.438776 (MainThread): Acquiring new redshift connection "model.redshift.pg_namespace".
+2021-07-07 20:23:00.442764 (MainThread): Acquiring new redshift connection "model.redshift.pg_tables".
+2021-07-07 20:23:00.445789 (MainThread): Acquiring new redshift connection "model.redshift.pg_user".
+2021-07-07 20:23:00.448780 (MainThread): Acquiring new redshift connection "model.redshift.pg_views".
+2021-07-07 20:23:00.451772 (MainThread): Acquiring new redshift connection "model.redshift.redshift_cost".
+2021-07-07 20:23:00.459720 (MainThread): Acquiring new redshift connection "model.redshift.stl_explain".
+2021-07-07 20:23:00.463708 (MainThread): Acquiring new redshift connection "model.redshift.stl_query".
+2021-07-07 20:23:00.466700 (MainThread): Acquiring new redshift connection "model.redshift.stl_wlm_query".
+2021-07-07 20:23:00.469692 (MainThread): Acquiring new redshift connection "model.redshift.stv_blocklist".
+2021-07-07 20:23:00.472684 (MainThread): Acquiring new redshift connection "model.redshift.stv_tbl_perm".
+2021-07-07 20:23:00.475676 (MainThread): Acquiring new redshift connection "model.redshift.svv_diskusage".
+2021-07-07 20:23:00.479665 (MainThread): Acquiring new redshift connection "model.redshift.redshift_columns".
+2021-07-07 20:23:00.484652 (MainThread): Acquiring new redshift connection "model.redshift.redshift_constraints".
+2021-07-07 20:23:00.488641 (MainThread): Acquiring new redshift connection "model.redshift.redshift_sort_dist_keys".
+2021-07-07 20:23:00.493628 (MainThread): Acquiring new redshift connection "model.redshift.redshift_tables".
+2021-07-07 20:23:00.499612 (MainThread): Acquiring new redshift connection "model.redshift.redshift_admin_dependencies".
+2021-07-07 20:23:00.505597 (MainThread): Acquiring new redshift connection "model.redshift.redshift_admin_queries".
+2021-07-07 20:23:00.511581 (MainThread): Acquiring new redshift connection "model.redshift.redshift_admin_table_stats".
+2021-07-07 20:23:00.522552 (MainThread): Acquiring new redshift connection "model.redshift.redshift_admin_users_schema_privileges".
+2021-07-07 20:23:00.528536 (MainThread): Acquiring new redshift connection "model.redshift.redshift_admin_users_table_view_privileges".
+2021-07-07 20:23:00.557489 (MainThread): 'soft_unicode' has been renamed to 'soft_str'. The old name will be removed in MarkupSafe 2.1.
+2021-07-07 20:23:00.560450 (MainThread): 'soft_unicode' has been renamed to 'soft_str'. The old name will be removed in MarkupSafe 2.1.
+2021-07-07 20:23:00.562444 (MainThread): 'soft_unicode' has been renamed to 'soft_str'. The old name will be removed in MarkupSafe 2.1.
+2021-07-07 20:23:00.564439 (MainThread): 'soft_unicode' has been renamed to 'soft_str'. The old name will be removed in MarkupSafe 2.1.
+2021-07-07 20:23:00.616788 (MainThread): Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'f91ea16b-42b8-459a-a1d9-27349c386700', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002605401B388>]}
+2021-07-07 20:23:00.629793 (MainThread): Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'f91ea16b-42b8-459a-a1d9-27349c386700', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026055CED808>]}
+2021-07-07 20:23:00.629793 (MainThread): Found 26 models, 4 tests, 0 snapshots, 0 analyses, 379 macros, 0 operations, 0 seed files, 0 sources, 0 exposures
+2021-07-07 20:23:00.631788 (MainThread): 
+2021-07-07 20:23:00.632784 (MainThread): Acquiring new redshift connection "master".
+2021-07-07 20:23:00.638849 (ThreadPoolExecutor-0_0): Acquiring new redshift connection "list_dev".
+2021-07-07 20:23:00.654811 (ThreadPoolExecutor-0_0): Using redshift connection "list_dev".
+2021-07-07 20:23:00.654811 (ThreadPoolExecutor-0_0): On list_dev: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "connection_name": "list_dev"} */
+
+    select distinct nspname from pg_namespace
+  
+2021-07-07 20:23:00.654811 (ThreadPoolExecutor-0_0): Opening a new connection, currently in state init
+2021-07-07 20:23:00.654811 (ThreadPoolExecutor-0_0): Connecting to Redshift using 'database' credentials
+2021-07-07 20:23:00.983886 (ThreadPoolExecutor-0_0): SQL status: SELECT in 0.33 seconds
+2021-07-07 20:23:00.997854 (ThreadPoolExecutor-0_0): On list_dev: Close
+2021-07-07 20:23:01.006863 (ThreadPoolExecutor-1_0): Acquiring new redshift connection "list_dev_public_dbt_test__audit".
+2021-07-07 20:23:01.043726 (ThreadPoolExecutor-1_0): Using redshift connection "list_dev_public_dbt_test__audit".
+2021-07-07 20:23:01.043726 (ThreadPoolExecutor-1_0): On list_dev_public_dbt_test__audit: BEGIN
+2021-07-07 20:23:01.043726 (ThreadPoolExecutor-1_0): Opening a new connection, currently in state init
+2021-07-07 20:23:01.044757 (ThreadPoolExecutor-1_0): Connecting to Redshift using 'database' credentials
+2021-07-07 20:23:01.346963 (ThreadPoolExecutor-1_0): SQL status: BEGIN in 0.30 seconds
+2021-07-07 20:23:01.347966 (ThreadPoolExecutor-1_0): Using redshift connection "list_dev_public_dbt_test__audit".
+2021-07-07 20:23:01.347966 (ThreadPoolExecutor-1_0): On list_dev_public_dbt_test__audit: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "connection_name": "list_dev_public_dbt_test__audit"} */
+select
+      'dev' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_dbt_test__audit'
+    union all
+    select
+      'dev' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_dbt_test__audit'
+  
+2021-07-07 20:23:01.383036 (ThreadPoolExecutor-1_0): SQL status: SELECT in 0.03 seconds
+2021-07-07 20:23:01.391025 (ThreadPoolExecutor-1_0): On list_dev_public_dbt_test__audit: ROLLBACK
+2021-07-07 20:23:01.419252 (ThreadPoolExecutor-1_0): On list_dev_public_dbt_test__audit: Close
+2021-07-07 20:23:01.422258 (ThreadPoolExecutor-1_0): Acquiring new redshift connection "list_dev_public".
+2021-07-07 20:23:01.430275 (ThreadPoolExecutor-1_0): Using redshift connection "list_dev_public".
+2021-07-07 20:23:01.431238 (ThreadPoolExecutor-1_0): On list_dev_public: BEGIN
+2021-07-07 20:23:01.431238 (ThreadPoolExecutor-1_0): Opening a new connection, currently in state closed
+2021-07-07 20:23:01.432235 (ThreadPoolExecutor-1_0): Connecting to Redshift using 'database' credentials
+2021-07-07 20:23:01.715363 (ThreadPoolExecutor-1_0): SQL status: BEGIN in 0.28 seconds
+2021-07-07 20:23:01.715363 (ThreadPoolExecutor-1_0): Using redshift connection "list_dev_public".
+2021-07-07 20:23:01.716360 (ThreadPoolExecutor-1_0): On list_dev_public: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "connection_name": "list_dev_public"} */
+select
+      'dev' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'dev' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+  
+2021-07-07 20:23:01.752687 (ThreadPoolExecutor-1_0): SQL status: SELECT in 0.04 seconds
+2021-07-07 20:23:01.755680 (ThreadPoolExecutor-1_0): On list_dev_public: ROLLBACK
+2021-07-07 20:23:01.782746 (ThreadPoolExecutor-1_0): On list_dev_public: Close
+2021-07-07 20:23:01.791720 (MainThread): Using redshift connection "master".
+2021-07-07 20:23:01.791720 (MainThread): On master: BEGIN
+2021-07-07 20:23:01.791720 (MainThread): Opening a new connection, currently in state init
+2021-07-07 20:23:01.791720 (MainThread): Connecting to Redshift using 'database' credentials
+2021-07-07 20:23:02.067177 (MainThread): SQL status: BEGIN in 0.28 seconds
+2021-07-07 20:23:02.067177 (MainThread): Using redshift connection "master".
+2021-07-07 20:23:02.068178 (MainThread): On master: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+2021-07-07 20:23:02.117068 (MainThread): SQL status: SELECT in 0.05 seconds
+2021-07-07 20:23:02.121063 (MainThread): On master: ROLLBACK
+2021-07-07 20:23:02.149434 (MainThread): Using redshift connection "master".
+2021-07-07 20:23:02.150487 (MainThread): On master: BEGIN
+2021-07-07 20:23:02.207074 (MainThread): SQL status: BEGIN in 0.06 seconds
+2021-07-07 20:23:02.208128 (MainThread): On master: COMMIT
+2021-07-07 20:23:02.208128 (MainThread): Using redshift connection "master".
+2021-07-07 20:23:02.208128 (MainThread): On master: COMMIT
+2021-07-07 20:23:02.238655 (MainThread): SQL status: COMMIT in 0.03 seconds
+2021-07-07 20:23:02.239463 (MainThread): On master: Close
+2021-07-07 20:23:02.241470 (MainThread): 15:23:02 | Concurrency: 1 threads (target='dev')
+2021-07-07 20:23:02.242473 (MainThread): 15:23:02 | 
+2021-07-07 20:23:02.267406 (Thread-1): Began running node model.redshift.pg_user
+2021-07-07 20:23:02.268400 (Thread-1): Acquiring new redshift connection "model.redshift.pg_user".
+2021-07-07 20:23:02.269392 (Thread-1): Compiling model.redshift.pg_user
+2021-07-07 20:23:02.272384 (Thread-1): Writing injected SQL for node "model.redshift.pg_user"
+2021-07-07 20:23:02.277372 (Thread-1): finished collecting timing info
+2021-07-07 20:23:02.279418 (Thread-1): Finished running node model.redshift.pg_user
+2021-07-07 20:23:02.279418 (Thread-1): Began running node model.redshift.pg_class
+2021-07-07 20:23:02.281360 (Thread-1): Acquiring new redshift connection "model.redshift.pg_class".
+2021-07-07 20:23:02.281360 (Thread-1): Compiling model.redshift.pg_class
+2021-07-07 20:23:02.285353 (Thread-1): Writing injected SQL for node "model.redshift.pg_class"
+2021-07-07 20:23:02.287347 (Thread-1): finished collecting timing info
+2021-07-07 20:23:02.288342 (Thread-1): Finished running node model.redshift.pg_class
+2021-07-07 20:23:02.288342 (Thread-1): Began running node model.redshift.pg_namespace
+2021-07-07 20:23:02.289339 (Thread-1): Acquiring new redshift connection "model.redshift.pg_namespace".
+2021-07-07 20:23:02.290337 (Thread-1): Compiling model.redshift.pg_namespace
+2021-07-07 20:23:02.297350 (Thread-1): Writing injected SQL for node "model.redshift.pg_namespace"
+2021-07-07 20:23:02.298348 (Thread-1): finished collecting timing info
+2021-07-07 20:23:02.299344 (Thread-1): Finished running node model.redshift.pg_namespace
+2021-07-07 20:23:02.299344 (Thread-1): Began running node model.redshift.pg_tables
+2021-07-07 20:23:02.300311 (Thread-1): Acquiring new redshift connection "model.redshift.pg_tables".
+2021-07-07 20:23:02.300311 (Thread-1): Compiling model.redshift.pg_tables
+2021-07-07 20:23:02.303302 (Thread-1): Writing injected SQL for node "model.redshift.pg_tables"
+2021-07-07 20:23:02.304300 (Thread-1): finished collecting timing info
+2021-07-07 20:23:02.305298 (Thread-1): Finished running node model.redshift.pg_tables
+2021-07-07 20:23:02.305298 (Thread-1): Began running node model.redshift.pg_views
+2021-07-07 20:23:02.306293 (Thread-1): Acquiring new redshift connection "model.redshift.pg_views".
+2021-07-07 20:23:02.306293 (Thread-1): Compiling model.redshift.pg_views
+2021-07-07 20:23:02.309314 (Thread-1): Writing injected SQL for node "model.redshift.pg_views"
+2021-07-07 20:23:02.311279 (Thread-1): finished collecting timing info
+2021-07-07 20:23:02.312278 (Thread-1): Finished running node model.redshift.pg_views
+2021-07-07 20:23:02.312278 (Thread-1): Began running node model.my_new_project.my_first_dbt_model
+2021-07-07 20:23:02.313274 (Thread-1): 15:23:02 | 1 of 8 START table model public.my_first_dbt_model................... [RUN]
+2021-07-07 20:23:02.314273 (Thread-1): Acquiring new redshift connection "model.my_new_project.my_first_dbt_model".
+2021-07-07 20:23:02.315312 (Thread-1): Compiling model.my_new_project.my_first_dbt_model
+2021-07-07 20:23:02.321257 (Thread-1): Writing injected SQL for node "model.my_new_project.my_first_dbt_model"
+2021-07-07 20:23:02.323251 (Thread-1): finished collecting timing info
+2021-07-07 20:23:02.366164 (Thread-1): Writing runtime SQL for node "model.my_new_project.my_first_dbt_model"
+2021-07-07 20:23:02.367619 (Thread-1): Using redshift connection "model.my_new_project.my_first_dbt_model".
+2021-07-07 20:23:02.367619 (Thread-1): On model.my_new_project.my_first_dbt_model: BEGIN
+2021-07-07 20:23:02.367619 (Thread-1): Opening a new connection, currently in state init
+2021-07-07 20:23:02.367619 (Thread-1): Connecting to Redshift using 'database' credentials
+2021-07-07 20:23:02.643701 (Thread-1): SQL status: BEGIN in 0.28 seconds
+2021-07-07 20:23:02.644682 (Thread-1): Using redshift connection "model.my_new_project.my_first_dbt_model".
+2021-07-07 20:23:02.644682 (Thread-1): On model.my_new_project.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.my_new_project.my_first_dbt_model"} */
+
+
+  create  table
+    "dev"."public"."my_first_dbt_model__dbt_tmp"
+    
+    
+  as (
+    /*
+    Welcome to your first dbt model!
+    Did you know that you can also configure models directly within SQL files?
+    This will override configurations stated in dbt_project.yml
+
+    Try changing "table" to "view" below
+*/
+
+
+
+with source_data as (
+
+    select 1 as id
+    union all
+    select null as id
+
+)
+
+select *
+from source_data
+
+/*
+    Uncomment the line below to remove records with null `id` values
+*/
+
+-- where id is not null
+  );
+2021-07-07 20:23:03.135841 (Thread-1): SQL status: SELECT in 0.49 seconds
+2021-07-07 20:23:03.165765 (Thread-1): Using redshift connection "model.my_new_project.my_first_dbt_model".
+2021-07-07 20:23:03.165765 (Thread-1): On model.my_new_project.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.my_new_project.my_first_dbt_model"} */
+alter table "dev"."public"."my_first_dbt_model__dbt_tmp" rename to "my_first_dbt_model"
+2021-07-07 20:23:03.194937 (Thread-1): SQL status: ALTER TABLE in 0.03 seconds
+2021-07-07 20:23:03.228844 (Thread-1): On model.my_new_project.my_first_dbt_model: COMMIT
+2021-07-07 20:23:03.228844 (Thread-1): Using redshift connection "model.my_new_project.my_first_dbt_model".
+2021-07-07 20:23:03.228844 (Thread-1): On model.my_new_project.my_first_dbt_model: COMMIT
+2021-07-07 20:23:03.326464 (Thread-1): SQL status: COMMIT in 0.10 seconds
+2021-07-07 20:23:03.326464 (Thread-1): Using redshift connection "model.my_new_project.my_first_dbt_model".
+2021-07-07 20:23:03.327459 (Thread-1): On model.my_new_project.my_first_dbt_model: BEGIN
+2021-07-07 20:23:03.353390 (Thread-1): SQL status: BEGIN in 0.03 seconds
+2021-07-07 20:23:03.363363 (Thread-1): Using redshift connection "model.my_new_project.my_first_dbt_model".
+2021-07-07 20:23:03.363363 (Thread-1): On model.my_new_project.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.my_new_project.my_first_dbt_model"} */
+drop table if exists "dev"."public"."my_first_dbt_model__dbt_backup" cascade
+2021-07-07 20:23:03.392286 (Thread-1): SQL status: DROP TABLE in 0.03 seconds
+2021-07-07 20:23:03.393284 (Thread-1): On model.my_new_project.my_first_dbt_model: COMMIT
+2021-07-07 20:23:03.393284 (Thread-1): Using redshift connection "model.my_new_project.my_first_dbt_model".
+2021-07-07 20:23:03.394284 (Thread-1): On model.my_new_project.my_first_dbt_model: COMMIT
+2021-07-07 20:23:03.424232 (Thread-1): SQL status: COMMIT in 0.03 seconds
+2021-07-07 20:23:03.424232 (Thread-1): Using redshift connection "model.my_new_project.my_first_dbt_model".
+2021-07-07 20:23:03.424232 (Thread-1): On model.my_new_project.my_first_dbt_model: BEGIN
+2021-07-07 20:23:03.451267 (Thread-1): SQL status: BEGIN in 0.03 seconds
+2021-07-07 20:23:03.452233 (Thread-1): finished collecting timing info
+2021-07-07 20:23:03.452233 (Thread-1): On model.my_new_project.my_first_dbt_model: ROLLBACK
+2021-07-07 20:23:03.479810 (Thread-1): On model.my_new_project.my_first_dbt_model: Close
+2021-07-07 20:23:03.479810 (Thread-1): Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f91ea16b-42b8-459a-a1d9-27349c386700', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026055F4A988>]}
+2021-07-07 20:23:03.480846 (Thread-1): 15:23:03 | 1 of 8 OK created table model public.my_first_dbt_model.............. [SELECT in 1.17s]
+2021-07-07 20:23:03.482029 (Thread-1): Finished running node model.my_new_project.my_first_dbt_model
+2021-07-07 20:23:03.482029 (Thread-1): Began running node model.redshift.pg_attribute
+2021-07-07 20:23:03.483028 (Thread-1): Acquiring new redshift connection "model.redshift.pg_attribute".
+2021-07-07 20:23:03.483028 (Thread-1): Compiling model.redshift.pg_attribute
+2021-07-07 20:23:03.484026 (Thread-1): Writing injected SQL for node "model.redshift.pg_attribute"
+2021-07-07 20:23:03.485023 (Thread-1): finished collecting timing info
+2021-07-07 20:23:03.486021 (Thread-1): Finished running node model.redshift.pg_attribute
+2021-07-07 20:23:03.486021 (Thread-1): Began running node model.redshift.pg_depend
+2021-07-07 20:23:03.487018 (Thread-1): Acquiring new redshift connection "model.redshift.pg_depend".
+2021-07-07 20:23:03.487018 (Thread-1): Compiling model.redshift.pg_depend
+2021-07-07 20:23:03.492039 (Thread-1): Writing injected SQL for node "model.redshift.pg_depend"
+2021-07-07 20:23:03.493033 (Thread-1): finished collecting timing info
+2021-07-07 20:23:03.494009 (Thread-1): Finished running node model.redshift.pg_depend
+2021-07-07 20:23:03.494997 (Thread-1): Began running node model.redshift.stl_explain
+2021-07-07 20:23:03.495997 (Thread-1): Acquiring new redshift connection "model.redshift.stl_explain".
+2021-07-07 20:23:03.495997 (Thread-1): Compiling model.redshift.stl_explain
+2021-07-07 20:23:03.498988 (Thread-1): Writing injected SQL for node "model.redshift.stl_explain"
+2021-07-07 20:23:03.499983 (Thread-1): finished collecting timing info
+2021-07-07 20:23:03.500981 (Thread-1): Finished running node model.redshift.stl_explain
+2021-07-07 20:23:03.500981 (Thread-1): Began running node model.redshift.stl_query
+2021-07-07 20:23:03.501978 (Thread-1): Acquiring new redshift connection "model.redshift.stl_query".
+2021-07-07 20:23:03.501978 (Thread-1): Compiling model.redshift.stl_query
+2021-07-07 20:23:03.504006 (Thread-1): Writing injected SQL for node "model.redshift.stl_query"
+2021-07-07 20:23:03.504006 (Thread-1): finished collecting timing info
+2021-07-07 20:23:03.504971 (Thread-1): Finished running node model.redshift.stl_query
+2021-07-07 20:23:03.504971 (Thread-1): Began running node model.redshift.stl_wlm_query
+2021-07-07 20:23:03.504971 (Thread-1): Acquiring new redshift connection "model.redshift.stl_wlm_query".
+2021-07-07 20:23:03.505968 (Thread-1): Compiling model.redshift.stl_wlm_query
+2021-07-07 20:23:03.508958 (Thread-1): Writing injected SQL for node "model.redshift.stl_wlm_query"
+2021-07-07 20:23:03.515941 (Thread-1): finished collecting timing info
+2021-07-07 20:23:03.515941 (Thread-1): Finished running node model.redshift.stl_wlm_query
+2021-07-07 20:23:03.515941 (Thread-1): Began running node model.redshift.stv_blocklist
+2021-07-07 20:23:03.516938 (Thread-1): Acquiring new redshift connection "model.redshift.stv_blocklist".
+2021-07-07 20:23:03.516938 (Thread-1): Compiling model.redshift.stv_blocklist
+2021-07-07 20:23:03.518933 (Thread-1): Writing injected SQL for node "model.redshift.stv_blocklist"
+2021-07-07 20:23:03.519929 (Thread-1): finished collecting timing info
+2021-07-07 20:23:03.520929 (Thread-1): Finished running node model.redshift.stv_blocklist
+2021-07-07 20:23:03.520929 (Thread-1): Began running node model.redshift.stv_tbl_perm
+2021-07-07 20:23:03.520929 (Thread-1): Acquiring new redshift connection "model.redshift.stv_tbl_perm".
+2021-07-07 20:23:03.520929 (Thread-1): Compiling model.redshift.stv_tbl_perm
+2021-07-07 20:23:03.522923 (Thread-1): Writing injected SQL for node "model.redshift.stv_tbl_perm"
+2021-07-07 20:23:03.524918 (Thread-1): finished collecting timing info
+2021-07-07 20:23:03.524918 (Thread-1): Finished running node model.redshift.stv_tbl_perm
+2021-07-07 20:23:03.525914 (Thread-1): Began running node model.redshift.svv_diskusage
+2021-07-07 20:23:03.525914 (Thread-1): Acquiring new redshift connection "model.redshift.svv_diskusage".
+2021-07-07 20:23:03.526912 (Thread-1): Compiling model.redshift.svv_diskusage
+2021-07-07 20:23:03.529939 (Thread-1): Writing injected SQL for node "model.redshift.svv_diskusage"
+2021-07-07 20:23:03.555044 (Thread-1): finished collecting timing info
+2021-07-07 20:23:03.555847 (Thread-1): Finished running node model.redshift.svv_diskusage
+2021-07-07 20:23:03.555847 (Thread-1): Began running node model.my_new_project.musicals_info
+2021-07-07 20:23:03.556852 (Thread-1): 15:23:03 | 2 of 8 START table model public.musicals_info........................ [RUN]
+2021-07-07 20:23:03.556852 (Thread-1): Acquiring new redshift connection "model.my_new_project.musicals_info".
+2021-07-07 20:23:03.557851 (Thread-1): Compiling model.my_new_project.musicals_info
+2021-07-07 20:23:03.563842 (Thread-1): Writing injected SQL for node "model.my_new_project.musicals_info"
+2021-07-07 20:23:03.564832 (Thread-1): finished collecting timing info
+2021-07-07 20:23:03.570848 (Thread-1): Writing runtime SQL for node "model.my_new_project.musicals_info"
+2021-07-07 20:23:03.571811 (Thread-1): Using redshift connection "model.my_new_project.musicals_info".
+2021-07-07 20:23:03.571811 (Thread-1): On model.my_new_project.musicals_info: BEGIN
+2021-07-07 20:23:03.571811 (Thread-1): Opening a new connection, currently in state closed
+2021-07-07 20:23:03.571811 (Thread-1): Connecting to Redshift using 'database' credentials
+2021-07-07 20:23:03.833754 (Thread-1): SQL status: BEGIN in 0.26 seconds
+2021-07-07 20:23:03.834812 (Thread-1): Using redshift connection "model.my_new_project.musicals_info".
+2021-07-07 20:23:03.834812 (Thread-1): On model.my_new_project.musicals_info: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.my_new_project.musicals_info"} */
+
+
+  create  table
+    "dev"."public"."musicals_info__dbt_tmp"
+    
+    
+  as (
+    
+
+select e.eventname , e.starttime
+from dev.public.event e inner join dev.public.category c
+on e.catid = c.catid
+where c.catname='Musicals'
+  );
+2021-07-07 20:23:12.489674 (Thread-1): SQL status: SELECT in 8.65 seconds
+2021-07-07 20:23:12.554992 (Thread-1): Using redshift connection "model.my_new_project.musicals_info".
+2021-07-07 20:23:12.554992 (Thread-1): On model.my_new_project.musicals_info: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.my_new_project.musicals_info"} */
+alter table "dev"."public"."musicals_info__dbt_tmp" rename to "musicals_info"
+2021-07-07 20:23:12.584243 (Thread-1): SQL status: ALTER TABLE in 0.03 seconds
+2021-07-07 20:23:12.585275 (Thread-1): On model.my_new_project.musicals_info: COMMIT
+2021-07-07 20:23:12.585275 (Thread-1): Using redshift connection "model.my_new_project.musicals_info".
+2021-07-07 20:23:12.585275 (Thread-1): On model.my_new_project.musicals_info: COMMIT
+2021-07-07 20:23:12.650652 (Thread-1): SQL status: COMMIT in 0.07 seconds
+2021-07-07 20:23:12.651695 (Thread-1): Using redshift connection "model.my_new_project.musicals_info".
+2021-07-07 20:23:12.652687 (Thread-1): On model.my_new_project.musicals_info: BEGIN
+2021-07-07 20:23:12.680252 (Thread-1): SQL status: BEGIN in 0.03 seconds
+2021-07-07 20:23:12.687069 (Thread-1): Using redshift connection "model.my_new_project.musicals_info".
+2021-07-07 20:23:12.688067 (Thread-1): On model.my_new_project.musicals_info: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.my_new_project.musicals_info"} */
+drop table if exists "dev"."public"."musicals_info__dbt_backup" cascade
+2021-07-07 20:23:12.716568 (Thread-1): SQL status: DROP TABLE in 0.03 seconds
+2021-07-07 20:23:12.719569 (Thread-1): On model.my_new_project.musicals_info: COMMIT
+2021-07-07 20:23:12.720567 (Thread-1): Using redshift connection "model.my_new_project.musicals_info".
+2021-07-07 20:23:12.720567 (Thread-1): On model.my_new_project.musicals_info: COMMIT
+2021-07-07 20:23:12.750294 (Thread-1): SQL status: COMMIT in 0.03 seconds
+2021-07-07 20:23:12.751352 (Thread-1): Using redshift connection "model.my_new_project.musicals_info".
+2021-07-07 20:23:12.751352 (Thread-1): On model.my_new_project.musicals_info: BEGIN
+2021-07-07 20:23:12.781160 (Thread-1): SQL status: BEGIN in 0.03 seconds
+2021-07-07 20:23:12.783203 (Thread-1): finished collecting timing info
+2021-07-07 20:23:12.783203 (Thread-1): On model.my_new_project.musicals_info: ROLLBACK
+2021-07-07 20:23:12.811754 (Thread-1): On model.my_new_project.musicals_info: Close
+2021-07-07 20:23:12.814739 (Thread-1): Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f91ea16b-42b8-459a-a1d9-27349c386700', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026055C11448>]}
+2021-07-07 20:23:12.815737 (Thread-1): 15:23:12 | 2 of 8 OK created table model public.musicals_info................... [SELECT in 9.26s]
+2021-07-07 20:23:12.818773 (Thread-1): Finished running node model.my_new_project.musicals_info
+2021-07-07 20:23:12.819771 (Thread-1): Began running node model.redshift.redshift_columns
+2021-07-07 20:23:12.821805 (Thread-1): Acquiring new redshift connection "model.redshift.redshift_columns".
+2021-07-07 20:23:12.821805 (Thread-1): Compiling model.redshift.redshift_columns
+2021-07-07 20:23:12.835728 (Thread-1): Writing injected SQL for node "model.redshift.redshift_columns"
+2021-07-07 20:23:12.839715 (Thread-1): finished collecting timing info
+2021-07-07 20:23:12.841713 (Thread-1): Finished running node model.redshift.redshift_columns
+2021-07-07 20:23:12.842709 (Thread-1): Began running node model.redshift.redshift_constraints
+2021-07-07 20:23:12.844701 (Thread-1): Acquiring new redshift connection "model.redshift.redshift_constraints".
+2021-07-07 20:23:12.845701 (Thread-1): Compiling model.redshift.redshift_constraints
+2021-07-07 20:23:12.859660 (Thread-1): Writing injected SQL for node "model.redshift.redshift_constraints"
+2021-07-07 20:23:12.863658 (Thread-1): finished collecting timing info
+2021-07-07 20:23:12.864647 (Thread-1): Finished running node model.redshift.redshift_constraints
+2021-07-07 20:23:12.865645 (Thread-1): Began running node model.redshift.redshift_sort_dist_keys
+2021-07-07 20:23:12.866646 (Thread-1): Acquiring new redshift connection "model.redshift.redshift_sort_dist_keys".
+2021-07-07 20:23:12.866646 (Thread-1): Compiling model.redshift.redshift_sort_dist_keys
+2021-07-07 20:23:12.874621 (Thread-1): Writing injected SQL for node "model.redshift.redshift_sort_dist_keys"
+2021-07-07 20:23:12.877613 (Thread-1): finished collecting timing info
+2021-07-07 20:23:12.879608 (Thread-1): Finished running node model.redshift.redshift_sort_dist_keys
+2021-07-07 20:23:12.879608 (Thread-1): Began running node model.redshift.redshift_tables
+2021-07-07 20:23:12.880605 (Thread-1): Acquiring new redshift connection "model.redshift.redshift_tables".
+2021-07-07 20:23:12.880605 (Thread-1): Compiling model.redshift.redshift_tables
+2021-07-07 20:23:12.885592 (Thread-1): Writing injected SQL for node "model.redshift.redshift_tables"
+2021-07-07 20:23:12.886588 (Thread-1): finished collecting timing info
+2021-07-07 20:23:12.886588 (Thread-1): Finished running node model.redshift.redshift_tables
+2021-07-07 20:23:12.886588 (Thread-1): Began running node model.redshift.redshift_admin_users_schema_privileges
+2021-07-07 20:23:12.887587 (Thread-1): 15:23:12 | 3 of 8 START view model public.redshift_admin_users_schema_privileges [RUN]
+2021-07-07 20:23:12.888585 (Thread-1): Acquiring new redshift connection "model.redshift.redshift_admin_users_schema_privileges".
+2021-07-07 20:23:12.888585 (Thread-1): Compiling model.redshift.redshift_admin_users_schema_privileges
+2021-07-07 20:23:12.921496 (Thread-1): Writing injected SQL for node "model.redshift.redshift_admin_users_schema_privileges"
+2021-07-07 20:23:12.922493 (Thread-1): finished collecting timing info
+2021-07-07 20:23:12.943467 (Thread-1): Writing runtime SQL for node "model.redshift.redshift_admin_users_schema_privileges"
+2021-07-07 20:23:12.945431 (Thread-1): Using redshift connection "model.redshift.redshift_admin_users_schema_privileges".
+2021-07-07 20:23:12.945431 (Thread-1): On model.redshift.redshift_admin_users_schema_privileges: BEGIN
+2021-07-07 20:23:12.945431 (Thread-1): Opening a new connection, currently in state closed
+2021-07-07 20:23:12.945431 (Thread-1): Connecting to Redshift using 'database' credentials
+2021-07-07 20:23:13.253406 (Thread-1): SQL status: BEGIN in 0.31 seconds
+2021-07-07 20:23:13.254235 (Thread-1): Using redshift connection "model.redshift.redshift_admin_users_schema_privileges".
+2021-07-07 20:23:13.254235 (Thread-1): On model.redshift.redshift_admin_users_schema_privileges: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.redshift.redshift_admin_users_schema_privileges"} */
+
+
+  create view "dev"."public"."redshift_admin_users_schema_privileges__dbt_tmp" as (
+    with  __dbt__cte__pg_tables as (
+select
+  schemaname as schema_name
+, tablename as table_name
+, tableowner as table_owner
+, tablespace as table_space
+, hasindexes as has_indexes
+, hasrules as has_rules
+, hastriggers as has_triggers
+from pg_tables
+),  __dbt__cte__pg_views as (
+select
+  schemaname as schema_name
+, viewname as view_name
+, viewowner as view_owner
+from pg_views
+),  __dbt__cte__pg_user as (
+select
+
+  usesysid as user_id
+, usename as username
+
+from pg_user
+),tables as (
+
+  select * from __dbt__cte__pg_tables
+
+), views as (
+
+  select * from __dbt__cte__pg_views
+
+), users as (
+
+  select * from __dbt__cte__pg_user
+  
+), schemas as (
+  
+  select
+  distinct(schema_name)
+  from tables
+  where schema_name not in ('pg_catalog', 'information_schema')
+        
+  union
+        
+  select
+  distinct(schema_name)
+  from views
+        
+  where schema_name not in ('pg_catalog', 'information_schema')
+  
+)
+
+
+select 
+  schemas.schema_name
+, users.username
+, has_schema_privilege(users.username, schemas.schema_name, 'usage') AS has_usage_privilege
+, has_schema_privilege(users.username, schemas.schema_name, 'create') AS has_create_privilege
+from schemas
+cross join users
+order by schemas.schema_name, users.username
+  ) ;
+
+2021-07-07 20:23:13.297287 (Thread-1): SQL status: CREATE VIEW in 0.04 seconds
+2021-07-07 20:23:13.318190 (Thread-1): Using redshift connection "model.redshift.redshift_admin_users_schema_privileges".
+2021-07-07 20:23:13.319187 (Thread-1): On model.redshift.redshift_admin_users_schema_privileges: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.redshift.redshift_admin_users_schema_privileges"} */
+alter table "dev"."public"."redshift_admin_users_schema_privileges__dbt_tmp" rename to "redshift_admin_users_schema_privileges"
+2021-07-07 20:23:13.348110 (Thread-1): SQL status: ALTER TABLE in 0.03 seconds
+2021-07-07 20:23:13.350104 (Thread-1): On model.redshift.redshift_admin_users_schema_privileges: COMMIT
+2021-07-07 20:23:13.351132 (Thread-1): Using redshift connection "model.redshift.redshift_admin_users_schema_privileges".
+2021-07-07 20:23:13.351132 (Thread-1): On model.redshift.redshift_admin_users_schema_privileges: COMMIT
+2021-07-07 20:23:13.402036 (Thread-1): SQL status: COMMIT in 0.05 seconds
+2021-07-07 20:23:13.402036 (Thread-1): Using redshift connection "model.redshift.redshift_admin_users_schema_privileges".
+2021-07-07 20:23:13.403035 (Thread-1): On model.redshift.redshift_admin_users_schema_privileges: BEGIN
+2021-07-07 20:23:13.431404 (Thread-1): SQL status: BEGIN in 0.03 seconds
+2021-07-07 20:23:13.435397 (Thread-1): Using redshift connection "model.redshift.redshift_admin_users_schema_privileges".
+2021-07-07 20:23:13.436395 (Thread-1): On model.redshift.redshift_admin_users_schema_privileges: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.redshift.redshift_admin_users_schema_privileges"} */
+drop view if exists "dev"."public"."redshift_admin_users_schema_privileges__dbt_backup" cascade
+2021-07-07 20:23:13.464560 (Thread-1): SQL status: DROP VIEW in 0.03 seconds
+2021-07-07 20:23:13.466562 (Thread-1): On model.redshift.redshift_admin_users_schema_privileges: COMMIT
+2021-07-07 20:23:13.466562 (Thread-1): Using redshift connection "model.redshift.redshift_admin_users_schema_privileges".
+2021-07-07 20:23:13.466562 (Thread-1): On model.redshift.redshift_admin_users_schema_privileges: COMMIT
+2021-07-07 20:23:13.516206 (Thread-1): SQL status: COMMIT in 0.05 seconds
+2021-07-07 20:23:13.516206 (Thread-1): Using redshift connection "model.redshift.redshift_admin_users_schema_privileges".
+2021-07-07 20:23:13.516206 (Thread-1): On model.redshift.redshift_admin_users_schema_privileges: BEGIN
+2021-07-07 20:23:13.545134 (Thread-1): SQL status: BEGIN in 0.03 seconds
+2021-07-07 20:23:13.547176 (Thread-1): finished collecting timing info
+2021-07-07 20:23:13.547176 (Thread-1): On model.redshift.redshift_admin_users_schema_privileges: ROLLBACK
+2021-07-07 20:23:13.581985 (Thread-1): On model.redshift.redshift_admin_users_schema_privileges: Close
+2021-07-07 20:23:13.583979 (Thread-1): Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f91ea16b-42b8-459a-a1d9-27349c386700', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026055D80D08>]}
+2021-07-07 20:23:13.585973 (Thread-1): 15:23:13 | 3 of 8 OK created view model public.redshift_admin_users_schema_privileges [CREATE VIEW in 0.70s]
+2021-07-07 20:23:13.587975 (Thread-1): Finished running node model.redshift.redshift_admin_users_schema_privileges
+2021-07-07 20:23:13.588967 (Thread-1): Began running node model.redshift.redshift_admin_users_table_view_privileges
+2021-07-07 20:23:13.591003 (Thread-1): 15:23:13 | 4 of 8 START view model public.redshift_admin_users_table_view_privileges [RUN]
+2021-07-07 20:23:13.592996 (Thread-1): Acquiring new redshift connection "model.redshift.redshift_admin_users_table_view_privileges".
+2021-07-07 20:23:13.593956 (Thread-1): Compiling model.redshift.redshift_admin_users_table_view_privileges
+2021-07-07 20:23:13.638859 (Thread-1): Writing injected SQL for node "model.redshift.redshift_admin_users_table_view_privileges"
+2021-07-07 20:23:13.639857 (Thread-1): finished collecting timing info
+2021-07-07 20:23:13.643816 (Thread-1): Writing runtime SQL for node "model.redshift.redshift_admin_users_table_view_privileges"
+2021-07-07 20:23:13.644815 (Thread-1): Using redshift connection "model.redshift.redshift_admin_users_table_view_privileges".
+2021-07-07 20:23:13.645812 (Thread-1): On model.redshift.redshift_admin_users_table_view_privileges: BEGIN
+2021-07-07 20:23:13.645812 (Thread-1): Opening a new connection, currently in state closed
+2021-07-07 20:23:13.645812 (Thread-1): Connecting to Redshift using 'database' credentials
+2021-07-07 20:23:13.972787 (Thread-1): SQL status: BEGIN in 0.33 seconds
+2021-07-07 20:23:13.972787 (Thread-1): Using redshift connection "model.redshift.redshift_admin_users_table_view_privileges".
+2021-07-07 20:23:13.972787 (Thread-1): On model.redshift.redshift_admin_users_table_view_privileges: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.redshift.redshift_admin_users_table_view_privileges"} */
+
+
+  create view "dev"."public"."redshift_admin_users_table_view_privileges__dbt_tmp" as (
+    with  __dbt__cte__pg_tables as (
+select
+  schemaname as schema_name
+, tablename as table_name
+, tableowner as table_owner
+, tablespace as table_space
+, hasindexes as has_indexes
+, hasrules as has_rules
+, hastriggers as has_triggers
+from pg_tables
+),  __dbt__cte__pg_views as (
+select
+  schemaname as schema_name
+, viewname as view_name
+, viewowner as view_owner
+from pg_views
+),  __dbt__cte__pg_user as (
+select
+
+  usesysid as user_id
+, usename as username
+
+from pg_user
+),tables as (
+
+  select * from __dbt__cte__pg_tables
+
+), views as (
+
+  select * from __dbt__cte__pg_views
+
+), users as (
+
+  select * from __dbt__cte__pg_user
+
+), objects as (
+  
+  select
+    schema_name
+  , 'table' as object_type
+  , table_name as object_name
+  , '"' || schema_name || '"."' || table_name || '"' as full_object_name
+  from tables
+  where schema_name not in ('pg_catalog', 'information_schema')
+  
+  union
+  
+  select
+    schema_name
+  , 'view' as object_type
+  , view_name as object_name
+  , '"' || schema_name || '"."' || view_name || '"' as full_object_name
+  from views
+  where schema_name not in ('pg_catalog', 'information_schema')
+  
+)
+
+select 
+  objects.schema_name
+, objects.object_name
+, users.username
+, has_table_privilege(users.username, objects.full_object_name, 'select') as has_select_privilege
+, has_table_privilege(users.username, objects.full_object_name, 'insert') as has_insert_privilege
+, has_table_privilege(users.username, objects.full_object_name, 'update') as has_update_privilege
+, has_table_privilege(users.username, objects.full_object_name, 'delete') as has_delete_privilege
+, has_table_privilege(users.username, objects.full_object_name, 'references') as has_references_privilege
+from objects
+cross join users
+order by objects.full_object_name, users.username
+  ) ;
+
+2021-07-07 20:23:14.015114 (Thread-1): SQL status: CREATE VIEW in 0.04 seconds
+2021-07-07 20:23:14.017944 (Thread-1): Using redshift connection "model.redshift.redshift_admin_users_table_view_privileges".
+2021-07-07 20:23:14.017944 (Thread-1): On model.redshift.redshift_admin_users_table_view_privileges: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.redshift.redshift_admin_users_table_view_privileges"} */
+alter table "dev"."public"."redshift_admin_users_table_view_privileges__dbt_tmp" rename to "redshift_admin_users_table_view_privileges"
+2021-07-07 20:23:14.047248 (Thread-1): SQL status: ALTER TABLE in 0.03 seconds
+2021-07-07 20:23:14.052226 (Thread-1): On model.redshift.redshift_admin_users_table_view_privileges: COMMIT
+2021-07-07 20:23:14.052226 (Thread-1): Using redshift connection "model.redshift.redshift_admin_users_table_view_privileges".
+2021-07-07 20:23:14.053221 (Thread-1): On model.redshift.redshift_admin_users_table_view_privileges: COMMIT
+2021-07-07 20:23:14.103817 (Thread-1): SQL status: COMMIT in 0.05 seconds
+2021-07-07 20:23:14.104814 (Thread-1): Using redshift connection "model.redshift.redshift_admin_users_table_view_privileges".
+2021-07-07 20:23:14.105811 (Thread-1): On model.redshift.redshift_admin_users_table_view_privileges: BEGIN
+2021-07-07 20:23:14.134732 (Thread-1): SQL status: BEGIN in 0.03 seconds
+2021-07-07 20:23:14.140716 (Thread-1): Using redshift connection "model.redshift.redshift_admin_users_table_view_privileges".
+2021-07-07 20:23:14.141714 (Thread-1): On model.redshift.redshift_admin_users_table_view_privileges: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.redshift.redshift_admin_users_table_view_privileges"} */
+drop view if exists "dev"."public"."redshift_admin_users_table_view_privileges__dbt_backup" cascade
+2021-07-07 20:23:14.170088 (Thread-1): SQL status: DROP VIEW in 0.03 seconds
+2021-07-07 20:23:14.171086 (Thread-1): On model.redshift.redshift_admin_users_table_view_privileges: COMMIT
+2021-07-07 20:23:14.171086 (Thread-1): Using redshift connection "model.redshift.redshift_admin_users_table_view_privileges".
+2021-07-07 20:23:14.171086 (Thread-1): On model.redshift.redshift_admin_users_table_view_privileges: COMMIT
+2021-07-07 20:23:14.221169 (Thread-1): SQL status: COMMIT in 0.05 seconds
+2021-07-07 20:23:14.221169 (Thread-1): Using redshift connection "model.redshift.redshift_admin_users_table_view_privileges".
+2021-07-07 20:23:14.221169 (Thread-1): On model.redshift.redshift_admin_users_table_view_privileges: BEGIN
+2021-07-07 20:23:14.249699 (Thread-1): SQL status: BEGIN in 0.03 seconds
+2021-07-07 20:23:14.249699 (Thread-1): finished collecting timing info
+2021-07-07 20:23:14.250738 (Thread-1): On model.redshift.redshift_admin_users_table_view_privileges: ROLLBACK
+2021-07-07 20:23:14.278324 (Thread-1): On model.redshift.redshift_admin_users_table_view_privileges: Close
+2021-07-07 20:23:14.280365 (Thread-1): Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f91ea16b-42b8-459a-a1d9-27349c386700', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026055FAB648>]}
+2021-07-07 20:23:14.280365 (Thread-1): 15:23:14 | 4 of 8 OK created view model public.redshift_admin_users_table_view_privileges [CREATE VIEW in 0.69s]
+2021-07-07 20:23:14.282653 (Thread-1): Finished running node model.redshift.redshift_admin_users_table_view_privileges
+2021-07-07 20:23:14.283659 (Thread-1): Began running node model.my_new_project.my_second_dbt_model
+2021-07-07 20:23:14.283659 (Thread-1): 15:23:14 | 5 of 8 START view model public.my_second_dbt_model................... [RUN]
+2021-07-07 20:23:14.285650 (Thread-1): Acquiring new redshift connection "model.my_new_project.my_second_dbt_model".
+2021-07-07 20:23:14.285650 (Thread-1): Compiling model.my_new_project.my_second_dbt_model
+2021-07-07 20:23:14.292631 (Thread-1): Writing injected SQL for node "model.my_new_project.my_second_dbt_model"
+2021-07-07 20:23:14.294654 (Thread-1): finished collecting timing info
+2021-07-07 20:23:14.305601 (Thread-1): Writing runtime SQL for node "model.my_new_project.my_second_dbt_model"
+2021-07-07 20:23:14.307594 (Thread-1): Using redshift connection "model.my_new_project.my_second_dbt_model".
+2021-07-07 20:23:14.307594 (Thread-1): On model.my_new_project.my_second_dbt_model: BEGIN
+2021-07-07 20:23:14.308589 (Thread-1): Opening a new connection, currently in state closed
+2021-07-07 20:23:14.308589 (Thread-1): Connecting to Redshift using 'database' credentials
+2021-07-07 20:23:14.596064 (Thread-1): SQL status: BEGIN in 0.29 seconds
+2021-07-07 20:23:14.597057 (Thread-1): Using redshift connection "model.my_new_project.my_second_dbt_model".
+2021-07-07 20:23:14.597057 (Thread-1): On model.my_new_project.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.my_new_project.my_second_dbt_model"} */
+
+
+  create view "dev"."public"."my_second_dbt_model__dbt_tmp" as (
+    -- Use the `ref` function to select from other models
+
+select *
+from "dev"."public"."my_first_dbt_model"
+where id = 1
+  ) ;
+
+2021-07-07 20:23:14.635079 (Thread-1): SQL status: CREATE VIEW in 0.04 seconds
+2021-07-07 20:23:14.650048 (Thread-1): Using redshift connection "model.my_new_project.my_second_dbt_model".
+2021-07-07 20:23:14.651046 (Thread-1): On model.my_new_project.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.my_new_project.my_second_dbt_model"} */
+alter table "dev"."public"."my_second_dbt_model__dbt_tmp" rename to "my_second_dbt_model"
+2021-07-07 20:23:14.679397 (Thread-1): SQL status: ALTER TABLE in 0.03 seconds
+2021-07-07 20:23:14.683393 (Thread-1): On model.my_new_project.my_second_dbt_model: COMMIT
+2021-07-07 20:23:14.683393 (Thread-1): Using redshift connection "model.my_new_project.my_second_dbt_model".
+2021-07-07 20:23:14.684389 (Thread-1): On model.my_new_project.my_second_dbt_model: COMMIT
+2021-07-07 20:23:14.735239 (Thread-1): SQL status: COMMIT in 0.05 seconds
+2021-07-07 20:23:14.736277 (Thread-1): Using redshift connection "model.my_new_project.my_second_dbt_model".
+2021-07-07 20:23:14.736277 (Thread-1): On model.my_new_project.my_second_dbt_model: BEGIN
+2021-07-07 20:23:14.764881 (Thread-1): SQL status: BEGIN in 0.03 seconds
+2021-07-07 20:23:14.773692 (Thread-1): Using redshift connection "model.my_new_project.my_second_dbt_model".
+2021-07-07 20:23:14.774690 (Thread-1): On model.my_new_project.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.my_new_project.my_second_dbt_model"} */
+drop view if exists "dev"."public"."my_second_dbt_model__dbt_backup" cascade
+2021-07-07 20:23:14.802866 (Thread-1): SQL status: DROP VIEW in 0.03 seconds
+2021-07-07 20:23:14.804868 (Thread-1): On model.my_new_project.my_second_dbt_model: COMMIT
+2021-07-07 20:23:14.804868 (Thread-1): Using redshift connection "model.my_new_project.my_second_dbt_model".
+2021-07-07 20:23:14.804868 (Thread-1): On model.my_new_project.my_second_dbt_model: COMMIT
+2021-07-07 20:23:14.854571 (Thread-1): SQL status: COMMIT in 0.05 seconds
+2021-07-07 20:23:14.854941 (Thread-1): Using redshift connection "model.my_new_project.my_second_dbt_model".
+2021-07-07 20:23:14.854941 (Thread-1): On model.my_new_project.my_second_dbt_model: BEGIN
+2021-07-07 20:23:14.883041 (Thread-1): SQL status: BEGIN in 0.03 seconds
+2021-07-07 20:23:14.884080 (Thread-1): finished collecting timing info
+2021-07-07 20:23:14.884080 (Thread-1): On model.my_new_project.my_second_dbt_model: ROLLBACK
+2021-07-07 20:23:14.911429 (Thread-1): On model.my_new_project.my_second_dbt_model: Close
+2021-07-07 20:23:14.912439 (Thread-1): Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f91ea16b-42b8-459a-a1d9-27349c386700', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026055EA2F88>]}
+2021-07-07 20:23:14.913462 (Thread-1): 15:23:14 | 5 of 8 OK created view model public.my_second_dbt_model.............. [CREATE VIEW in 0.63s]
+2021-07-07 20:23:14.915018 (Thread-1): Finished running node model.my_new_project.my_second_dbt_model
+2021-07-07 20:23:14.915018 (Thread-1): Began running node model.redshift.redshift_admin_dependencies
+2021-07-07 20:23:14.916024 (Thread-1): 15:23:14 | 6 of 8 START view model public.redshift_admin_dependencies........... [RUN]
+2021-07-07 20:23:14.916952 (Thread-1): Acquiring new redshift connection "model.redshift.redshift_admin_dependencies".
+2021-07-07 20:23:14.917954 (Thread-1): Compiling model.redshift.redshift_admin_dependencies
+2021-07-07 20:23:14.949904 (Thread-1): Writing injected SQL for node "model.redshift.redshift_admin_dependencies"
+2021-07-07 20:23:14.967731 (Thread-1): finished collecting timing info
+2021-07-07 20:23:14.971719 (Thread-1): Writing runtime SQL for node "model.redshift.redshift_admin_dependencies"
+2021-07-07 20:23:14.973528 (Thread-1): Using redshift connection "model.redshift.redshift_admin_dependencies".
+2021-07-07 20:23:14.974448 (Thread-1): On model.redshift.redshift_admin_dependencies: BEGIN
+2021-07-07 20:23:14.974448 (Thread-1): Opening a new connection, currently in state closed
+2021-07-07 20:23:14.974448 (Thread-1): Connecting to Redshift using 'database' credentials
+2021-07-07 20:23:15.252044 (Thread-1): SQL status: BEGIN in 0.28 seconds
+2021-07-07 20:23:15.253040 (Thread-1): Using redshift connection "model.redshift.redshift_admin_dependencies".
+2021-07-07 20:23:15.253040 (Thread-1): On model.redshift.redshift_admin_dependencies: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.redshift.redshift_admin_dependencies"} */
+
+
+  create view "dev"."public"."redshift_admin_dependencies__dbt_tmp" as (
+    
+
+with __dbt__cte__pg_class as (
+select
+  oid
+, relname
+, relnamespace
+, reltype
+, relowner
+, relam
+, relfilenode
+, reltablespace
+, relpages
+, reltuples
+, reltoastrelid
+, reltoastidxid
+, relhasindex
+, relisshared
+, relkind
+, relnatts
+, relexternid
+, relisreplicated
+, relispinned
+, reldiststyle
+, relprojbaseid
+, relchecks
+, reltriggers
+, relukeys
+, relfkeys
+, relrefs
+, relhasoids
+, relhaspkey
+, relhasrules
+, relhassubclass
+, relacl
+from pg_class
+),  __dbt__cte__pg_depend as (
+select
+  classid
+, objid
+, objsubid
+, refclassid
+, refobjid
+, refobjsubid
+, deptype
+from pg_depend
+),  __dbt__cte__pg_namespace as (
+select
+  oid
+, nspname
+, nspowner
+, nspacl
+from pg_namespace
+)select distinct
+  srcobj.oid as source_oid
+  , srcnsp.nspname as source_schemaname
+  , srcobj.relname as source_objectname
+  , tgtobj.oid as dependent_oid
+  , tgtnsp.nspname as dependent_schemaname
+  , tgtobj.relname as dependent_objectname
+
+from
+
+  __dbt__cte__pg_class as srcobj
+  join __dbt__cte__pg_depend as srcdep on srcobj.oid = srcdep.refobjid
+  join __dbt__cte__pg_depend as tgtdep on srcdep.objid = tgtdep.objid
+  join __dbt__cte__pg_class as tgtobj
+    on tgtdep.refobjid = tgtobj.oid
+    and srcobj.oid <> tgtobj.oid
+  left join __dbt__cte__pg_namespace as srcnsp
+    on srcobj.relnamespace = srcnsp.oid
+  left join __dbt__cte__pg_namespace tgtnsp on tgtobj.relnamespace = tgtnsp.oid
+
+where
+  tgtdep.deptype = 'i' --dependency_internal
+  and tgtobj.relkind = 'v' --i=index, v=view, s=sequence
+  ) ;
+
+2021-07-07 20:23:15.295814 (Thread-1): SQL status: CREATE VIEW in 0.04 seconds
+2021-07-07 20:23:15.305825 (Thread-1): Using redshift connection "model.redshift.redshift_admin_dependencies".
+2021-07-07 20:23:15.305825 (Thread-1): On model.redshift.redshift_admin_dependencies: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.redshift.redshift_admin_dependencies"} */
+alter table "dev"."public"."redshift_admin_dependencies__dbt_tmp" rename to "redshift_admin_dependencies"
+2021-07-07 20:23:15.336291 (Thread-1): SQL status: ALTER TABLE in 0.03 seconds
+2021-07-07 20:23:15.341274 (Thread-1): On model.redshift.redshift_admin_dependencies: COMMIT
+2021-07-07 20:23:15.341274 (Thread-1): Using redshift connection "model.redshift.redshift_admin_dependencies".
+2021-07-07 20:23:15.342271 (Thread-1): On model.redshift.redshift_admin_dependencies: COMMIT
+2021-07-07 20:23:15.392081 (Thread-1): SQL status: COMMIT in 0.05 seconds
+2021-07-07 20:23:15.392910 (Thread-1): Using redshift connection "model.redshift.redshift_admin_dependencies".
+2021-07-07 20:23:15.393903 (Thread-1): On model.redshift.redshift_admin_dependencies: BEGIN
+2021-07-07 20:23:15.423172 (Thread-1): SQL status: BEGIN in 0.03 seconds
+2021-07-07 20:23:15.432199 (Thread-1): Using redshift connection "model.redshift.redshift_admin_dependencies".
+2021-07-07 20:23:15.433197 (Thread-1): On model.redshift.redshift_admin_dependencies: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.redshift.redshift_admin_dependencies"} */
+drop view if exists "dev"."public"."redshift_admin_dependencies__dbt_backup" cascade
+2021-07-07 20:23:15.461298 (Thread-1): SQL status: DROP VIEW in 0.03 seconds
+2021-07-07 20:23:15.465295 (Thread-1): On model.redshift.redshift_admin_dependencies: COMMIT
+2021-07-07 20:23:15.465295 (Thread-1): Using redshift connection "model.redshift.redshift_admin_dependencies".
+2021-07-07 20:23:15.466294 (Thread-1): On model.redshift.redshift_admin_dependencies: COMMIT
+2021-07-07 20:23:15.515086 (Thread-1): SQL status: COMMIT in 0.05 seconds
+2021-07-07 20:23:15.516024 (Thread-1): Using redshift connection "model.redshift.redshift_admin_dependencies".
+2021-07-07 20:23:15.516024 (Thread-1): On model.redshift.redshift_admin_dependencies: BEGIN
+2021-07-07 20:23:15.544706 (Thread-1): SQL status: BEGIN in 0.03 seconds
+2021-07-07 20:23:15.546710 (Thread-1): finished collecting timing info
+2021-07-07 20:23:15.547707 (Thread-1): On model.redshift.redshift_admin_dependencies: ROLLBACK
+2021-07-07 20:23:15.610578 (Thread-1): On model.redshift.redshift_admin_dependencies: Close
+2021-07-07 20:23:15.612569 (Thread-1): Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f91ea16b-42b8-459a-a1d9-27349c386700', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026055E7F508>]}
+2021-07-07 20:23:15.613566 (Thread-1): 15:23:15 | 6 of 8 OK created view model public.redshift_admin_dependencies...... [CREATE VIEW in 0.69s]
+2021-07-07 20:23:15.615063 (Thread-1): Finished running node model.redshift.redshift_admin_dependencies
+2021-07-07 20:23:15.615063 (Thread-1): Began running node model.redshift.redshift_cost
+2021-07-07 20:23:15.617056 (Thread-1): Acquiring new redshift connection "model.redshift.redshift_cost".
+2021-07-07 20:23:15.617056 (Thread-1): Compiling model.redshift.redshift_cost
+2021-07-07 20:23:15.650994 (Thread-1): Writing injected SQL for node "model.redshift.redshift_cost"
+2021-07-07 20:23:15.652957 (Thread-1): finished collecting timing info
+2021-07-07 20:23:15.653960 (Thread-1): Finished running node model.redshift.redshift_cost
+2021-07-07 20:23:15.653960 (Thread-1): Began running node model.redshift.redshift_admin_table_stats
+2021-07-07 20:23:15.654953 (Thread-1): 15:23:15 | 7 of 8 START view model public.redshift_admin_table_stats............ [RUN]
+2021-07-07 20:23:15.655982 (Thread-1): Acquiring new redshift connection "model.redshift.redshift_admin_table_stats".
+2021-07-07 20:23:15.655982 (Thread-1): Compiling model.redshift.redshift_admin_table_stats
+2021-07-07 20:23:15.717815 (Thread-1): Writing injected SQL for node "model.redshift.redshift_admin_table_stats"
+2021-07-07 20:23:15.718794 (Thread-1): finished collecting timing info
+2021-07-07 20:23:15.721804 (Thread-1): Writing runtime SQL for node "model.redshift.redshift_admin_table_stats"
+2021-07-07 20:23:15.722803 (Thread-1): Using redshift connection "model.redshift.redshift_admin_table_stats".
+2021-07-07 20:23:15.722803 (Thread-1): On model.redshift.redshift_admin_table_stats: BEGIN
+2021-07-07 20:23:15.722803 (Thread-1): Opening a new connection, currently in state closed
+2021-07-07 20:23:15.722803 (Thread-1): Connecting to Redshift using 'database' credentials
+2021-07-07 20:23:16.034792 (Thread-1): SQL status: BEGIN in 0.31 seconds
+2021-07-07 20:23:16.035786 (Thread-1): Using redshift connection "model.redshift.redshift_admin_table_stats".
+2021-07-07 20:23:16.035786 (Thread-1): On model.redshift.redshift_admin_table_stats: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.redshift.redshift_admin_table_stats"} */
+
+
+  create view "dev"."public"."redshift_admin_table_stats__dbt_tmp" as (
+    with  __dbt__cte__stv_tbl_perm as (
+select
+  slice
+, id -- table id
+, name -- table name
+, rows
+, sorted_rows
+, (rows - sorted_rows) as unsorted_rows
+, temp
+, db_id
+, backup
+from stv_tbl_perm
+),  __dbt__cte__pg_class as (
+select
+  oid
+, relname
+, relnamespace
+, reltype
+, relowner
+, relam
+, relfilenode
+, reltablespace
+, relpages
+, reltuples
+, reltoastrelid
+, reltoastidxid
+, relhasindex
+, relisshared
+, relkind
+, relnatts
+, relexternid
+, relisreplicated
+, relispinned
+, reldiststyle
+, relprojbaseid
+, relchecks
+, reltriggers
+, relukeys
+, relfkeys
+, relrefs
+, relhasoids
+, relhaspkey
+, relhasrules
+, relhassubclass
+, relacl
+from pg_class
+),  __dbt__cte__pg_namespace as (
+select
+  oid
+, nspname
+, nspowner
+, nspacl
+from pg_namespace
+),  __dbt__cte__stv_blocklist as (
+select
+  slice
+, col
+, tbl
+, blocknum
+, num_values
+, extended_limits
+, minvalue
+, maxvalue
+, sb_pos
+, pinned
+, on_disk
+, backed_up
+, modified
+, hdr_modified
+, unsorted
+, tombstone
+, preferred_diskno
+, temporary
+, newblock
+, num_readers
+, id
+, flags
+from stv_blocklist
+),  __dbt__cte__pg_attribute as (
+select
+  attrelid
+, attname
+, atttypid
+, attstattarget
+, attlen
+, attnum
+, attndims
+, attcacheoff
+, atttypmod
+, attbyval
+, attstorage
+, attalign
+, attnotnull
+, atthasdef
+, attisdropped
+, attislocal
+, attinhcount
+, attisdistkey
+, attispreloaded
+, attsortkeyord
+, attencodingtype
+, attencrypttype
+, (case attisdistkey
+        when 't' then attname
+        else null end) as dist_key
+, (case attsortkeyord
+        when 1 then attname
+        else null end) as sort_key
+from pg_attribute
+),  __dbt__cte__svv_diskusage as (
+select
+  db_id
+, name
+, slice
+, col
+, tbl
+, blocknum
+, num_values
+, extended_limits
+, minvalue
+, maxvalue
+, sb_pos
+, pinned
+, on_disk
+, backed_up
+, modified
+, hdr_modified
+, unsorted
+, tombstone
+, preferred_diskno
+, temporary
+, newblock
+, num_readers
+, id
+, flags
+from svv_diskusage
+),unsorted_by_table as (
+
+  select
+    db_id
+  , id as table_id
+  , name as table_name
+  , sum(rows) as rows
+  , sum(unsorted_rows) as unsorted_rows
+  from __dbt__cte__stv_tbl_perm
+  group by 1, 2, 3
+
+), pg_class as (
+
+  select * from __dbt__cte__pg_class
+
+), pg_namespace as (
+
+  select * from __dbt__cte__pg_namespace
+
+), table_sizes as (
+
+  select
+    tbl as table_id
+  , count(*) as size_in_megabytes
+  from __dbt__cte__stv_blocklist
+  group by 1
+
+), table_attributes as (
+
+  select
+    attrelid as table_id
+  , min(dist_key) as dist_key
+  , min(sort_key) as sort_key
+  , max(attsortkeyord) as num_sort_keys
+  , (max(attencodingtype) > 0) as is_encoded
+  , max(attnum) as num_columns
+  from __dbt__cte__pg_attribute
+  group by 1
+
+), slice_distribution as (
+
+  select
+    tbl as table_id
+  , trim(name) as name
+  , slice
+  , count(*) as size_in_megabytes
+
+  from __dbt__cte__svv_diskusage
+  group by 1, 2, 3
+
+), capacity as (
+
+  select
+    sum(capacity) as total_megabytes
+  from
+  stv_partitions
+  where part_begin=0
+
+), table_distribution_ratio as (
+
+  select
+    table_id
+  , (max(size_in_megabytes)::float / min(size_in_megabytes)::float)
+      as ratio
+  from slice_distribution
+  group by 1
+
+)
+
+select
+
+  trim(pg_namespace.nspname) as schema
+, trim(unsorted_by_table.table_name) as table
+, unsorted_by_table.rows
+, unsorted_by_table.unsorted_rows
+, (case unsorted_by_table.rows
+        when 0 then 0
+        else (unsorted_by_table.unsorted_rows::float / unsorted_by_table.rows::float) * 100.0 end)
+    as percent_rows_unsorted
+, unsorted_by_table.table_id
+
+, decode(pg_class.reldiststyle, 0, 'even',
+                              1, table_attributes.dist_key,
+                              'all') as dist_style
+, table_distribution_ratio.ratio as dist_skew
+
+, (table_attributes.sort_key is not null) as is_sorted
+, table_attributes.sort_key
+, table_attributes.num_sort_keys
+, table_attributes.num_columns
+
+, table_sizes.size_in_megabytes
+, (case capacity.total_megabytes
+        when 0 then 0
+        else (table_sizes.size_in_megabytes::float / capacity.total_megabytes::float) * 100.0 end)
+    as disk_used_percent_of_total
+, table_attributes.is_encoded
+
+from unsorted_by_table
+
+inner join pg_class
+  on pg_class.oid = unsorted_by_table.table_id
+
+inner join pg_namespace
+  on pg_namespace.oid = pg_class.relnamespace
+
+inner join capacity
+  on 1=1
+
+left join table_sizes
+  on unsorted_by_table.table_id = table_sizes.table_id
+
+inner join table_attributes
+  on table_attributes.table_id = unsorted_by_table.table_id
+
+inner join table_distribution_ratio
+  on table_distribution_ratio.table_id = unsorted_by_table.table_id
+  ) ;
+
+2021-07-07 20:23:16.092105 (Thread-1): SQL status: CREATE VIEW in 0.06 seconds
+2021-07-07 20:23:16.101089 (Thread-1): Using redshift connection "model.redshift.redshift_admin_table_stats".
+2021-07-07 20:23:16.102088 (Thread-1): On model.redshift.redshift_admin_table_stats: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.redshift.redshift_admin_table_stats"} */
+alter table "dev"."public"."redshift_admin_table_stats__dbt_tmp" rename to "redshift_admin_table_stats"
+2021-07-07 20:23:16.132283 (Thread-1): SQL status: ALTER TABLE in 0.03 seconds
+2021-07-07 20:23:16.138277 (Thread-1): On model.redshift.redshift_admin_table_stats: COMMIT
+2021-07-07 20:23:16.138277 (Thread-1): Using redshift connection "model.redshift.redshift_admin_table_stats".
+2021-07-07 20:23:16.139275 (Thread-1): On model.redshift.redshift_admin_table_stats: COMMIT
+2021-07-07 20:23:16.200978 (Thread-1): SQL status: COMMIT in 0.06 seconds
+2021-07-07 20:23:16.201984 (Thread-1): Using redshift connection "model.redshift.redshift_admin_table_stats".
+2021-07-07 20:23:16.202976 (Thread-1): On model.redshift.redshift_admin_table_stats: BEGIN
+2021-07-07 20:23:16.231850 (Thread-1): SQL status: BEGIN in 0.03 seconds
+2021-07-07 20:23:16.239888 (Thread-1): Using redshift connection "model.redshift.redshift_admin_table_stats".
+2021-07-07 20:23:16.240887 (Thread-1): On model.redshift.redshift_admin_table_stats: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.redshift.redshift_admin_table_stats"} */
+drop view if exists "dev"."public"."redshift_admin_table_stats__dbt_backup" cascade
+2021-07-07 20:23:16.269675 (Thread-1): SQL status: DROP VIEW in 0.03 seconds
+2021-07-07 20:23:16.274604 (Thread-1): On model.redshift.redshift_admin_table_stats: COMMIT
+2021-07-07 20:23:16.275601 (Thread-1): Using redshift connection "model.redshift.redshift_admin_table_stats".
+2021-07-07 20:23:16.276599 (Thread-1): On model.redshift.redshift_admin_table_stats: COMMIT
+2021-07-07 20:23:16.326192 (Thread-1): SQL status: COMMIT in 0.05 seconds
+2021-07-07 20:23:16.327254 (Thread-1): Using redshift connection "model.redshift.redshift_admin_table_stats".
+2021-07-07 20:23:16.327254 (Thread-1): On model.redshift.redshift_admin_table_stats: BEGIN
+2021-07-07 20:23:16.356950 (Thread-1): SQL status: BEGIN in 0.03 seconds
+2021-07-07 20:23:16.359004 (Thread-1): finished collecting timing info
+2021-07-07 20:23:16.359951 (Thread-1): On model.redshift.redshift_admin_table_stats: ROLLBACK
+2021-07-07 20:23:16.421756 (Thread-1): On model.redshift.redshift_admin_table_stats: Close
+2021-07-07 20:23:16.424815 (Thread-1): Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f91ea16b-42b8-459a-a1d9-27349c386700', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026055D98DC8>]}
+2021-07-07 20:23:16.425806 (Thread-1): 15:23:16 | 7 of 8 OK created view model public.redshift_admin_table_stats....... [CREATE VIEW in 0.77s]
+2021-07-07 20:23:16.429745 (Thread-1): Finished running node model.redshift.redshift_admin_table_stats
+2021-07-07 20:23:16.430742 (Thread-1): Began running node model.redshift.redshift_admin_queries
+2021-07-07 20:23:16.431738 (Thread-1): 15:23:16 | 8 of 8 START view model public.redshift_admin_queries................ [RUN]
+2021-07-07 20:23:16.434739 (Thread-1): Acquiring new redshift connection "model.redshift.redshift_admin_queries".
+2021-07-07 20:23:16.435728 (Thread-1): Compiling model.redshift.redshift_admin_queries
+2021-07-07 20:23:16.479613 (Thread-1): Writing injected SQL for node "model.redshift.redshift_admin_queries"
+2021-07-07 20:23:16.480610 (Thread-1): finished collecting timing info
+2021-07-07 20:23:16.487589 (Thread-1): Writing runtime SQL for node "model.redshift.redshift_admin_queries"
+2021-07-07 20:23:16.488737 (Thread-1): Using redshift connection "model.redshift.redshift_admin_queries".
+2021-07-07 20:23:16.489586 (Thread-1): On model.redshift.redshift_admin_queries: BEGIN
+2021-07-07 20:23:16.489586 (Thread-1): Opening a new connection, currently in state closed
+2021-07-07 20:23:16.489586 (Thread-1): Connecting to Redshift using 'database' credentials
+2021-07-07 20:23:16.792930 (Thread-1): SQL status: BEGIN in 0.30 seconds
+2021-07-07 20:23:16.793981 (Thread-1): Using redshift connection "model.redshift.redshift_admin_queries".
+2021-07-07 20:23:16.793981 (Thread-1): On model.redshift.redshift_admin_queries: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.redshift.redshift_admin_queries"} */
+
+
+  create view "dev"."public"."redshift_admin_queries__dbt_tmp" as (
+    with  __dbt__cte__stl_query as (
+select
+
+  userid as user_id
+, query as query_id
+, xid as transaction_id
+, label
+, pid
+, database
+, starttime as started_at
+, endtime as finished_at
+, aborted
+
+from stl_query
+),  __dbt__cte__pg_user as (
+select
+
+  usesysid as user_id
+, usename as username
+
+from pg_user
+),  __dbt__cte__stl_explain as (
+select
+
+  userid as user_id
+, query as query_id
+, nodeid
+, parentid
+, plannode
+, info
+
+from stl_explain
+),  __dbt__cte__redshift_cost as (
+with stl_explain as (
+
+  select query_id, plannode from __dbt__cte__stl_explain
+  where nodeid = 1
+
+), parse_step_one as (
+
+  -- plannode (which contains cost) is formatted like:
+  --   XN Seq Scan on nyc_last_update  (cost=0.00..0.03 rows=2 width=40)
+  -- we want to rip out the cost part (0.00, 0.03) and make it usable.
+  -- cost_string after this step is "0.00..0.03 ..."
+  select
+    query_id
+  , split_part(plannode, 'cost=', 2) as cost_string
+
+  from stl_explain
+
+), parse_step_two as (
+
+  select
+    query_id
+  , split_part(cost_string, '..', 1) as starting_cost
+  , substring(
+      split_part(cost_string, '..', 2)
+      from 1
+      for strpos(split_part(cost_string, '..', 2), ' ')) as total_cost
+
+  from parse_step_one
+
+)
+
+
+select
+
+  query_id
+, starting_cost::float as starting_cost
+, total_cost::float as total_cost
+
+from parse_step_two
+),  __dbt__cte__stl_wlm_query as (
+select
+
+  userid as user_id
+, query as query_id
+, xid
+, task
+, service_class
+, slot_count
+, service_class_start_time
+, queue_start_time
+, queue_end_time
+, total_queue_time
+, exec_start_time
+, exec_end_time
+, total_exec_time
+, service_class_end_time
+, final_state
+
+from stl_wlm_query
+),queries as (
+
+  select * from __dbt__cte__stl_query
+
+), users as (
+
+  select * from __dbt__cte__pg_user
+
+), cost as (
+
+  select * from __dbt__cte__redshift_cost
+
+), timings as (
+
+  select * from __dbt__cte__stl_wlm_query
+
+)
+
+
+
+select
+
+  queries.query_id
+, queries.transaction_id
+, users.username::varchar
+
+, cost.starting_cost
+, cost.total_cost
+
+, queries.started_at
+, queries.finished_at
+
+, timings.queue_start_time
+, timings.queue_end_time
+, (timings.total_queue_time::float / 1000000.0) as total_queue_time_seconds
+
+, timings.exec_start_time
+, timings.exec_end_time
+, (timings.total_exec_time::float / 1000000.0) as total_exec_time_seconds
+
+from queries
+
+left join users
+  on queries.user_id = users.user_id
+
+left join cost
+  on queries.query_id = cost.query_id
+
+left join timings
+  on queries.query_id = timings.query_id
+  ) ;
+
+2021-07-07 20:23:16.859717 (Thread-1): SQL status: CREATE VIEW in 0.06 seconds
+2021-07-07 20:23:16.871695 (Thread-1): Using redshift connection "model.redshift.redshift_admin_queries".
+2021-07-07 20:23:16.871695 (Thread-1): On model.redshift.redshift_admin_queries: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.redshift.redshift_admin_queries"} */
+alter table "dev"."public"."redshift_admin_queries__dbt_tmp" rename to "redshift_admin_queries"
+2021-07-07 20:23:16.900730 (Thread-1): SQL status: ALTER TABLE in 0.03 seconds
+2021-07-07 20:23:16.905544 (Thread-1): On model.redshift.redshift_admin_queries: COMMIT
+2021-07-07 20:23:16.905544 (Thread-1): Using redshift connection "model.redshift.redshift_admin_queries".
+2021-07-07 20:23:16.906541 (Thread-1): On model.redshift.redshift_admin_queries: COMMIT
+2021-07-07 20:23:16.959875 (Thread-1): SQL status: COMMIT in 0.05 seconds
+2021-07-07 20:23:16.960834 (Thread-1): Using redshift connection "model.redshift.redshift_admin_queries".
+2021-07-07 20:23:16.962844 (Thread-1): On model.redshift.redshift_admin_queries: BEGIN
+2021-07-07 20:23:17.018476 (Thread-1): SQL status: BEGIN in 0.06 seconds
+2021-07-07 20:23:17.025159 (Thread-1): Using redshift connection "model.redshift.redshift_admin_queries".
+2021-07-07 20:23:17.026160 (Thread-1): On model.redshift.redshift_admin_queries: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.redshift.redshift_admin_queries"} */
+drop view if exists "dev"."public"."redshift_admin_queries__dbt_backup" cascade
+2021-07-07 20:23:17.080088 (Thread-1): SQL status: DROP VIEW in 0.05 seconds
+2021-07-07 20:23:17.085045 (Thread-1): On model.redshift.redshift_admin_queries: COMMIT
+2021-07-07 20:23:17.085045 (Thread-1): Using redshift connection "model.redshift.redshift_admin_queries".
+2021-07-07 20:23:17.085045 (Thread-1): On model.redshift.redshift_admin_queries: COMMIT
+2021-07-07 20:23:17.138499 (Thread-1): SQL status: COMMIT in 0.05 seconds
+2021-07-07 20:23:17.139520 (Thread-1): Using redshift connection "model.redshift.redshift_admin_queries".
+2021-07-07 20:23:17.139520 (Thread-1): On model.redshift.redshift_admin_queries: BEGIN
+2021-07-07 20:23:17.168890 (Thread-1): SQL status: BEGIN in 0.03 seconds
+2021-07-07 20:23:17.170909 (Thread-1): finished collecting timing info
+2021-07-07 20:23:17.170909 (Thread-1): On model.redshift.redshift_admin_queries: ROLLBACK
+2021-07-07 20:23:17.214558 (Thread-1): On model.redshift.redshift_admin_queries: Close
+2021-07-07 20:23:17.217552 (Thread-1): Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f91ea16b-42b8-459a-a1d9-27349c386700', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026056064FC8>]}
+2021-07-07 20:23:17.219547 (Thread-1): 15:23:17 | 8 of 8 OK created view model public.redshift_admin_queries........... [CREATE VIEW in 0.78s]
+2021-07-07 20:23:17.222536 (Thread-1): Finished running node model.redshift.redshift_admin_queries
+2021-07-07 20:23:17.296035 (MainThread): Acquiring new redshift connection "master".
+2021-07-07 20:23:17.297034 (MainThread): Using redshift connection "master".
+2021-07-07 20:23:17.298032 (MainThread): On master: BEGIN
+2021-07-07 20:23:17.298032 (MainThread): Opening a new connection, currently in state closed
+2021-07-07 20:23:17.298032 (MainThread): Connecting to Redshift using 'database' credentials
+2021-07-07 20:23:17.657660 (MainThread): SQL status: BEGIN in 0.36 seconds
+2021-07-07 20:23:17.658486 (MainThread): On master: COMMIT
+2021-07-07 20:23:17.658486 (MainThread): Using redshift connection "master".
+2021-07-07 20:23:17.659480 (MainThread): On master: COMMIT
+2021-07-07 20:23:17.693423 (MainThread): SQL status: COMMIT in 0.03 seconds
+2021-07-07 20:23:17.693423 (MainThread): On master: Close
+2021-07-07 20:23:17.694384 (MainThread): 15:23:17 | 
+2021-07-07 20:23:17.695383 (MainThread): 15:23:17 | Finished running 2 table models, 6 view models in 17.06s.
+2021-07-07 20:23:17.698388 (MainThread): Connection 'master' was properly closed.
+2021-07-07 20:23:17.699405 (MainThread): Connection 'list_dev' was properly closed.
+2021-07-07 20:23:17.699405 (MainThread): Connection 'list_dev_public' was properly closed.
+2021-07-07 20:23:17.699405 (MainThread): Connection 'model.redshift.redshift_admin_queries' was properly closed.
+2021-07-07 20:23:17.722310 (MainThread): 
+2021-07-07 20:23:17.722310 (MainThread): Completed successfully
+2021-07-07 20:23:17.725303 (MainThread): 
+Done. PASS=8 WARN=0 ERROR=0 SKIP=0 TOTAL=8
+2021-07-07 20:23:17.734279 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026055D9E548>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026055C5EA08>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026055E88088>]}
+2021-07-07 20:23:17.734279 (MainThread): Flushing usage events
+2021-07-08 15:55:41.662025 (MainThread): Running with dbt=0.20.0-rc1
+2021-07-08 15:55:45.519576 (MainThread): running dbt with arguments Namespace(cls=<class 'dbt.task.run.RunTask'>, debug=False, defer=None, exclude=None, fail_fast=False, full_refresh=False, log_cache_events=False, log_format='default', models=None, partial_parse=None, profile=None, profiles_dir='C:\\Users\\urvas\\.dbt', project_dir=None, record_timing_info=None, rpc_method='run', selector_name=None, single_threaded=False, state=None, strict=False, target=None, test_new_parser=False, threads=None, use_cache=True, use_colors=None, use_experimental_parser=False, vars='{}', version_check=True, warn_error=False, which='run', write_json=True)
+2021-07-08 15:55:45.535198 (MainThread): Tracking: tracking
+2021-07-08 15:55:45.537949 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C386E73508>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C38AA15C48>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C38AA15CC8>]}
+2021-07-08 15:55:45.715585 (MainThread): Partial parsing not enabled
+2021-07-08 15:55:46.154542 (MainThread): Parsing macros\adapters.sql
+2021-07-08 15:55:46.229638 (MainThread): Parsing macros\catalog.sql
+2021-07-08 15:55:46.237678 (MainThread): Parsing macros\relations.sql
+2021-07-08 15:55:46.237678 (MainThread): Parsing macros\materializations\snapshot_merge.sql
+2021-07-08 15:55:46.237678 (MainThread): Parsing macros\adapters.sql
+2021-07-08 15:55:46.262741 (MainThread): Parsing macros\catalog.sql
+2021-07-08 15:55:46.262741 (MainThread): Parsing macros\relations.sql
+2021-07-08 15:55:46.280398 (MainThread): Parsing macros\materializations\snapshot_merge.sql
+2021-07-08 15:55:46.282309 (MainThread): Parsing macros\core.sql
+2021-07-08 15:55:46.286300 (MainThread): Parsing macros\adapters\common.sql
+2021-07-08 15:55:46.353364 (MainThread): Parsing macros\etc\datetime.sql
+2021-07-08 15:55:46.362781 (MainThread): Parsing macros\etc\get_custom_alias.sql
+2021-07-08 15:55:46.362781 (MainThread): Parsing macros\etc\get_custom_database.sql
+2021-07-08 15:55:46.362781 (MainThread): Parsing macros\etc\get_custom_schema.sql
+2021-07-08 15:55:46.362781 (MainThread): Parsing macros\etc\is_incremental.sql
+2021-07-08 15:55:46.371934 (MainThread): Parsing macros\etc\query.sql
+2021-07-08 15:55:46.373960 (MainThread): Parsing macros\materializations\helpers.sql
+2021-07-08 15:55:46.379691 (MainThread): Parsing macros\materializations\test.sql
+2021-07-08 15:55:46.379691 (MainThread): Parsing macros\materializations\common\merge.sql
+2021-07-08 15:55:46.397368 (MainThread): Parsing macros\materializations\incremental\helpers.sql
+2021-07-08 15:55:46.413042 (MainThread): Parsing macros\materializations\incremental\incremental.sql
+2021-07-08 15:55:46.415037 (MainThread): Parsing macros\materializations\seed\seed.sql
+2021-07-08 15:55:46.437743 (MainThread): Parsing macros\materializations\snapshot\snapshot.sql
+2021-07-08 15:55:46.496090 (MainThread): Parsing macros\materializations\snapshot\snapshot_merge.sql
+2021-07-08 15:55:46.497087 (MainThread): Parsing macros\materializations\snapshot\strategies.sql
+2021-07-08 15:55:46.512715 (MainThread): Parsing macros\materializations\table\table.sql
+2021-07-08 15:55:46.529522 (MainThread): Parsing macros\materializations\view\create_or_replace_view.sql
+2021-07-08 15:55:46.529522 (MainThread): Parsing macros\materializations\view\view.sql
+2021-07-08 15:55:46.547021 (MainThread): Parsing macros\schema_tests\accepted_values.sql
+2021-07-08 15:55:46.547021 (MainThread): Parsing macros\schema_tests\not_null.sql
+2021-07-08 15:55:46.547021 (MainThread): Parsing macros\schema_tests\relationships.sql
+2021-07-08 15:55:46.547021 (MainThread): Parsing macros\schema_tests\unique.sql
+2021-07-08 15:55:46.547021 (MainThread): Parsing macros\cross_db_utils\cast_bool_to_text.sql
+2021-07-08 15:55:46.547021 (MainThread): Parsing macros\cross_db_utils\concat.sql
+2021-07-08 15:55:46.547021 (MainThread): Parsing macros\cross_db_utils\current_timestamp.sql
+2021-07-08 15:55:46.562754 (MainThread): Parsing macros\cross_db_utils\datatypes.sql
+2021-07-08 15:55:46.570022 (MainThread): Parsing macros\cross_db_utils\dateadd.sql
+2021-07-08 15:55:46.570022 (MainThread): Parsing macros\cross_db_utils\datediff.sql
+2021-07-08 15:55:46.579694 (MainThread): Parsing macros\cross_db_utils\date_trunc.sql
+2021-07-08 15:55:46.579694 (MainThread): Parsing macros\cross_db_utils\except.sql
+2021-07-08 15:55:46.579694 (MainThread): Parsing macros\cross_db_utils\hash.sql
+2021-07-08 15:55:46.579694 (MainThread): Parsing macros\cross_db_utils\identifier.sql
+2021-07-08 15:55:46.579694 (MainThread): Parsing macros\cross_db_utils\intersect.sql
+2021-07-08 15:55:46.579694 (MainThread): Parsing macros\cross_db_utils\last_day.sql
+2021-07-08 15:55:46.596404 (MainThread): Parsing macros\cross_db_utils\length.sql
+2021-07-08 15:55:46.596404 (MainThread): Parsing macros\cross_db_utils\literal.sql
+2021-07-08 15:55:46.596404 (MainThread): Parsing macros\cross_db_utils\position.sql
+2021-07-08 15:55:46.596404 (MainThread): Parsing macros\cross_db_utils\replace.sql
+2021-07-08 15:55:46.596404 (MainThread): Parsing macros\cross_db_utils\right.sql
+2021-07-08 15:55:46.596404 (MainThread): Parsing macros\cross_db_utils\safe_cast.sql
+2021-07-08 15:55:46.596404 (MainThread): Parsing macros\cross_db_utils\split_part.sql
+2021-07-08 15:55:46.596404 (MainThread): Parsing macros\cross_db_utils\width_bucket.sql
+2021-07-08 15:55:46.612067 (MainThread): Parsing macros\cross_db_utils\_is_ephemeral.sql
+2021-07-08 15:55:46.612067 (MainThread): Parsing macros\cross_db_utils\_is_relation.sql
+2021-07-08 15:55:46.612067 (MainThread): Parsing macros\jinja_helpers\log_info.sql
+2021-07-08 15:55:46.612067 (MainThread): Parsing macros\jinja_helpers\pretty_log_format.sql
+2021-07-08 15:55:46.612067 (MainThread): Parsing macros\jinja_helpers\pretty_time.sql
+2021-07-08 15:55:46.612067 (MainThread): Parsing macros\jinja_helpers\slugify.sql
+2021-07-08 15:55:46.612067 (MainThread): Parsing macros\materializations\insert_by_period_materialization.sql
+2021-07-08 15:55:46.679830 (MainThread): Parsing macros\schema_tests\accepted_range.sql
+2021-07-08 15:55:46.679830 (MainThread): Parsing macros\schema_tests\at_least_one.sql
+2021-07-08 15:55:46.679830 (MainThread): Parsing macros\schema_tests\cardinality_equality.sql
+2021-07-08 15:55:46.695501 (MainThread): Parsing macros\schema_tests\equality.sql
+2021-07-08 15:55:46.696499 (MainThread): Parsing macros\schema_tests\equal_rowcount.sql
+2021-07-08 15:55:46.696499 (MainThread): Parsing macros\schema_tests\expression_is_true.sql
+2021-07-08 15:55:46.704440 (MainThread): Parsing macros\schema_tests\fewer_rows_than.sql
+2021-07-08 15:55:46.704440 (MainThread): Parsing macros\schema_tests\mutually_exclusive_ranges.sql
+2021-07-08 15:55:46.704440 (MainThread): Parsing macros\schema_tests\not_accepted_values.sql
+2021-07-08 15:55:46.720041 (MainThread): Parsing macros\schema_tests\not_constant.sql
+2021-07-08 15:55:46.723071 (MainThread): Parsing macros\schema_tests\recency.sql
+2021-07-08 15:55:46.723071 (MainThread): Parsing macros\schema_tests\relationships_where.sql
+2021-07-08 15:55:46.729461 (MainThread): Parsing macros\schema_tests\sequential_values.sql
+2021-07-08 15:55:46.730458 (MainThread): Parsing macros\schema_tests\test_not_null_where.sql
+2021-07-08 15:55:46.730458 (MainThread): Parsing macros\schema_tests\test_unique_where.sql
+2021-07-08 15:55:46.730458 (MainThread): Parsing macros\schema_tests\unique_combination_of_columns.sql
+2021-07-08 15:55:46.737970 (MainThread): Parsing macros\sql\date_spine.sql
+2021-07-08 15:55:46.737970 (MainThread): Parsing macros\sql\generate_series.sql
+2021-07-08 15:55:46.746343 (MainThread): Parsing macros\sql\get_column_values.sql
+2021-07-08 15:55:46.746343 (MainThread): Parsing macros\sql\get_query_results_as_dict.sql
+2021-07-08 15:55:46.746343 (MainThread): Parsing macros\sql\get_relations_by_pattern.sql
+2021-07-08 15:55:46.761851 (MainThread): Parsing macros\sql\get_relations_by_prefix.sql
+2021-07-08 15:55:46.762832 (MainThread): Parsing macros\sql\get_tables_by_pattern_sql.sql
+2021-07-08 15:55:46.762832 (MainThread): Parsing macros\sql\get_tables_by_prefix_sql.sql
+2021-07-08 15:55:46.762832 (MainThread): Parsing macros\sql\groupby.sql
+2021-07-08 15:55:46.762832 (MainThread): Parsing macros\sql\haversine_distance.sql
+2021-07-08 15:55:46.780512 (MainThread): Parsing macros\sql\nullcheck.sql
+2021-07-08 15:55:46.780512 (MainThread): Parsing macros\sql\nullcheck_table.sql
+2021-07-08 15:55:46.796543 (MainThread): Parsing macros\sql\pivot.sql
+2021-07-08 15:55:46.805358 (MainThread): Parsing macros\sql\safe_add.sql
+2021-07-08 15:55:46.805358 (MainThread): Parsing macros\sql\star.sql
+2021-07-08 15:55:46.822193 (MainThread): Parsing macros\sql\surrogate_key.sql
+2021-07-08 15:55:46.823191 (MainThread): Parsing macros\sql\union.sql
+2021-07-08 15:55:46.829508 (MainThread): Parsing macros\sql\unpivot.sql
+2021-07-08 15:55:46.838051 (MainThread): Parsing macros\web\get_url_host.sql
+2021-07-08 15:55:46.838051 (MainThread): Parsing macros\web\get_url_parameter.sql
+2021-07-08 15:55:46.838051 (MainThread): Parsing macros\web\get_url_path.sql
+2021-07-08 15:55:46.853708 (MainThread): Parsing macros\compression.sql
+2021-07-08 15:55:46.863093 (MainThread): Parsing macros\ddl.sql
+2021-07-08 15:55:46.879768 (MainThread): Parsing macros\introspection.sql
+2021-07-08 15:55:46.891839 (MainThread): Parsing macros\queries.sql
+2021-07-08 15:55:46.891839 (MainThread): Parsing macros\redshift_maintenance_operation.sql
+2021-07-08 15:55:46.891839 (MainThread): Parsing macros\try_cast.sql
+2021-07-08 15:55:46.907499 (MainThread): Parsing macros\unload.sql
+2021-07-08 15:55:46.912862 (MainThread): Parsing macros\utilities.sql
+2021-07-08 15:55:47.481857 (MainThread): Acquiring new redshift connection "model.my_new_project.musicals_info".
+2021-07-08 15:55:47.491831 (MainThread): Acquiring new redshift connection "model.my_new_project.my_first_dbt_model".
+2021-07-08 15:55:47.496819 (MainThread): Acquiring new redshift connection "model.my_new_project.my_second_dbt_model".
+2021-07-08 15:55:47.561617 (MainThread): Acquiring new redshift connection "model.redshift.pg_attribute".
+2021-07-08 15:55:47.570593 (MainThread): Acquiring new redshift connection "model.redshift.pg_class".
+2021-07-08 15:55:47.578571 (MainThread): Acquiring new redshift connection "model.redshift.pg_depend".
+2021-07-08 15:55:47.587544 (MainThread): Acquiring new redshift connection "model.redshift.pg_namespace".
+2021-07-08 15:55:47.593556 (MainThread): Acquiring new redshift connection "model.redshift.pg_tables".
+2021-07-08 15:55:47.598548 (MainThread): Acquiring new redshift connection "model.redshift.pg_user".
+2021-07-08 15:55:47.602539 (MainThread): Acquiring new redshift connection "model.redshift.pg_views".
+2021-07-08 15:55:47.605526 (MainThread): Acquiring new redshift connection "model.redshift.redshift_cost".
+2021-07-08 15:55:47.611513 (MainThread): Acquiring new redshift connection "model.redshift.stl_explain".
+2021-07-08 15:55:47.617497 (MainThread): Acquiring new redshift connection "model.redshift.stl_query".
+2021-07-08 15:55:47.621483 (MainThread): Acquiring new redshift connection "model.redshift.stl_wlm_query".
+2021-07-08 15:55:47.624479 (MainThread): Acquiring new redshift connection "model.redshift.stv_blocklist".
+2021-07-08 15:55:47.627469 (MainThread): Acquiring new redshift connection "model.redshift.stv_tbl_perm".
+2021-07-08 15:55:47.631426 (MainThread): Acquiring new redshift connection "model.redshift.svv_diskusage".
+2021-07-08 15:55:47.635415 (MainThread): Acquiring new redshift connection "model.redshift.redshift_columns".
+2021-07-08 15:55:47.642569 (MainThread): Acquiring new redshift connection "model.redshift.redshift_constraints".
+2021-07-08 15:55:47.648520 (MainThread): Acquiring new redshift connection "model.redshift.redshift_sort_dist_keys".
+2021-07-08 15:55:47.654505 (MainThread): Acquiring new redshift connection "model.redshift.redshift_tables".
+2021-07-08 15:55:47.659491 (MainThread): Acquiring new redshift connection "model.redshift.redshift_admin_dependencies".
+2021-07-08 15:55:47.666472 (MainThread): Acquiring new redshift connection "model.redshift.redshift_admin_queries".
+2021-07-08 15:55:47.672456 (MainThread): Acquiring new redshift connection "model.redshift.redshift_admin_table_stats".
+2021-07-08 15:55:47.683457 (MainThread): Acquiring new redshift connection "model.redshift.redshift_admin_users_schema_privileges".
+2021-07-08 15:55:47.687444 (MainThread): Acquiring new redshift connection "model.redshift.redshift_admin_users_table_view_privileges".
+2021-07-08 15:55:47.719359 (MainThread): 'soft_unicode' has been renamed to 'soft_str'. The old name will be removed in MarkupSafe 2.1.
+2021-07-08 15:55:47.721356 (MainThread): 'soft_unicode' has been renamed to 'soft_str'. The old name will be removed in MarkupSafe 2.1.
+2021-07-08 15:55:47.723351 (MainThread): 'soft_unicode' has been renamed to 'soft_str'. The old name will be removed in MarkupSafe 2.1.
+2021-07-08 15:55:47.725345 (MainThread): 'soft_unicode' has been renamed to 'soft_str'. The old name will be removed in MarkupSafe 2.1.
+2021-07-08 15:55:47.763230 (MainThread): Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '1ce81d87-b0c1-45fa-aba0-a47ba6a5fbb6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C38AB2E708>]}
+2021-07-08 15:55:47.776192 (MainThread): Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '1ce81d87-b0c1-45fa-aba0-a47ba6a5fbb6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C38ABDCA08>]}
+2021-07-08 15:55:47.776192 (MainThread): Found 26 models, 4 tests, 0 snapshots, 0 analyses, 379 macros, 0 operations, 0 seed files, 0 sources, 0 exposures
+2021-07-08 15:55:47.779185 (MainThread): 
+2021-07-08 15:55:47.787937 (MainThread): Acquiring new redshift connection "master".
+2021-07-08 15:55:47.790804 (ThreadPoolExecutor-0_0): Acquiring new redshift connection "list_dev".
+2021-07-08 15:55:47.808801 (ThreadPoolExecutor-0_0): Using redshift connection "list_dev".
+2021-07-08 15:55:47.808801 (ThreadPoolExecutor-0_0): On list_dev: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "connection_name": "list_dev"} */
+
+    select distinct nspname from pg_namespace
+  
+2021-07-08 15:55:47.809755 (ThreadPoolExecutor-0_0): Opening a new connection, currently in state init
+2021-07-08 15:55:47.809755 (ThreadPoolExecutor-0_0): Connecting to Redshift using 'database' credentials
+2021-07-08 15:55:49.548289 (ThreadPoolExecutor-0_0): SQL status: SELECT in 1.74 seconds
+2021-07-08 15:55:49.548289 (ThreadPoolExecutor-0_0): On list_dev: Close
+2021-07-08 15:55:49.570883 (ThreadPoolExecutor-1_0): Acquiring new redshift connection "list_dev_public_dbt_test__audit".
+2021-07-08 15:55:49.614231 (ThreadPoolExecutor-1_0): Using redshift connection "list_dev_public_dbt_test__audit".
+2021-07-08 15:55:49.614231 (ThreadPoolExecutor-1_0): On list_dev_public_dbt_test__audit: BEGIN
+2021-07-08 15:55:49.614231 (ThreadPoolExecutor-1_0): Opening a new connection, currently in state init
+2021-07-08 15:55:49.614231 (ThreadPoolExecutor-1_0): Connecting to Redshift using 'database' credentials
+2021-07-08 15:55:49.898383 (ThreadPoolExecutor-1_0): SQL status: BEGIN in 0.28 seconds
+2021-07-08 15:55:49.898383 (ThreadPoolExecutor-1_0): Using redshift connection "list_dev_public_dbt_test__audit".
+2021-07-08 15:55:49.898383 (ThreadPoolExecutor-1_0): On list_dev_public_dbt_test__audit: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "connection_name": "list_dev_public_dbt_test__audit"} */
+select
+      'dev' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_dbt_test__audit'
+    union all
+    select
+      'dev' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_dbt_test__audit'
+  
+2021-07-08 15:55:49.931427 (ThreadPoolExecutor-1_0): SQL status: SELECT in 0.03 seconds
+2021-07-08 15:55:49.947590 (ThreadPoolExecutor-1_0): On list_dev_public_dbt_test__audit: ROLLBACK
+2021-07-08 15:55:49.964993 (ThreadPoolExecutor-1_0): On list_dev_public_dbt_test__audit: Close
+2021-07-08 15:55:49.980919 (ThreadPoolExecutor-1_0): Acquiring new redshift connection "list_dev_public".
+2021-07-08 15:55:49.984069 (ThreadPoolExecutor-1_0): Using redshift connection "list_dev_public".
+2021-07-08 15:55:49.984069 (ThreadPoolExecutor-1_0): On list_dev_public: BEGIN
+2021-07-08 15:55:49.984069 (ThreadPoolExecutor-1_0): Opening a new connection, currently in state closed
+2021-07-08 15:55:49.984069 (ThreadPoolExecutor-1_0): Connecting to Redshift using 'database' credentials
+2021-07-08 15:55:50.264563 (ThreadPoolExecutor-1_0): SQL status: BEGIN in 0.28 seconds
+2021-07-08 15:55:50.264563 (ThreadPoolExecutor-1_0): Using redshift connection "list_dev_public".
+2021-07-08 15:55:50.264563 (ThreadPoolExecutor-1_0): On list_dev_public: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "connection_name": "list_dev_public"} */
+select
+      'dev' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'dev' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+  
+2021-07-08 15:55:50.300025 (ThreadPoolExecutor-1_0): SQL status: SELECT in 0.04 seconds
+2021-07-08 15:55:50.315832 (ThreadPoolExecutor-1_0): On list_dev_public: ROLLBACK
+2021-07-08 15:55:50.346483 (ThreadPoolExecutor-1_0): On list_dev_public: Close
+2021-07-08 15:55:50.364398 (MainThread): Using redshift connection "master".
+2021-07-08 15:55:50.364398 (MainThread): On master: BEGIN
+2021-07-08 15:55:50.364398 (MainThread): Opening a new connection, currently in state init
+2021-07-08 15:55:50.364398 (MainThread): Connecting to Redshift using 'database' credentials
+2021-07-08 15:55:50.650108 (MainThread): SQL status: BEGIN in 0.29 seconds
+2021-07-08 15:55:50.650108 (MainThread): Using redshift connection "master".
+2021-07-08 15:55:50.650108 (MainThread): On master: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+2021-07-08 15:55:50.697151 (MainThread): SQL status: SELECT in 0.05 seconds
+2021-07-08 15:55:50.697151 (MainThread): On master: ROLLBACK
+2021-07-08 15:55:50.731784 (MainThread): Using redshift connection "master".
+2021-07-08 15:55:50.731784 (MainThread): On master: BEGIN
+2021-07-08 15:55:50.798981 (MainThread): SQL status: BEGIN in 0.07 seconds
+2021-07-08 15:55:50.798981 (MainThread): On master: COMMIT
+2021-07-08 15:55:50.800018 (MainThread): Using redshift connection "master".
+2021-07-08 15:55:50.800018 (MainThread): On master: COMMIT
+2021-07-08 15:55:50.813743 (MainThread): SQL status: COMMIT in 0.01 seconds
+2021-07-08 15:55:50.829854 (MainThread): On master: Close
+2021-07-08 15:55:50.832632 (MainThread): 10:55:50 | Concurrency: 1 threads (target='dev')
+2021-07-08 15:55:50.833790 (MainThread): 10:55:50 | 
+2021-07-08 15:55:51.124882 (Thread-1): Began running node model.redshift.pg_user
+2021-07-08 15:55:51.124882 (Thread-1): Acquiring new redshift connection "model.redshift.pg_user".
+2021-07-08 15:55:51.124882 (Thread-1): Compiling model.redshift.pg_user
+2021-07-08 15:55:51.124882 (Thread-1): Writing injected SQL for node "model.redshift.pg_user"
+2021-07-08 15:55:51.124882 (Thread-1): finished collecting timing info
+2021-07-08 15:55:51.141738 (Thread-1): Finished running node model.redshift.pg_user
+2021-07-08 15:55:51.142026 (Thread-1): Began running node model.redshift.pg_class
+2021-07-08 15:55:51.143075 (Thread-1): Acquiring new redshift connection "model.redshift.pg_class".
+2021-07-08 15:55:51.143075 (Thread-1): Compiling model.redshift.pg_class
+2021-07-08 15:55:51.148643 (Thread-1): Writing injected SQL for node "model.redshift.pg_class"
+2021-07-08 15:55:51.148643 (Thread-1): finished collecting timing info
+2021-07-08 15:55:51.148643 (Thread-1): Finished running node model.redshift.pg_class
+2021-07-08 15:55:51.148643 (Thread-1): Began running node model.redshift.pg_namespace
+2021-07-08 15:55:51.164204 (Thread-1): Acquiring new redshift connection "model.redshift.pg_namespace".
+2021-07-08 15:55:51.165201 (Thread-1): Compiling model.redshift.pg_namespace
+2021-07-08 15:55:51.177577 (Thread-1): Writing injected SQL for node "model.redshift.pg_namespace"
+2021-07-08 15:55:51.180806 (Thread-1): finished collecting timing info
+2021-07-08 15:55:51.181803 (Thread-1): Finished running node model.redshift.pg_namespace
+2021-07-08 15:55:51.183059 (Thread-1): Began running node model.redshift.pg_tables
+2021-07-08 15:55:51.184090 (Thread-1): Acquiring new redshift connection "model.redshift.pg_tables".
+2021-07-08 15:55:51.184090 (Thread-1): Compiling model.redshift.pg_tables
+2021-07-08 15:55:51.184090 (Thread-1): Writing injected SQL for node "model.redshift.pg_tables"
+2021-07-08 15:55:51.184090 (Thread-1): finished collecting timing info
+2021-07-08 15:55:51.184090 (Thread-1): Finished running node model.redshift.pg_tables
+2021-07-08 15:55:51.184090 (Thread-1): Began running node model.redshift.pg_views
+2021-07-08 15:55:51.196984 (Thread-1): Acquiring new redshift connection "model.redshift.pg_views".
+2021-07-08 15:55:51.196984 (Thread-1): Compiling model.redshift.pg_views
+2021-07-08 15:55:51.197980 (Thread-1): Writing injected SQL for node "model.redshift.pg_views"
+2021-07-08 15:55:51.197980 (Thread-1): finished collecting timing info
+2021-07-08 15:55:51.197980 (Thread-1): Finished running node model.redshift.pg_views
+2021-07-08 15:55:51.197980 (Thread-1): Began running node model.my_new_project.my_first_dbt_model
+2021-07-08 15:55:51.206067 (Thread-1): 10:55:51 | 1 of 8 START table model public.my_first_dbt_model................... [RUN]
+2021-07-08 15:55:51.207532 (Thread-1): Acquiring new redshift connection "model.my_new_project.my_first_dbt_model".
+2021-07-08 15:55:51.207532 (Thread-1): Compiling model.my_new_project.my_first_dbt_model
+2021-07-08 15:55:51.217635 (Thread-1): Writing injected SQL for node "model.my_new_project.my_first_dbt_model"
+2021-07-08 15:55:51.219669 (Thread-1): finished collecting timing info
+2021-07-08 15:55:51.319362 (Thread-1): Writing runtime SQL for node "model.my_new_project.my_first_dbt_model"
+2021-07-08 15:55:51.320359 (Thread-1): Using redshift connection "model.my_new_project.my_first_dbt_model".
+2021-07-08 15:55:51.320359 (Thread-1): On model.my_new_project.my_first_dbt_model: BEGIN
+2021-07-08 15:55:51.320359 (Thread-1): Opening a new connection, currently in state init
+2021-07-08 15:55:51.320359 (Thread-1): Connecting to Redshift using 'database' credentials
+2021-07-08 15:55:51.617634 (Thread-1): SQL status: BEGIN in 0.30 seconds
+2021-07-08 15:55:51.618709 (Thread-1): Using redshift connection "model.my_new_project.my_first_dbt_model".
+2021-07-08 15:55:51.619698 (Thread-1): On model.my_new_project.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.my_new_project.my_first_dbt_model"} */
+
+
+  create  table
+    "dev"."public"."my_first_dbt_model__dbt_tmp"
+    
+    
+  as (
+    /*
+    Welcome to your first dbt model!
+    Did you know that you can also configure models directly within SQL files?
+    This will override configurations stated in dbt_project.yml
+
+    Try changing "table" to "view" below
+*/
+
+
+
+with source_data as (
+
+    select 1 as id
+    union all
+    select null as id
+
+)
+
+select *
+from source_data
+
+/*
+    Uncomment the line below to remove records with null `id` values
+*/
+
+-- where id is not null
+  );
+2021-07-08 15:55:51.695325 (Thread-1): SQL status: SELECT in 0.07 seconds
+2021-07-08 15:55:51.723248 (Thread-1): Using redshift connection "model.my_new_project.my_first_dbt_model".
+2021-07-08 15:55:51.724246 (Thread-1): On model.my_new_project.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.my_new_project.my_first_dbt_model"} */
+alter table "dev"."public"."my_first_dbt_model" rename to "my_first_dbt_model__dbt_backup"
+2021-07-08 15:55:51.753980 (Thread-1): SQL status: ALTER TABLE in 0.03 seconds
+2021-07-08 15:55:51.761837 (Thread-1): Using redshift connection "model.my_new_project.my_first_dbt_model".
+2021-07-08 15:55:51.762704 (Thread-1): On model.my_new_project.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.my_new_project.my_first_dbt_model"} */
+alter table "dev"."public"."my_first_dbt_model__dbt_tmp" rename to "my_first_dbt_model"
+2021-07-08 15:55:51.791417 (Thread-1): SQL status: ALTER TABLE in 0.03 seconds
+2021-07-08 15:55:51.830353 (Thread-1): On model.my_new_project.my_first_dbt_model: COMMIT
+2021-07-08 15:55:51.830353 (Thread-1): Using redshift connection "model.my_new_project.my_first_dbt_model".
+2021-07-08 15:55:51.830353 (Thread-1): On model.my_new_project.my_first_dbt_model: COMMIT
+2021-07-08 15:55:51.919817 (Thread-1): SQL status: COMMIT in 0.09 seconds
+2021-07-08 15:55:51.920870 (Thread-1): Using redshift connection "model.my_new_project.my_first_dbt_model".
+2021-07-08 15:55:51.921861 (Thread-1): On model.my_new_project.my_first_dbt_model: BEGIN
+2021-07-08 15:55:51.951241 (Thread-1): SQL status: BEGIN in 0.03 seconds
+2021-07-08 15:55:51.982790 (Thread-1): Using redshift connection "model.my_new_project.my_first_dbt_model".
+2021-07-08 15:55:51.983787 (Thread-1): On model.my_new_project.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.my_new_project.my_first_dbt_model"} */
+drop table if exists "dev"."public"."my_first_dbt_model__dbt_backup" cascade
+2021-07-08 15:55:52.017999 (Thread-1): SQL status: DROP TABLE in 0.03 seconds
+2021-07-08 15:55:52.022000 (Thread-1): On model.my_new_project.my_first_dbt_model: COMMIT
+2021-07-08 15:55:52.022000 (Thread-1): Using redshift connection "model.my_new_project.my_first_dbt_model".
+2021-07-08 15:55:52.023049 (Thread-1): On model.my_new_project.my_first_dbt_model: COMMIT
+2021-07-08 15:55:52.087802 (Thread-1): SQL status: COMMIT in 0.06 seconds
+2021-07-08 15:55:52.088866 (Thread-1): Using redshift connection "model.my_new_project.my_first_dbt_model".
+2021-07-08 15:55:52.088866 (Thread-1): On model.my_new_project.my_first_dbt_model: BEGIN
+2021-07-08 15:55:52.121010 (Thread-1): SQL status: BEGIN in 0.03 seconds
+2021-07-08 15:55:52.123184 (Thread-1): finished collecting timing info
+2021-07-08 15:55:52.123950 (Thread-1): On model.my_new_project.my_first_dbt_model: ROLLBACK
+2021-07-08 15:55:52.152412 (Thread-1): On model.my_new_project.my_first_dbt_model: Close
+2021-07-08 15:55:52.154965 (Thread-1): Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1ce81d87-b0c1-45fa-aba0-a47ba6a5fbb6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C38ADD9888>]}
+2021-07-08 15:55:52.156965 (Thread-1): 10:55:52 | 1 of 8 OK created table model public.my_first_dbt_model.............. [SELECT in 0.95s]
+2021-07-08 15:55:52.159952 (Thread-1): Finished running node model.my_new_project.my_first_dbt_model
+2021-07-08 15:55:52.161060 (Thread-1): Began running node model.redshift.pg_attribute
+2021-07-08 15:55:52.163942 (Thread-1): Acquiring new redshift connection "model.redshift.pg_attribute".
+2021-07-08 15:55:52.166933 (Thread-1): Compiling model.redshift.pg_attribute
+2021-07-08 15:55:52.179911 (Thread-1): Writing injected SQL for node "model.redshift.pg_attribute"
+2021-07-08 15:55:52.184242 (Thread-1): finished collecting timing info
+2021-07-08 15:55:52.186881 (Thread-1): Finished running node model.redshift.pg_attribute
+2021-07-08 15:55:52.188068 (Thread-1): Began running node model.redshift.pg_depend
+2021-07-08 15:55:52.190897 (Thread-1): Acquiring new redshift connection "model.redshift.pg_depend".
+2021-07-08 15:55:52.191867 (Thread-1): Compiling model.redshift.pg_depend
+2021-07-08 15:55:52.198861 (Thread-1): Writing injected SQL for node "model.redshift.pg_depend"
+2021-07-08 15:55:52.200848 (Thread-1): finished collecting timing info
+2021-07-08 15:55:52.201839 (Thread-1): Finished running node model.redshift.pg_depend
+2021-07-08 15:55:52.201839 (Thread-1): Began running node model.redshift.stl_explain
+2021-07-08 15:55:52.203872 (Thread-1): Acquiring new redshift connection "model.redshift.stl_explain".
+2021-07-08 15:55:52.203872 (Thread-1): Compiling model.redshift.stl_explain
+2021-07-08 15:55:52.207822 (Thread-1): Writing injected SQL for node "model.redshift.stl_explain"
+2021-07-08 15:55:52.210088 (Thread-1): finished collecting timing info
+2021-07-08 15:55:52.211811 (Thread-1): Finished running node model.redshift.stl_explain
+2021-07-08 15:55:52.212344 (Thread-1): Began running node model.redshift.stl_query
+2021-07-08 15:55:52.213807 (Thread-1): Acquiring new redshift connection "model.redshift.stl_query".
+2021-07-08 15:55:52.214804 (Thread-1): Compiling model.redshift.stl_query
+2021-07-08 15:55:52.221789 (Thread-1): Writing injected SQL for node "model.redshift.stl_query"
+2021-07-08 15:55:52.223779 (Thread-1): finished collecting timing info
+2021-07-08 15:55:52.224779 (Thread-1): Finished running node model.redshift.stl_query
+2021-07-08 15:55:52.224779 (Thread-1): Began running node model.redshift.stl_wlm_query
+2021-07-08 15:55:52.225823 (Thread-1): Acquiring new redshift connection "model.redshift.stl_wlm_query".
+2021-07-08 15:55:52.225823 (Thread-1): Compiling model.redshift.stl_wlm_query
+2021-07-08 15:55:52.230762 (Thread-1): Writing injected SQL for node "model.redshift.stl_wlm_query"
+2021-07-08 15:55:52.231793 (Thread-1): finished collecting timing info
+2021-07-08 15:55:52.231793 (Thread-1): Finished running node model.redshift.stl_wlm_query
+2021-07-08 15:55:52.231793 (Thread-1): Began running node model.redshift.stv_blocklist
+2021-07-08 15:55:52.232758 (Thread-1): Acquiring new redshift connection "model.redshift.stv_blocklist".
+2021-07-08 15:55:52.232758 (Thread-1): Compiling model.redshift.stv_blocklist
+2021-07-08 15:55:52.235746 (Thread-1): Writing injected SQL for node "model.redshift.stv_blocklist"
+2021-07-08 15:55:52.237185 (Thread-1): finished collecting timing info
+2021-07-08 15:55:52.237775 (Thread-1): Finished running node model.redshift.stv_blocklist
+2021-07-08 15:55:52.237775 (Thread-1): Began running node model.redshift.stv_tbl_perm
+2021-07-08 15:55:52.238741 (Thread-1): Acquiring new redshift connection "model.redshift.stv_tbl_perm".
+2021-07-08 15:55:52.238741 (Thread-1): Compiling model.redshift.stv_tbl_perm
+2021-07-08 15:55:52.242727 (Thread-1): Writing injected SQL for node "model.redshift.stv_tbl_perm"
+2021-07-08 15:55:52.243724 (Thread-1): finished collecting timing info
+2021-07-08 15:55:52.244723 (Thread-1): Finished running node model.redshift.stv_tbl_perm
+2021-07-08 15:55:52.245090 (Thread-1): Began running node model.redshift.svv_diskusage
+2021-07-08 15:55:52.245722 (Thread-1): Acquiring new redshift connection "model.redshift.svv_diskusage".
+2021-07-08 15:55:52.246309 (Thread-1): Compiling model.redshift.svv_diskusage
+2021-07-08 15:55:52.248715 (Thread-1): Writing injected SQL for node "model.redshift.svv_diskusage"
+2021-07-08 15:55:52.249712 (Thread-1): finished collecting timing info
+2021-07-08 15:55:52.250710 (Thread-1): Finished running node model.redshift.svv_diskusage
+2021-07-08 15:55:52.250710 (Thread-1): Began running node model.my_new_project.musicals_info
+2021-07-08 15:55:52.251763 (Thread-1): 10:55:52 | 2 of 8 START table model public.musicals_info........................ [RUN]
+2021-07-08 15:55:52.252702 (Thread-1): Acquiring new redshift connection "model.my_new_project.musicals_info".
+2021-07-08 15:55:52.252702 (Thread-1): Compiling model.my_new_project.musicals_info
+2021-07-08 15:55:52.261732 (Thread-1): Writing injected SQL for node "model.my_new_project.musicals_info"
+2021-07-08 15:55:52.262799 (Thread-1): finished collecting timing info
+2021-07-08 15:55:52.269656 (Thread-1): Writing runtime SQL for node "model.my_new_project.musicals_info"
+2021-07-08 15:55:52.270658 (Thread-1): Using redshift connection "model.my_new_project.musicals_info".
+2021-07-08 15:55:52.270658 (Thread-1): On model.my_new_project.musicals_info: BEGIN
+2021-07-08 15:55:52.270658 (Thread-1): Opening a new connection, currently in state closed
+2021-07-08 15:55:52.270658 (Thread-1): Connecting to Redshift using 'database' credentials
+2021-07-08 15:55:52.541524 (Thread-1): SQL status: BEGIN in 0.27 seconds
+2021-07-08 15:55:52.542574 (Thread-1): Using redshift connection "model.my_new_project.musicals_info".
+2021-07-08 15:55:52.542574 (Thread-1): On model.my_new_project.musicals_info: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.my_new_project.musicals_info"} */
+
+
+  create  table
+    "dev"."public"."musicals_info__dbt_tmp"
+    
+    
+  as (
+    
+
+select e.eventname , e.starttime
+from dev.public.event e inner join dev.public.category c
+on e.catid = c.catid
+where c.catname='Musicals'
+  );
+2021-07-08 15:55:52.638691 (Thread-1): SQL status: SELECT in 0.10 seconds
+2021-07-08 15:55:52.654502 (Thread-1): Using redshift connection "model.my_new_project.musicals_info".
+2021-07-08 15:55:52.655500 (Thread-1): On model.my_new_project.musicals_info: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.my_new_project.musicals_info"} */
+alter table "dev"."public"."musicals_info" rename to "musicals_info__dbt_backup"
+2021-07-08 15:55:52.684722 (Thread-1): SQL status: ALTER TABLE in 0.03 seconds
+2021-07-08 15:55:52.696566 (Thread-1): Using redshift connection "model.my_new_project.musicals_info".
+2021-07-08 15:55:52.697553 (Thread-1): On model.my_new_project.musicals_info: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.my_new_project.musicals_info"} */
+alter table "dev"."public"."musicals_info__dbt_tmp" rename to "musicals_info"
+2021-07-08 15:55:52.726360 (Thread-1): SQL status: ALTER TABLE in 0.03 seconds
+2021-07-08 15:55:52.733341 (Thread-1): On model.my_new_project.musicals_info: COMMIT
+2021-07-08 15:55:52.734338 (Thread-1): Using redshift connection "model.my_new_project.musicals_info".
+2021-07-08 15:55:52.735393 (Thread-1): On model.my_new_project.musicals_info: COMMIT
+2021-07-08 15:55:52.798988 (Thread-1): SQL status: COMMIT in 0.06 seconds
+2021-07-08 15:55:52.800989 (Thread-1): Using redshift connection "model.my_new_project.musicals_info".
+2021-07-08 15:55:52.800989 (Thread-1): On model.my_new_project.musicals_info: BEGIN
+2021-07-08 15:55:52.830345 (Thread-1): SQL status: BEGIN in 0.03 seconds
+2021-07-08 15:55:52.840640 (Thread-1): Using redshift connection "model.my_new_project.musicals_info".
+2021-07-08 15:55:52.841314 (Thread-1): On model.my_new_project.musicals_info: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.my_new_project.musicals_info"} */
+drop table if exists "dev"."public"."musicals_info__dbt_backup" cascade
+2021-07-08 15:55:52.883480 (Thread-1): SQL status: DROP TABLE in 0.04 seconds
+2021-07-08 15:55:52.888467 (Thread-1): On model.my_new_project.musicals_info: COMMIT
+2021-07-08 15:55:52.889463 (Thread-1): Using redshift connection "model.my_new_project.musicals_info".
+2021-07-08 15:55:52.889463 (Thread-1): On model.my_new_project.musicals_info: COMMIT
+2021-07-08 15:55:52.942943 (Thread-1): SQL status: COMMIT in 0.05 seconds
+2021-07-08 15:55:52.944000 (Thread-1): Using redshift connection "model.my_new_project.musicals_info".
+2021-07-08 15:55:52.944000 (Thread-1): On model.my_new_project.musicals_info: BEGIN
+2021-07-08 15:55:52.972697 (Thread-1): SQL status: BEGIN in 0.03 seconds
+2021-07-08 15:55:52.975538 (Thread-1): finished collecting timing info
+2021-07-08 15:55:52.975538 (Thread-1): On model.my_new_project.musicals_info: ROLLBACK
+2021-07-08 15:55:53.005723 (Thread-1): On model.my_new_project.musicals_info: Close
+2021-07-08 15:55:53.008762 (Thread-1): Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1ce81d87-b0c1-45fa-aba0-a47ba6a5fbb6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C38AE32F08>]}
+2021-07-08 15:55:53.009763 (Thread-1): 10:55:53 | 2 of 8 OK created table model public.musicals_info................... [SELECT in 0.76s]
+2021-07-08 15:55:53.013696 (Thread-1): Finished running node model.my_new_project.musicals_info
+2021-07-08 15:55:53.015696 (Thread-1): Began running node model.redshift.redshift_columns
+2021-07-08 15:55:53.018682 (Thread-1): Acquiring new redshift connection "model.redshift.redshift_columns".
+2021-07-08 15:55:53.018682 (Thread-1): Compiling model.redshift.redshift_columns
+2021-07-08 15:55:53.037681 (Thread-1): Writing injected SQL for node "model.redshift.redshift_columns"
+2021-07-08 15:55:53.041349 (Thread-1): finished collecting timing info
+2021-07-08 15:55:53.042614 (Thread-1): Finished running node model.redshift.redshift_columns
+2021-07-08 15:55:53.042614 (Thread-1): Began running node model.redshift.redshift_constraints
+2021-07-08 15:55:53.044608 (Thread-1): Acquiring new redshift connection "model.redshift.redshift_constraints".
+2021-07-08 15:55:53.044608 (Thread-1): Compiling model.redshift.redshift_constraints
+2021-07-08 15:55:53.056584 (Thread-1): Writing injected SQL for node "model.redshift.redshift_constraints"
+2021-07-08 15:55:53.058579 (Thread-1): finished collecting timing info
+2021-07-08 15:55:53.059577 (Thread-1): Finished running node model.redshift.redshift_constraints
+2021-07-08 15:55:53.060638 (Thread-1): Began running node model.redshift.redshift_sort_dist_keys
+2021-07-08 15:55:53.061567 (Thread-1): Acquiring new redshift connection "model.redshift.redshift_sort_dist_keys".
+2021-07-08 15:55:53.062561 (Thread-1): Compiling model.redshift.redshift_sort_dist_keys
+2021-07-08 15:55:53.073780 (Thread-1): Writing injected SQL for node "model.redshift.redshift_sort_dist_keys"
+2021-07-08 15:55:53.076906 (Thread-1): finished collecting timing info
+2021-07-08 15:55:53.078764 (Thread-1): Finished running node model.redshift.redshift_sort_dist_keys
+2021-07-08 15:55:53.079837 (Thread-1): Began running node model.redshift.redshift_tables
+2021-07-08 15:55:53.081856 (Thread-1): Acquiring new redshift connection "model.redshift.redshift_tables".
+2021-07-08 15:55:53.082756 (Thread-1): Compiling model.redshift.redshift_tables
+2021-07-08 15:55:53.097714 (Thread-1): Writing injected SQL for node "model.redshift.redshift_tables"
+2021-07-08 15:55:53.099531 (Thread-1): finished collecting timing info
+2021-07-08 15:55:53.100775 (Thread-1): Finished running node model.redshift.redshift_tables
+2021-07-08 15:55:53.100775 (Thread-1): Began running node model.redshift.redshift_admin_users_schema_privileges
+2021-07-08 15:55:53.101704 (Thread-1): 10:55:53 | 3 of 8 START view model public.redshift_admin_users_schema_privileges [RUN]
+2021-07-08 15:55:53.102701 (Thread-1): Acquiring new redshift connection "model.redshift.redshift_admin_users_schema_privileges".
+2021-07-08 15:55:53.103699 (Thread-1): Compiling model.redshift.redshift_admin_users_schema_privileges
+2021-07-08 15:55:53.178534 (Thread-1): Writing injected SQL for node "model.redshift.redshift_admin_users_schema_privileges"
+2021-07-08 15:55:53.180367 (Thread-1): finished collecting timing info
+2021-07-08 15:55:53.209414 (Thread-1): Writing runtime SQL for node "model.redshift.redshift_admin_users_schema_privileges"
+2021-07-08 15:55:53.211409 (Thread-1): Using redshift connection "model.redshift.redshift_admin_users_schema_privileges".
+2021-07-08 15:55:53.211409 (Thread-1): On model.redshift.redshift_admin_users_schema_privileges: BEGIN
+2021-07-08 15:55:53.211409 (Thread-1): Opening a new connection, currently in state closed
+2021-07-08 15:55:53.211409 (Thread-1): Connecting to Redshift using 'database' credentials
+2021-07-08 15:55:53.549527 (Thread-1): SQL status: BEGIN in 0.34 seconds
+2021-07-08 15:55:53.550263 (Thread-1): Using redshift connection "model.redshift.redshift_admin_users_schema_privileges".
+2021-07-08 15:55:53.550263 (Thread-1): On model.redshift.redshift_admin_users_schema_privileges: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.redshift.redshift_admin_users_schema_privileges"} */
+
+
+  create view "dev"."public"."redshift_admin_users_schema_privileges__dbt_tmp" as (
+    with  __dbt__cte__pg_tables as (
+select
+  schemaname as schema_name
+, tablename as table_name
+, tableowner as table_owner
+, tablespace as table_space
+, hasindexes as has_indexes
+, hasrules as has_rules
+, hastriggers as has_triggers
+from pg_tables
+),  __dbt__cte__pg_views as (
+select
+  schemaname as schema_name
+, viewname as view_name
+, viewowner as view_owner
+from pg_views
+),  __dbt__cte__pg_user as (
+select
+
+  usesysid as user_id
+, usename as username
+
+from pg_user
+),tables as (
+
+  select * from __dbt__cte__pg_tables
+
+), views as (
+
+  select * from __dbt__cte__pg_views
+
+), users as (
+
+  select * from __dbt__cte__pg_user
+  
+), schemas as (
+  
+  select
+  distinct(schema_name)
+  from tables
+  where schema_name not in ('pg_catalog', 'information_schema')
+        
+  union
+        
+  select
+  distinct(schema_name)
+  from views
+        
+  where schema_name not in ('pg_catalog', 'information_schema')
+  
+)
+
+
+select 
+  schemas.schema_name
+, users.username
+, has_schema_privilege(users.username, schemas.schema_name, 'usage') AS has_usage_privilege
+, has_schema_privilege(users.username, schemas.schema_name, 'create') AS has_create_privilege
+from schemas
+cross join users
+order by schemas.schema_name, users.username
+  ) ;
+
+2021-07-08 15:55:53.597410 (Thread-1): SQL status: CREATE VIEW in 0.05 seconds
+2021-07-08 15:55:53.616099 (Thread-1): Using redshift connection "model.redshift.redshift_admin_users_schema_privileges".
+2021-07-08 15:55:53.617099 (Thread-1): On model.redshift.redshift_admin_users_schema_privileges: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.redshift.redshift_admin_users_schema_privileges"} */
+alter table "dev"."public"."redshift_admin_users_schema_privileges" rename to "redshift_admin_users_schema_privileges__dbt_backup"
+2021-07-08 15:55:53.647072 (Thread-1): SQL status: ALTER TABLE in 0.03 seconds
+2021-07-08 15:55:53.656467 (Thread-1): Using redshift connection "model.redshift.redshift_admin_users_schema_privileges".
+2021-07-08 15:55:53.656467 (Thread-1): On model.redshift.redshift_admin_users_schema_privileges: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.redshift.redshift_admin_users_schema_privileges"} */
+alter table "dev"."public"."redshift_admin_users_schema_privileges__dbt_tmp" rename to "redshift_admin_users_schema_privileges"
+2021-07-08 15:55:53.686422 (Thread-1): SQL status: ALTER TABLE in 0.03 seconds
+2021-07-08 15:55:53.689374 (Thread-1): On model.redshift.redshift_admin_users_schema_privileges: COMMIT
+2021-07-08 15:55:53.690371 (Thread-1): Using redshift connection "model.redshift.redshift_admin_users_schema_privileges".
+2021-07-08 15:55:53.690371 (Thread-1): On model.redshift.redshift_admin_users_schema_privileges: COMMIT
+2021-07-08 15:55:53.747612 (Thread-1): SQL status: COMMIT in 0.06 seconds
+2021-07-08 15:55:53.748494 (Thread-1): Using redshift connection "model.redshift.redshift_admin_users_schema_privileges".
+2021-07-08 15:55:53.749491 (Thread-1): On model.redshift.redshift_admin_users_schema_privileges: BEGIN
+2021-07-08 15:55:53.778954 (Thread-1): SQL status: BEGIN in 0.03 seconds
+2021-07-08 15:55:53.796932 (Thread-1): Using redshift connection "model.redshift.redshift_admin_users_schema_privileges".
+2021-07-08 15:55:53.796932 (Thread-1): On model.redshift.redshift_admin_users_schema_privileges: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.redshift.redshift_admin_users_schema_privileges"} */
+drop view if exists "dev"."public"."redshift_admin_users_schema_privileges__dbt_backup" cascade
+2021-07-08 15:55:53.831443 (Thread-1): SQL status: DROP VIEW in 0.03 seconds
+2021-07-08 15:55:53.835480 (Thread-1): On model.redshift.redshift_admin_users_schema_privileges: COMMIT
+2021-07-08 15:55:53.836471 (Thread-1): Using redshift connection "model.redshift.redshift_admin_users_schema_privileges".
+2021-07-08 15:55:53.836471 (Thread-1): On model.redshift.redshift_admin_users_schema_privileges: COMMIT
+2021-07-08 15:55:53.888470 (Thread-1): SQL status: COMMIT in 0.05 seconds
+2021-07-08 15:55:53.889541 (Thread-1): Using redshift connection "model.redshift.redshift_admin_users_schema_privileges".
+2021-07-08 15:55:53.890534 (Thread-1): On model.redshift.redshift_admin_users_schema_privileges: BEGIN
+2021-07-08 15:55:53.921991 (Thread-1): SQL status: BEGIN in 0.03 seconds
+2021-07-08 15:55:53.923906 (Thread-1): finished collecting timing info
+2021-07-08 15:55:53.924902 (Thread-1): On model.redshift.redshift_admin_users_schema_privileges: ROLLBACK
+2021-07-08 15:55:53.954166 (Thread-1): On model.redshift.redshift_admin_users_schema_privileges: Close
+2021-07-08 15:55:53.959156 (Thread-1): Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1ce81d87-b0c1-45fa-aba0-a47ba6a5fbb6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C38A9B4F48>]}
+2021-07-08 15:55:53.961151 (Thread-1): 10:55:53 | 3 of 8 OK created view model public.redshift_admin_users_schema_privileges [CREATE VIEW in 0.86s]
+2021-07-08 15:55:53.966139 (Thread-1): Finished running node model.redshift.redshift_admin_users_schema_privileges
+2021-07-08 15:55:53.967132 (Thread-1): Began running node model.redshift.redshift_admin_users_table_view_privileges
+2021-07-08 15:55:53.971121 (Thread-1): 10:55:53 | 4 of 8 START view model public.redshift_admin_users_table_view_privileges [RUN]
+2021-07-08 15:55:53.974113 (Thread-1): Acquiring new redshift connection "model.redshift.redshift_admin_users_table_view_privileges".
+2021-07-08 15:55:53.975343 (Thread-1): Compiling model.redshift.redshift_admin_users_table_view_privileges
+2021-07-08 15:55:54.075086 (Thread-1): Writing injected SQL for node "model.redshift.redshift_admin_users_table_view_privileges"
+2021-07-08 15:55:54.078079 (Thread-1): finished collecting timing info
+2021-07-08 15:55:54.091070 (Thread-1): Writing runtime SQL for node "model.redshift.redshift_admin_users_table_view_privileges"
+2021-07-08 15:55:54.095058 (Thread-1): Using redshift connection "model.redshift.redshift_admin_users_table_view_privileges".
+2021-07-08 15:55:54.098050 (Thread-1): On model.redshift.redshift_admin_users_table_view_privileges: BEGIN
+2021-07-08 15:55:54.098050 (Thread-1): Opening a new connection, currently in state closed
+2021-07-08 15:55:54.099046 (Thread-1): Connecting to Redshift using 'database' credentials
+2021-07-08 15:55:54.429174 (Thread-1): SQL status: BEGIN in 0.33 seconds
+2021-07-08 15:55:54.430196 (Thread-1): Using redshift connection "model.redshift.redshift_admin_users_table_view_privileges".
+2021-07-08 15:55:54.431185 (Thread-1): On model.redshift.redshift_admin_users_table_view_privileges: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.redshift.redshift_admin_users_table_view_privileges"} */
+
+
+  create view "dev"."public"."redshift_admin_users_table_view_privileges__dbt_tmp" as (
+    with  __dbt__cte__pg_tables as (
+select
+  schemaname as schema_name
+, tablename as table_name
+, tableowner as table_owner
+, tablespace as table_space
+, hasindexes as has_indexes
+, hasrules as has_rules
+, hastriggers as has_triggers
+from pg_tables
+),  __dbt__cte__pg_views as (
+select
+  schemaname as schema_name
+, viewname as view_name
+, viewowner as view_owner
+from pg_views
+),  __dbt__cte__pg_user as (
+select
+
+  usesysid as user_id
+, usename as username
+
+from pg_user
+),tables as (
+
+  select * from __dbt__cte__pg_tables
+
+), views as (
+
+  select * from __dbt__cte__pg_views
+
+), users as (
+
+  select * from __dbt__cte__pg_user
+
+), objects as (
+  
+  select
+    schema_name
+  , 'table' as object_type
+  , table_name as object_name
+  , '"' || schema_name || '"."' || table_name || '"' as full_object_name
+  from tables
+  where schema_name not in ('pg_catalog', 'information_schema')
+  
+  union
+  
+  select
+    schema_name
+  , 'view' as object_type
+  , view_name as object_name
+  , '"' || schema_name || '"."' || view_name || '"' as full_object_name
+  from views
+  where schema_name not in ('pg_catalog', 'information_schema')
+  
+)
+
+select 
+  objects.schema_name
+, objects.object_name
+, users.username
+, has_table_privilege(users.username, objects.full_object_name, 'select') as has_select_privilege
+, has_table_privilege(users.username, objects.full_object_name, 'insert') as has_insert_privilege
+, has_table_privilege(users.username, objects.full_object_name, 'update') as has_update_privilege
+, has_table_privilege(users.username, objects.full_object_name, 'delete') as has_delete_privilege
+, has_table_privilege(users.username, objects.full_object_name, 'references') as has_references_privilege
+from objects
+cross join users
+order by objects.full_object_name, users.username
+  ) ;
+
+2021-07-08 15:55:54.474462 (Thread-1): SQL status: CREATE VIEW in 0.04 seconds
+2021-07-08 15:55:54.500245 (Thread-1): Using redshift connection "model.redshift.redshift_admin_users_table_view_privileges".
+2021-07-08 15:55:54.501243 (Thread-1): On model.redshift.redshift_admin_users_table_view_privileges: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.redshift.redshift_admin_users_table_view_privileges"} */
+alter table "dev"."public"."redshift_admin_users_table_view_privileges" rename to "redshift_admin_users_table_view_privileges__dbt_backup"
+2021-07-08 15:55:54.530479 (Thread-1): SQL status: ALTER TABLE in 0.03 seconds
+2021-07-08 15:55:54.544437 (Thread-1): Using redshift connection "model.redshift.redshift_admin_users_table_view_privileges".
+2021-07-08 15:55:54.544437 (Thread-1): On model.redshift.redshift_admin_users_table_view_privileges: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.redshift.redshift_admin_users_table_view_privileges"} */
+alter table "dev"."public"."redshift_admin_users_table_view_privileges__dbt_tmp" rename to "redshift_admin_users_table_view_privileges"
+2021-07-08 15:55:54.574357 (Thread-1): SQL status: ALTER TABLE in 0.03 seconds
+2021-07-08 15:55:54.580394 (Thread-1): On model.redshift.redshift_admin_users_table_view_privileges: COMMIT
+2021-07-08 15:55:54.581406 (Thread-1): Using redshift connection "model.redshift.redshift_admin_users_table_view_privileges".
+2021-07-08 15:55:54.582408 (Thread-1): On model.redshift.redshift_admin_users_table_view_privileges: COMMIT
+2021-07-08 15:55:54.633319 (Thread-1): SQL status: COMMIT in 0.05 seconds
+2021-07-08 15:55:54.634262 (Thread-1): Using redshift connection "model.redshift.redshift_admin_users_table_view_privileges".
+2021-07-08 15:55:54.635259 (Thread-1): On model.redshift.redshift_admin_users_table_view_privileges: BEGIN
+2021-07-08 15:55:54.665186 (Thread-1): SQL status: BEGIN in 0.03 seconds
+2021-07-08 15:55:54.683365 (Thread-1): Using redshift connection "model.redshift.redshift_admin_users_table_view_privileges".
+2021-07-08 15:55:54.683365 (Thread-1): On model.redshift.redshift_admin_users_table_view_privileges: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.redshift.redshift_admin_users_table_view_privileges"} */
+drop view if exists "dev"."public"."redshift_admin_users_table_view_privileges__dbt_backup" cascade
+2021-07-08 15:55:54.717139 (Thread-1): SQL status: DROP VIEW in 0.03 seconds
+2021-07-08 15:55:54.721125 (Thread-1): On model.redshift.redshift_admin_users_table_view_privileges: COMMIT
+2021-07-08 15:55:54.721125 (Thread-1): Using redshift connection "model.redshift.redshift_admin_users_table_view_privileges".
+2021-07-08 15:55:54.722124 (Thread-1): On model.redshift.redshift_admin_users_table_view_privileges: COMMIT
+2021-07-08 15:55:54.771004 (Thread-1): SQL status: COMMIT in 0.05 seconds
+2021-07-08 15:55:54.771991 (Thread-1): Using redshift connection "model.redshift.redshift_admin_users_table_view_privileges".
+2021-07-08 15:55:54.771991 (Thread-1): On model.redshift.redshift_admin_users_table_view_privileges: BEGIN
+2021-07-08 15:55:54.800496 (Thread-1): SQL status: BEGIN in 0.03 seconds
+2021-07-08 15:55:54.803036 (Thread-1): finished collecting timing info
+2021-07-08 15:55:54.804158 (Thread-1): On model.redshift.redshift_admin_users_table_view_privileges: ROLLBACK
+2021-07-08 15:55:54.832067 (Thread-1): On model.redshift.redshift_admin_users_table_view_privileges: Close
+2021-07-08 15:55:54.835947 (Thread-1): Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1ce81d87-b0c1-45fa-aba0-a47ba6a5fbb6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C38AAB75C8>]}
+2021-07-08 15:55:54.837951 (Thread-1): 10:55:54 | 4 of 8 OK created view model public.redshift_admin_users_table_view_privileges [CREATE VIEW in 0.86s]
+2021-07-08 15:55:54.840938 (Thread-1): Finished running node model.redshift.redshift_admin_users_table_view_privileges
+2021-07-08 15:55:54.841940 (Thread-1): Began running node model.my_new_project.my_second_dbt_model
+2021-07-08 15:55:54.843975 (Thread-1): 10:55:54 | 5 of 8 START view model public.my_second_dbt_model................... [RUN]
+2021-07-08 15:55:54.845972 (Thread-1): Acquiring new redshift connection "model.my_new_project.my_second_dbt_model".
+2021-07-08 15:55:54.847353 (Thread-1): Compiling model.my_new_project.my_second_dbt_model
+2021-07-08 15:55:54.863874 (Thread-1): Writing injected SQL for node "model.my_new_project.my_second_dbt_model"
+2021-07-08 15:55:55.100803 (Thread-1): finished collecting timing info
+2021-07-08 15:55:55.119765 (Thread-1): Writing runtime SQL for node "model.my_new_project.my_second_dbt_model"
+2021-07-08 15:55:55.122758 (Thread-1): Using redshift connection "model.my_new_project.my_second_dbt_model".
+2021-07-08 15:55:55.123718 (Thread-1): On model.my_new_project.my_second_dbt_model: BEGIN
+2021-07-08 15:55:55.123718 (Thread-1): Opening a new connection, currently in state closed
+2021-07-08 15:55:55.124718 (Thread-1): Connecting to Redshift using 'database' credentials
+2021-07-08 15:55:55.420585 (Thread-1): SQL status: BEGIN in 0.30 seconds
+2021-07-08 15:55:55.421656 (Thread-1): Using redshift connection "model.my_new_project.my_second_dbt_model".
+2021-07-08 15:55:55.422650 (Thread-1): On model.my_new_project.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.my_new_project.my_second_dbt_model"} */
+
+
+  create view "dev"."public"."my_second_dbt_model__dbt_tmp" as (
+    -- Use the `ref` function to select from other models
+
+select *
+from "dev"."public"."my_first_dbt_model"
+where id = 1
+  ) ;
+
+2021-07-08 15:55:55.460514 (Thread-1): SQL status: CREATE VIEW in 0.04 seconds
+2021-07-08 15:55:55.472537 (Thread-1): Using redshift connection "model.my_new_project.my_second_dbt_model".
+2021-07-08 15:55:55.472537 (Thread-1): On model.my_new_project.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.my_new_project.my_second_dbt_model"} */
+alter table "dev"."public"."my_second_dbt_model__dbt_tmp" rename to "my_second_dbt_model"
+2021-07-08 15:55:55.505139 (Thread-1): SQL status: ALTER TABLE in 0.03 seconds
+2021-07-08 15:55:55.510185 (Thread-1): On model.my_new_project.my_second_dbt_model: COMMIT
+2021-07-08 15:55:55.511185 (Thread-1): Using redshift connection "model.my_new_project.my_second_dbt_model".
+2021-07-08 15:55:55.511185 (Thread-1): On model.my_new_project.my_second_dbt_model: COMMIT
+2021-07-08 15:55:55.563824 (Thread-1): SQL status: COMMIT in 0.05 seconds
+2021-07-08 15:55:55.565767 (Thread-1): Using redshift connection "model.my_new_project.my_second_dbt_model".
+2021-07-08 15:55:55.565767 (Thread-1): On model.my_new_project.my_second_dbt_model: BEGIN
+2021-07-08 15:55:55.593926 (Thread-1): SQL status: BEGIN in 0.03 seconds
+2021-07-08 15:55:55.603917 (Thread-1): Using redshift connection "model.my_new_project.my_second_dbt_model".
+2021-07-08 15:55:55.603917 (Thread-1): On model.my_new_project.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.my_new_project.my_second_dbt_model"} */
+drop view if exists "dev"."public"."my_second_dbt_model__dbt_backup" cascade
+2021-07-08 15:55:55.632697 (Thread-1): SQL status: DROP VIEW in 0.03 seconds
+2021-07-08 15:55:55.636514 (Thread-1): On model.my_new_project.my_second_dbt_model: COMMIT
+2021-07-08 15:55:55.637512 (Thread-1): Using redshift connection "model.my_new_project.my_second_dbt_model".
+2021-07-08 15:55:55.637512 (Thread-1): On model.my_new_project.my_second_dbt_model: COMMIT
+2021-07-08 15:55:55.685780 (Thread-1): SQL status: COMMIT in 0.05 seconds
+2021-07-08 15:55:55.686752 (Thread-1): Using redshift connection "model.my_new_project.my_second_dbt_model".
+2021-07-08 15:55:55.687781 (Thread-1): On model.my_new_project.my_second_dbt_model: BEGIN
+2021-07-08 15:55:55.716448 (Thread-1): SQL status: BEGIN in 0.03 seconds
+2021-07-08 15:55:55.719371 (Thread-1): finished collecting timing info
+2021-07-08 15:55:55.719371 (Thread-1): On model.my_new_project.my_second_dbt_model: ROLLBACK
+2021-07-08 15:55:55.747998 (Thread-1): On model.my_new_project.my_second_dbt_model: Close
+2021-07-08 15:55:55.750776 (Thread-1): Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1ce81d87-b0c1-45fa-aba0-a47ba6a5fbb6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C38A993448>]}
+2021-07-08 15:55:55.751773 (Thread-1): 10:55:55 | 5 of 8 OK created view model public.my_second_dbt_model.............. [CREATE VIEW in 0.90s]
+2021-07-08 15:55:55.754933 (Thread-1): Finished running node model.my_new_project.my_second_dbt_model
+2021-07-08 15:55:55.756421 (Thread-1): Began running node model.redshift.redshift_admin_dependencies
+2021-07-08 15:55:55.757761 (Thread-1): 10:55:55 | 6 of 8 START view model public.redshift_admin_dependencies........... [RUN]
+2021-07-08 15:55:55.760748 (Thread-1): Acquiring new redshift connection "model.redshift.redshift_admin_dependencies".
+2021-07-08 15:55:55.761749 (Thread-1): Compiling model.redshift.redshift_admin_dependencies
+2021-07-08 15:55:55.825656 (Thread-1): Writing injected SQL for node "model.redshift.redshift_admin_dependencies"
+2021-07-08 15:55:55.826653 (Thread-1): finished collecting timing info
+2021-07-08 15:55:55.840615 (Thread-1): Writing runtime SQL for node "model.redshift.redshift_admin_dependencies"
+2021-07-08 15:55:55.842612 (Thread-1): Using redshift connection "model.redshift.redshift_admin_dependencies".
+2021-07-08 15:55:55.842612 (Thread-1): On model.redshift.redshift_admin_dependencies: BEGIN
+2021-07-08 15:55:55.842612 (Thread-1): Opening a new connection, currently in state closed
+2021-07-08 15:55:55.842612 (Thread-1): Connecting to Redshift using 'database' credentials
+2021-07-08 15:55:56.156679 (Thread-1): SQL status: BEGIN in 0.31 seconds
+2021-07-08 15:55:56.157695 (Thread-1): Using redshift connection "model.redshift.redshift_admin_dependencies".
+2021-07-08 15:55:56.157695 (Thread-1): On model.redshift.redshift_admin_dependencies: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.redshift.redshift_admin_dependencies"} */
+
+
+  create view "dev"."public"."redshift_admin_dependencies__dbt_tmp" as (
+    
+
+with __dbt__cte__pg_class as (
+select
+  oid
+, relname
+, relnamespace
+, reltype
+, relowner
+, relam
+, relfilenode
+, reltablespace
+, relpages
+, reltuples
+, reltoastrelid
+, reltoastidxid
+, relhasindex
+, relisshared
+, relkind
+, relnatts
+, relexternid
+, relisreplicated
+, relispinned
+, reldiststyle
+, relprojbaseid
+, relchecks
+, reltriggers
+, relukeys
+, relfkeys
+, relrefs
+, relhasoids
+, relhaspkey
+, relhasrules
+, relhassubclass
+, relacl
+from pg_class
+),  __dbt__cte__pg_depend as (
+select
+  classid
+, objid
+, objsubid
+, refclassid
+, refobjid
+, refobjsubid
+, deptype
+from pg_depend
+),  __dbt__cte__pg_namespace as (
+select
+  oid
+, nspname
+, nspowner
+, nspacl
+from pg_namespace
+)select distinct
+  srcobj.oid as source_oid
+  , srcnsp.nspname as source_schemaname
+  , srcobj.relname as source_objectname
+  , tgtobj.oid as dependent_oid
+  , tgtnsp.nspname as dependent_schemaname
+  , tgtobj.relname as dependent_objectname
+
+from
+
+  __dbt__cte__pg_class as srcobj
+  join __dbt__cte__pg_depend as srcdep on srcobj.oid = srcdep.refobjid
+  join __dbt__cte__pg_depend as tgtdep on srcdep.objid = tgtdep.objid
+  join __dbt__cte__pg_class as tgtobj
+    on tgtdep.refobjid = tgtobj.oid
+    and srcobj.oid <> tgtobj.oid
+  left join __dbt__cte__pg_namespace as srcnsp
+    on srcobj.relnamespace = srcnsp.oid
+  left join __dbt__cte__pg_namespace tgtnsp on tgtobj.relnamespace = tgtnsp.oid
+
+where
+  tgtdep.deptype = 'i' --dependency_internal
+  and tgtobj.relkind = 'v' --i=index, v=view, s=sequence
+  ) ;
+
+2021-07-08 15:55:56.207652 (Thread-1): SQL status: CREATE VIEW in 0.05 seconds
+2021-07-08 15:55:56.220742 (Thread-1): Using redshift connection "model.redshift.redshift_admin_dependencies".
+2021-07-08 15:55:56.221675 (Thread-1): On model.redshift.redshift_admin_dependencies: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.redshift.redshift_admin_dependencies"} */
+alter table "dev"."public"."redshift_admin_dependencies" rename to "redshift_admin_dependencies__dbt_backup"
+2021-07-08 15:55:56.252286 (Thread-1): SQL status: ALTER TABLE in 0.03 seconds
+2021-07-08 15:55:56.268293 (Thread-1): Using redshift connection "model.redshift.redshift_admin_dependencies".
+2021-07-08 15:55:56.268293 (Thread-1): On model.redshift.redshift_admin_dependencies: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.redshift.redshift_admin_dependencies"} */
+alter table "dev"."public"."redshift_admin_dependencies__dbt_tmp" rename to "redshift_admin_dependencies"
+2021-07-08 15:55:56.299226 (Thread-1): SQL status: ALTER TABLE in 0.03 seconds
+2021-07-08 15:55:56.305218 (Thread-1): On model.redshift.redshift_admin_dependencies: COMMIT
+2021-07-08 15:55:56.306217 (Thread-1): Using redshift connection "model.redshift.redshift_admin_dependencies".
+2021-07-08 15:55:56.306217 (Thread-1): On model.redshift.redshift_admin_dependencies: COMMIT
+2021-07-08 15:55:56.357827 (Thread-1): SQL status: COMMIT in 0.05 seconds
+2021-07-08 15:55:56.358886 (Thread-1): Using redshift connection "model.redshift.redshift_admin_dependencies".
+2021-07-08 15:55:56.359876 (Thread-1): On model.redshift.redshift_admin_dependencies: BEGIN
+2021-07-08 15:55:56.392188 (Thread-1): SQL status: BEGIN in 0.03 seconds
+2021-07-08 15:55:56.403306 (Thread-1): Using redshift connection "model.redshift.redshift_admin_dependencies".
+2021-07-08 15:55:56.403306 (Thread-1): On model.redshift.redshift_admin_dependencies: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.redshift.redshift_admin_dependencies"} */
+drop view if exists "dev"."public"."redshift_admin_dependencies__dbt_backup" cascade
+2021-07-08 15:55:56.436027 (Thread-1): SQL status: DROP VIEW in 0.03 seconds
+2021-07-08 15:55:56.440010 (Thread-1): On model.redshift.redshift_admin_dependencies: COMMIT
+2021-07-08 15:55:56.440010 (Thread-1): Using redshift connection "model.redshift.redshift_admin_dependencies".
+2021-07-08 15:55:56.441008 (Thread-1): On model.redshift.redshift_admin_dependencies: COMMIT
+2021-07-08 15:55:56.491837 (Thread-1): SQL status: COMMIT in 0.05 seconds
+2021-07-08 15:55:56.492903 (Thread-1): Using redshift connection "model.redshift.redshift_admin_dependencies".
+2021-07-08 15:55:56.492903 (Thread-1): On model.redshift.redshift_admin_dependencies: BEGIN
+2021-07-08 15:55:56.522774 (Thread-1): SQL status: BEGIN in 0.03 seconds
+2021-07-08 15:55:56.524768 (Thread-1): finished collecting timing info
+2021-07-08 15:55:56.525765 (Thread-1): On model.redshift.redshift_admin_dependencies: ROLLBACK
+2021-07-08 15:55:56.557531 (Thread-1): On model.redshift.redshift_admin_dependencies: Close
+2021-07-08 15:55:56.559576 (Thread-1): Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1ce81d87-b0c1-45fa-aba0-a47ba6a5fbb6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C38AB61908>]}
+2021-07-08 15:55:56.561571 (Thread-1): 10:55:56 | 6 of 8 OK created view model public.redshift_admin_dependencies...... [CREATE VIEW in 0.80s]
+2021-07-08 15:55:56.565509 (Thread-1): Finished running node model.redshift.redshift_admin_dependencies
+2021-07-08 15:55:56.566667 (Thread-1): Began running node model.redshift.redshift_cost
+2021-07-08 15:55:56.568588 (Thread-1): Acquiring new redshift connection "model.redshift.redshift_cost".
+2021-07-08 15:55:56.569548 (Thread-1): Compiling model.redshift.redshift_cost
+2021-07-08 15:55:56.625943 (Thread-1): Writing injected SQL for node "model.redshift.redshift_cost"
+2021-07-08 15:55:56.628900 (Thread-1): finished collecting timing info
+2021-07-08 15:55:56.631987 (Thread-1): Finished running node model.redshift.redshift_cost
+2021-07-08 15:55:56.632887 (Thread-1): Began running node model.redshift.redshift_admin_table_stats
+2021-07-08 15:55:56.634881 (Thread-1): 10:55:56 | 7 of 8 START view model public.redshift_admin_table_stats............ [RUN]
+2021-07-08 15:55:56.636882 (Thread-1): Acquiring new redshift connection "model.redshift.redshift_admin_table_stats".
+2021-07-08 15:55:56.637882 (Thread-1): Compiling model.redshift.redshift_admin_table_stats
+2021-07-08 15:55:56.831865 (Thread-1): Writing injected SQL for node "model.redshift.redshift_admin_table_stats"
+2021-07-08 15:55:56.839574 (Thread-1): finished collecting timing info
+2021-07-08 15:55:56.849829 (Thread-1): Writing runtime SQL for node "model.redshift.redshift_admin_table_stats"
+2021-07-08 15:55:56.849829 (Thread-1): Using redshift connection "model.redshift.redshift_admin_table_stats".
+2021-07-08 15:55:56.849829 (Thread-1): On model.redshift.redshift_admin_table_stats: BEGIN
+2021-07-08 15:55:56.849829 (Thread-1): Opening a new connection, currently in state closed
+2021-07-08 15:55:56.849829 (Thread-1): Connecting to Redshift using 'database' credentials
+2021-07-08 15:55:57.478406 (Thread-1): SQL status: BEGIN in 0.63 seconds
+2021-07-08 15:55:57.478406 (Thread-1): Using redshift connection "model.redshift.redshift_admin_table_stats".
+2021-07-08 15:55:57.479419 (Thread-1): On model.redshift.redshift_admin_table_stats: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.redshift.redshift_admin_table_stats"} */
+
+
+  create view "dev"."public"."redshift_admin_table_stats__dbt_tmp" as (
+    with  __dbt__cte__stv_tbl_perm as (
+select
+  slice
+, id -- table id
+, name -- table name
+, rows
+, sorted_rows
+, (rows - sorted_rows) as unsorted_rows
+, temp
+, db_id
+, backup
+from stv_tbl_perm
+),  __dbt__cte__pg_class as (
+select
+  oid
+, relname
+, relnamespace
+, reltype
+, relowner
+, relam
+, relfilenode
+, reltablespace
+, relpages
+, reltuples
+, reltoastrelid
+, reltoastidxid
+, relhasindex
+, relisshared
+, relkind
+, relnatts
+, relexternid
+, relisreplicated
+, relispinned
+, reldiststyle
+, relprojbaseid
+, relchecks
+, reltriggers
+, relukeys
+, relfkeys
+, relrefs
+, relhasoids
+, relhaspkey
+, relhasrules
+, relhassubclass
+, relacl
+from pg_class
+),  __dbt__cte__pg_namespace as (
+select
+  oid
+, nspname
+, nspowner
+, nspacl
+from pg_namespace
+),  __dbt__cte__stv_blocklist as (
+select
+  slice
+, col
+, tbl
+, blocknum
+, num_values
+, extended_limits
+, minvalue
+, maxvalue
+, sb_pos
+, pinned
+, on_disk
+, backed_up
+, modified
+, hdr_modified
+, unsorted
+, tombstone
+, preferred_diskno
+, temporary
+, newblock
+, num_readers
+, id
+, flags
+from stv_blocklist
+),  __dbt__cte__pg_attribute as (
+select
+  attrelid
+, attname
+, atttypid
+, attstattarget
+, attlen
+, attnum
+, attndims
+, attcacheoff
+, atttypmod
+, attbyval
+, attstorage
+, attalign
+, attnotnull
+, atthasdef
+, attisdropped
+, attislocal
+, attinhcount
+, attisdistkey
+, attispreloaded
+, attsortkeyord
+, attencodingtype
+, attencrypttype
+, (case attisdistkey
+        when 't' then attname
+        else null end) as dist_key
+, (case attsortkeyord
+        when 1 then attname
+        else null end) as sort_key
+from pg_attribute
+),  __dbt__cte__svv_diskusage as (
+select
+  db_id
+, name
+, slice
+, col
+, tbl
+, blocknum
+, num_values
+, extended_limits
+, minvalue
+, maxvalue
+, sb_pos
+, pinned
+, on_disk
+, backed_up
+, modified
+, hdr_modified
+, unsorted
+, tombstone
+, preferred_diskno
+, temporary
+, newblock
+, num_readers
+, id
+, flags
+from svv_diskusage
+),unsorted_by_table as (
+
+  select
+    db_id
+  , id as table_id
+  , name as table_name
+  , sum(rows) as rows
+  , sum(unsorted_rows) as unsorted_rows
+  from __dbt__cte__stv_tbl_perm
+  group by 1, 2, 3
+
+), pg_class as (
+
+  select * from __dbt__cte__pg_class
+
+), pg_namespace as (
+
+  select * from __dbt__cte__pg_namespace
+
+), table_sizes as (
+
+  select
+    tbl as table_id
+  , count(*) as size_in_megabytes
+  from __dbt__cte__stv_blocklist
+  group by 1
+
+), table_attributes as (
+
+  select
+    attrelid as table_id
+  , min(dist_key) as dist_key
+  , min(sort_key) as sort_key
+  , max(attsortkeyord) as num_sort_keys
+  , (max(attencodingtype) > 0) as is_encoded
+  , max(attnum) as num_columns
+  from __dbt__cte__pg_attribute
+  group by 1
+
+), slice_distribution as (
+
+  select
+    tbl as table_id
+  , trim(name) as name
+  , slice
+  , count(*) as size_in_megabytes
+
+  from __dbt__cte__svv_diskusage
+  group by 1, 2, 3
+
+), capacity as (
+
+  select
+    sum(capacity) as total_megabytes
+  from
+  stv_partitions
+  where part_begin=0
+
+), table_distribution_ratio as (
+
+  select
+    table_id
+  , (max(size_in_megabytes)::float / min(size_in_megabytes)::float)
+      as ratio
+  from slice_distribution
+  group by 1
+
+)
+
+select
+
+  trim(pg_namespace.nspname) as schema
+, trim(unsorted_by_table.table_name) as table
+, unsorted_by_table.rows
+, unsorted_by_table.unsorted_rows
+, (case unsorted_by_table.rows
+        when 0 then 0
+        else (unsorted_by_table.unsorted_rows::float / unsorted_by_table.rows::float) * 100.0 end)
+    as percent_rows_unsorted
+, unsorted_by_table.table_id
+
+, decode(pg_class.reldiststyle, 0, 'even',
+                              1, table_attributes.dist_key,
+                              'all') as dist_style
+, table_distribution_ratio.ratio as dist_skew
+
+, (table_attributes.sort_key is not null) as is_sorted
+, table_attributes.sort_key
+, table_attributes.num_sort_keys
+, table_attributes.num_columns
+
+, table_sizes.size_in_megabytes
+, (case capacity.total_megabytes
+        when 0 then 0
+        else (table_sizes.size_in_megabytes::float / capacity.total_megabytes::float) * 100.0 end)
+    as disk_used_percent_of_total
+, table_attributes.is_encoded
+
+from unsorted_by_table
+
+inner join pg_class
+  on pg_class.oid = unsorted_by_table.table_id
+
+inner join pg_namespace
+  on pg_namespace.oid = pg_class.relnamespace
+
+inner join capacity
+  on 1=1
+
+left join table_sizes
+  on unsorted_by_table.table_id = table_sizes.table_id
+
+inner join table_attributes
+  on table_attributes.table_id = unsorted_by_table.table_id
+
+inner join table_distribution_ratio
+  on table_distribution_ratio.table_id = unsorted_by_table.table_id
+  ) ;
+
+2021-07-08 15:55:57.533212 (Thread-1): SQL status: CREATE VIEW in 0.05 seconds
+2021-07-08 15:55:57.553208 (Thread-1): Using redshift connection "model.redshift.redshift_admin_table_stats".
+2021-07-08 15:55:57.554203 (Thread-1): On model.redshift.redshift_admin_table_stats: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.redshift.redshift_admin_table_stats"} */
+alter table "dev"."public"."redshift_admin_table_stats" rename to "redshift_admin_table_stats__dbt_backup"
+2021-07-08 15:55:57.616593 (Thread-1): SQL status: ALTER TABLE in 0.06 seconds
+2021-07-08 15:55:57.631684 (Thread-1): Using redshift connection "model.redshift.redshift_admin_table_stats".
+2021-07-08 15:55:57.632611 (Thread-1): On model.redshift.redshift_admin_table_stats: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.redshift.redshift_admin_table_stats"} */
+alter table "dev"."public"."redshift_admin_table_stats__dbt_tmp" rename to "redshift_admin_table_stats"
+2021-07-08 15:55:57.663384 (Thread-1): SQL status: ALTER TABLE in 0.03 seconds
+2021-07-08 15:55:57.668327 (Thread-1): On model.redshift.redshift_admin_table_stats: COMMIT
+2021-07-08 15:55:57.669796 (Thread-1): Using redshift connection "model.redshift.redshift_admin_table_stats".
+2021-07-08 15:55:57.670320 (Thread-1): On model.redshift.redshift_admin_table_stats: COMMIT
+2021-07-08 15:55:57.721798 (Thread-1): SQL status: COMMIT in 0.05 seconds
+2021-07-08 15:55:57.722822 (Thread-1): Using redshift connection "model.redshift.redshift_admin_table_stats".
+2021-07-08 15:55:57.723813 (Thread-1): On model.redshift.redshift_admin_table_stats: BEGIN
+2021-07-08 15:55:57.752457 (Thread-1): SQL status: BEGIN in 0.03 seconds
+2021-07-08 15:55:57.761145 (Thread-1): Using redshift connection "model.redshift.redshift_admin_table_stats".
+2021-07-08 15:55:57.761145 (Thread-1): On model.redshift.redshift_admin_table_stats: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.redshift.redshift_admin_table_stats"} */
+drop view if exists "dev"."public"."redshift_admin_table_stats__dbt_backup" cascade
+2021-07-08 15:55:57.802564 (Thread-1): SQL status: DROP VIEW in 0.04 seconds
+2021-07-08 15:55:57.805606 (Thread-1): On model.redshift.redshift_admin_table_stats: COMMIT
+2021-07-08 15:55:57.806606 (Thread-1): Using redshift connection "model.redshift.redshift_admin_table_stats".
+2021-07-08 15:55:57.806606 (Thread-1): On model.redshift.redshift_admin_table_stats: COMMIT
+2021-07-08 15:55:57.857093 (Thread-1): SQL status: COMMIT in 0.05 seconds
+2021-07-08 15:55:57.858158 (Thread-1): Using redshift connection "model.redshift.redshift_admin_table_stats".
+2021-07-08 15:55:57.858158 (Thread-1): On model.redshift.redshift_admin_table_stats: BEGIN
+2021-07-08 15:55:57.886703 (Thread-1): SQL status: BEGIN in 0.03 seconds
+2021-07-08 15:55:57.888908 (Thread-1): finished collecting timing info
+2021-07-08 15:55:57.889752 (Thread-1): On model.redshift.redshift_admin_table_stats: ROLLBACK
+2021-07-08 15:55:57.938392 (Thread-1): On model.redshift.redshift_admin_table_stats: Close
+2021-07-08 15:55:57.941268 (Thread-1): Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1ce81d87-b0c1-45fa-aba0-a47ba6a5fbb6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C38AC864C8>]}
+2021-07-08 15:55:57.943255 (Thread-1): 10:55:57 | 7 of 8 OK created view model public.redshift_admin_table_stats....... [CREATE VIEW in 1.31s]
+2021-07-08 15:55:57.946246 (Thread-1): Finished running node model.redshift.redshift_admin_table_stats
+2021-07-08 15:55:57.948248 (Thread-1): Began running node model.redshift.redshift_admin_queries
+2021-07-08 15:55:57.950237 (Thread-1): 10:55:57 | 8 of 8 START view model public.redshift_admin_queries................ [RUN]
+2021-07-08 15:55:57.952289 (Thread-1): Acquiring new redshift connection "model.redshift.redshift_admin_queries".
+2021-07-08 15:55:57.952289 (Thread-1): Compiling model.redshift.redshift_admin_queries
+2021-07-08 15:55:58.026036 (Thread-1): Writing injected SQL for node "model.redshift.redshift_admin_queries"
+2021-07-08 15:55:58.029029 (Thread-1): finished collecting timing info
+2021-07-08 15:55:58.038539 (Thread-1): Writing runtime SQL for node "model.redshift.redshift_admin_queries"
+2021-07-08 15:55:58.040534 (Thread-1): Using redshift connection "model.redshift.redshift_admin_queries".
+2021-07-08 15:55:58.040534 (Thread-1): On model.redshift.redshift_admin_queries: BEGIN
+2021-07-08 15:55:58.040534 (Thread-1): Opening a new connection, currently in state closed
+2021-07-08 15:55:58.041530 (Thread-1): Connecting to Redshift using 'database' credentials
+2021-07-08 15:55:58.322069 (Thread-1): SQL status: BEGIN in 0.28 seconds
+2021-07-08 15:55:58.322069 (Thread-1): Using redshift connection "model.redshift.redshift_admin_queries".
+2021-07-08 15:55:58.330593 (Thread-1): On model.redshift.redshift_admin_queries: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.redshift.redshift_admin_queries"} */
+
+
+  create view "dev"."public"."redshift_admin_queries__dbt_tmp" as (
+    with  __dbt__cte__stl_query as (
+select
+
+  userid as user_id
+, query as query_id
+, xid as transaction_id
+, label
+, pid
+, database
+, starttime as started_at
+, endtime as finished_at
+, aborted
+
+from stl_query
+),  __dbt__cte__pg_user as (
+select
+
+  usesysid as user_id
+, usename as username
+
+from pg_user
+),  __dbt__cte__stl_explain as (
+select
+
+  userid as user_id
+, query as query_id
+, nodeid
+, parentid
+, plannode
+, info
+
+from stl_explain
+),  __dbt__cte__redshift_cost as (
+with stl_explain as (
+
+  select query_id, plannode from __dbt__cte__stl_explain
+  where nodeid = 1
+
+), parse_step_one as (
+
+  -- plannode (which contains cost) is formatted like:
+  --   XN Seq Scan on nyc_last_update  (cost=0.00..0.03 rows=2 width=40)
+  -- we want to rip out the cost part (0.00, 0.03) and make it usable.
+  -- cost_string after this step is "0.00..0.03 ..."
+  select
+    query_id
+  , split_part(plannode, 'cost=', 2) as cost_string
+
+  from stl_explain
+
+), parse_step_two as (
+
+  select
+    query_id
+  , split_part(cost_string, '..', 1) as starting_cost
+  , substring(
+      split_part(cost_string, '..', 2)
+      from 1
+      for strpos(split_part(cost_string, '..', 2), ' ')) as total_cost
+
+  from parse_step_one
+
+)
+
+
+select
+
+  query_id
+, starting_cost::float as starting_cost
+, total_cost::float as total_cost
+
+from parse_step_two
+),  __dbt__cte__stl_wlm_query as (
+select
+
+  userid as user_id
+, query as query_id
+, xid
+, task
+, service_class
+, slot_count
+, service_class_start_time
+, queue_start_time
+, queue_end_time
+, total_queue_time
+, exec_start_time
+, exec_end_time
+, total_exec_time
+, service_class_end_time
+, final_state
+
+from stl_wlm_query
+),queries as (
+
+  select * from __dbt__cte__stl_query
+
+), users as (
+
+  select * from __dbt__cte__pg_user
+
+), cost as (
+
+  select * from __dbt__cte__redshift_cost
+
+), timings as (
+
+  select * from __dbt__cte__stl_wlm_query
+
+)
+
+
+
+select
+
+  queries.query_id
+, queries.transaction_id
+, users.username::varchar
+
+, cost.starting_cost
+, cost.total_cost
+
+, queries.started_at
+, queries.finished_at
+
+, timings.queue_start_time
+, timings.queue_end_time
+, (timings.total_queue_time::float / 1000000.0) as total_queue_time_seconds
+
+, timings.exec_start_time
+, timings.exec_end_time
+, (timings.total_exec_time::float / 1000000.0) as total_exec_time_seconds
+
+from queries
+
+left join users
+  on queries.user_id = users.user_id
+
+left join cost
+  on queries.query_id = cost.query_id
+
+left join timings
+  on queries.query_id = timings.query_id
+  ) ;
+
+2021-07-08 15:55:58.376638 (Thread-1): SQL status: CREATE VIEW in 0.05 seconds
+2021-07-08 15:55:58.388594 (Thread-1): Using redshift connection "model.redshift.redshift_admin_queries".
+2021-07-08 15:55:58.388594 (Thread-1): On model.redshift.redshift_admin_queries: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.redshift.redshift_admin_queries"} */
+alter table "dev"."public"."redshift_admin_queries" rename to "redshift_admin_queries__dbt_backup"
+2021-07-08 15:55:58.421148 (Thread-1): SQL status: ALTER TABLE in 0.03 seconds
+2021-07-08 15:55:58.440340 (Thread-1): Using redshift connection "model.redshift.redshift_admin_queries".
+2021-07-08 15:55:58.441380 (Thread-1): On model.redshift.redshift_admin_queries: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.redshift.redshift_admin_queries"} */
+alter table "dev"."public"."redshift_admin_queries__dbt_tmp" rename to "redshift_admin_queries"
+2021-07-08 15:55:58.465998 (Thread-1): SQL status: ALTER TABLE in 0.02 seconds
+2021-07-08 15:55:58.473826 (Thread-1): On model.redshift.redshift_admin_queries: COMMIT
+2021-07-08 15:55:58.473826 (Thread-1): Using redshift connection "model.redshift.redshift_admin_queries".
+2021-07-08 15:55:58.473826 (Thread-1): On model.redshift.redshift_admin_queries: COMMIT
+2021-07-08 15:55:58.525482 (Thread-1): SQL status: COMMIT in 0.05 seconds
+2021-07-08 15:55:58.525482 (Thread-1): Using redshift connection "model.redshift.redshift_admin_queries".
+2021-07-08 15:55:58.530420 (Thread-1): On model.redshift.redshift_admin_queries: BEGIN
+2021-07-08 15:55:58.557524 (Thread-1): SQL status: BEGIN in 0.03 seconds
+2021-07-08 15:55:58.566402 (Thread-1): Using redshift connection "model.redshift.redshift_admin_queries".
+2021-07-08 15:55:58.566402 (Thread-1): On model.redshift.redshift_admin_queries: /* {"app": "dbt", "dbt_version": "0.20.0rc1", "profile_name": "default", "target_name": "dev", "node_id": "model.redshift.redshift_admin_queries"} */
+drop view if exists "dev"."public"."redshift_admin_queries__dbt_backup" cascade
+2021-07-08 15:55:58.602134 (Thread-1): SQL status: DROP VIEW in 0.04 seconds
+2021-07-08 15:55:58.604760 (Thread-1): On model.redshift.redshift_admin_queries: COMMIT
+2021-07-08 15:55:58.605757 (Thread-1): Using redshift connection "model.redshift.redshift_admin_queries".
+2021-07-08 15:55:58.605757 (Thread-1): On model.redshift.redshift_admin_queries: COMMIT
+2021-07-08 15:55:58.657252 (Thread-1): SQL status: COMMIT in 0.05 seconds
+2021-07-08 15:55:58.658298 (Thread-1): Using redshift connection "model.redshift.redshift_admin_queries".
+2021-07-08 15:55:58.659106 (Thread-1): On model.redshift.redshift_admin_queries: BEGIN
+2021-07-08 15:55:58.687349 (Thread-1): SQL status: BEGIN in 0.03 seconds
+2021-07-08 15:55:58.689345 (Thread-1): finished collecting timing info
+2021-07-08 15:55:58.689345 (Thread-1): On model.redshift.redshift_admin_queries: ROLLBACK
+2021-07-08 15:55:58.719041 (Thread-1): On model.redshift.redshift_admin_queries: Close
+2021-07-08 15:55:58.722084 (Thread-1): Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1ce81d87-b0c1-45fa-aba0-a47ba6a5fbb6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C38AC4D608>]}
+2021-07-08 15:55:58.723089 (Thread-1): 10:55:58 | 8 of 8 OK created view model public.redshift_admin_queries........... [CREATE VIEW in 0.77s]
+2021-07-08 15:55:58.726031 (Thread-1): Finished running node model.redshift.redshift_admin_queries
+2021-07-08 15:55:58.808803 (MainThread): Acquiring new redshift connection "master".
+2021-07-08 15:55:58.809801 (MainThread): Using redshift connection "master".
+2021-07-08 15:55:58.810807 (MainThread): On master: BEGIN
+2021-07-08 15:55:58.810807 (MainThread): Opening a new connection, currently in state closed
+2021-07-08 15:55:58.810807 (MainThread): Connecting to Redshift using 'database' credentials
+2021-07-08 15:55:59.098871 (MainThread): SQL status: BEGIN in 0.29 seconds
+2021-07-08 15:55:59.099870 (MainThread): On master: COMMIT
+2021-07-08 15:55:59.100867 (MainThread): Using redshift connection "master".
+2021-07-08 15:55:59.101982 (MainThread): On master: COMMIT
+2021-07-08 15:55:59.153073 (MainThread): SQL status: COMMIT in 0.05 seconds
+2021-07-08 15:55:59.154101 (MainThread): On master: Close
+2021-07-08 15:55:59.155909 (MainThread): 10:55:59 | 
+2021-07-08 15:55:59.157904 (MainThread): 10:55:59 | Finished running 2 table models, 6 view models in 11.37s.
+2021-07-08 15:55:59.163931 (MainThread): Connection 'master' was properly closed.
+2021-07-08 15:55:59.165890 (MainThread): Connection 'list_dev' was properly closed.
+2021-07-08 15:55:59.166884 (MainThread): Connection 'list_dev_public' was properly closed.
+2021-07-08 15:55:59.166884 (MainThread): Connection 'model.redshift.redshift_admin_queries' was properly closed.
+2021-07-08 15:55:59.228719 (MainThread): 
+2021-07-08 15:55:59.228719 (MainThread): Completed successfully
+2021-07-08 15:55:59.239823 (MainThread): 
+Done. PASS=8 WARN=0 ERROR=0 SKIP=0 TOTAL=8
+2021-07-08 15:55:59.243830 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C38AC20E48>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C38AD30688>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C38AD304C8>]}
+2021-07-08 15:55:59.244723 (MainThread): Flushing usage events

@@ -1,0 +1,19 @@
+name: 'redshift'
+version: '0.0.1'
+
+config-version: 2
+
+source-paths: ["models"]
+macro-paths: ["macros"]
+test-paths: ["tests"]
+
+profile: redshift_package
+
+models:
+  redshift:
+    base:
+      materialized: ephemeral
+    introspection:
+      materialized: ephemeral
+    views:
+      materialized: view

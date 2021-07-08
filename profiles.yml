@@ -1,0 +1,13 @@
+default:
+  target: dev
+  outputs:
+    dev:
+      type: redshift
+      host: redshift-cluster-1.cwjbpr84uhbn.us-east-1.redshift.amazonaws.com
+      user: awsuser
+      password: MAconvent!3
+      port: 5439
+      dbname: dev
+      schema: public
+      threads: 1
+      keepalives_idle: 0 # default 0, indicating the system default
